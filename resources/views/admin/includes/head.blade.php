@@ -28,5 +28,10 @@
         height: auto !important;
         margin-top: -30px;
     }
+    
+    td a{
+        display: inline-block;
+        margin-right: 5px;
+    }
 
 </style>

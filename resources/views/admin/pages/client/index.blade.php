@@ -27,8 +27,9 @@
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                             <th scope="col">No. Of Projects</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Incubation Date</th>
-
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,43 +40,53 @@
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
                             <td> 4 </td>
+                            <td><span class="label label-sm label-success"> Active </span></td>
                             <td> 14th Jan 2017 </td>
+                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
-                       <tr>
+                        <tr>
                             <td>1</td>
                             <td> Neelkanth Group Pvt. Ltd. </td>
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
                             <td> 4 </td>
+                            <td><span class="label label-sm label-danger"> Suspended </span></td>
                             <td> 14th Jan 2017 </td>
+                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>1</td>
                             <td> Neelkanth Group Pvt. Ltd. </td>
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
                             <td> 4 </td>
+                            <td><span class="label label-sm label-danger"> Suspended </span></td>
                             <td> 14th Jan 2017 </td>
+                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>1</td>
                             <td> Neelkanth Group Pvt. Ltd. </td>
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
                             <td> 4 </td>
+                            <td><span class="label label-sm label-success"> Active </span></td>
                             <td> 14th Jan 2017 </td>
+                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>1</td>
                             <td> Neelkanth Group Pvt. Ltd. </td>
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
                             <td> 4 </td>
+                            <td><span class="label label-sm label-danger"> Suspended </span></td>
                             <td> 14th Jan 2017 </td>
+                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
                     </tbody>
                 </table>
