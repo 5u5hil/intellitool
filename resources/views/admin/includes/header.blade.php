@@ -15,7 +15,7 @@
                 <!-- BEGIN LOGO -->
                 <a id="index" class="page-logo" href="{{ route('admin.dashboard') }}"><img src="{{ asset(config('constants.adminAssets').'logo.png')}} " /></a>
                 <!-- END LOGO -->
-            
+
                 <!-- BEGIN TOPBAR ACTIONS -->
                 <div class="topbar-actions">
                     <!-- BEGIN GROUP NOTIFICATION -->
@@ -125,24 +125,16 @@
                         </button>
                         <ul class="dropdown-menu-v2" role="menu">
                             <li class="active">
-                                <a href="#">New Post</a>
+                                <a href="#">New Client</a>
                             </li>
                             <li>
-                                <a href="#">New Comment</a>
+                                <a href="#">New Project</a>
                             </li>
                             <li>
-                                <a href="#">Share</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">Comments
-                                    <span class="badge badge-success">4</span>
-                                </a>
+                                <a href="#">New Schedule</a>
                             </li>
                             <li>
-                                <a href="#">Feedbacks
-                                    <span class="badge badge-danger">2</span>
-                                </a>
+                                <a href="#">New Employee</a>
                             </li>
                         </ul>
                     </div>
@@ -205,308 +197,49 @@
                     </li>
                     <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
                         <a href="javascript:;" class="text-uppercase">
-                            <i class="icon-puzzle"></i> Features </a>
+                            <i class="icon-puzzle"></i> Project Management </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
-                                    <i class="icon-diamond"></i> UI Features </a>
+                                    <i class="icon-diamond"></i> Client </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="ui_colors.html"> Color Library </a>
+                                        <a href="ui_colors.html"> Add New Client </a>
                                     </li>
                                     <li>
-                                        <a href="ui_metronic_grid.html"> Metronic Grid System </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_general.html"> General Components </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_buttons.html"> Buttons </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_buttons_spinner.html"> Spinner Buttons </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_confirmations.html"> Popover Confirmations </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_sweetalert.html"> Bootstrap Sweet Alerts </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_icons.html"> Font Icons </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_socicons.html"> Social Icons </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_typography.html"> Typography </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_tabs_accordions_navs.html"> Tabs, Accordions & Navs </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_tree.html"> Tree View </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_timeline.html"> Timeline 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_timeline_2.html"> Timeline 2 </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_timeline_horizontal.html"> Horizontal Timeline </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_page_progress_style_1.html"> Page Progress Bar - Flash </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_page_progress_style_2.html"> Page Progress Bar - Big Counter </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_blockui.html"> Block UI </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_bootstrap_growl.html"> Bootstrap Growl Notifications </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_notific8.html"> Notific8 Notifications </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_toastr.html"> Toastr Notifications </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_bootbox.html"> Bootbox Dialogs </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_alerts_api.html"> Metronic Alerts API </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_session_timeout.html"> Session Timeout </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_idle_timeout.html"> User Idle Timeout </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_modals.html"> Modals </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_extended_modals.html"> Extended Modals </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_tiles.html"> Tiles </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_timeline.html"> Timeline </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_datepaginator.html"> Date Paginator </a>
-                                    </li>
-                                    <li>
-                                        <a href="ui_nestable.html"> Nestable List </a>
+                                        <a href="ui_metronic_grid.html"> All Clients </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
-                                    <i class="icon-puzzle"></i> Components </a>
+                                    <i class="icon-puzzle"></i> Projects </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="components_date_time_pickers.html"> Date & Time Pickers </a>
+                                        <a href="components_date_time_pickers.html"> Add New Project </a>
                                     </li>
                                     <li>
-                                        <a href="components_color_pickers.html"> Color Pickers </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_select2.html"> Select2 Dropdowns </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_multiselect_dropdown.html"> Bootstrap Multiselect Dropdowns </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_select.html"> Bootstrap Select </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_multi_select.html"> Bootstrap Multiple Select </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_select_splitter.html"> Select Splitter </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_clipboard.html"> Clipboard </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_typeahead.html"> Typeahead Autocomplete </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_tagsinput.html"> Bootstrap Tagsinput </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_switch.html"> Bootstrap Switch </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_maxlength.html"> Bootstrap Maxlength </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_fileinput.html"> Bootstrap File Input </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_bootstrap_touchspin.html"> Bootstrap Touchspin </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_form_tools.html"> Form Widgets & Tools </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_context_menu.html"> Context Menu </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_editors.html"> Markdown & WYSIWYG Editors </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_code_editors.html"> Code Editors </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_ion_sliders.html"> Ion Range Sliders </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_noui_sliders.html"> NoUI Range Sliders </a>
-                                    </li>
-                                    <li>
-                                        <a href="components_knob_dials.html"> Knob Circle Dials </a>
+                                        <a href="components_color_pickers.html"> All Projects </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
-                                    <i class="icon-settings"></i> Form Stuff </a>
+                                    <i class="icon-settings"></i> Schedule Planning </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="form_controls.html"> Bootstrap Form
-                                            <br>Controls </a>
+                                        <a href="form_controls.html"> Add New Plan</a>
                                     </li>
                                     <li>
-                                        <a href="form_controls_md.html"> Material Design
-                                            <br>Form Controls </a>
+                                        <a href="form_controls_md.html"> All Plans </a>
                                     </li>
-                                    <li>
-                                        <a href="form_validation.html"> Form Validation </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_validation_states_md.html"> Material Design
-                                            <br>Form Validation States </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_validation_md.html"> Material Design
-                                            <br>Form Validation </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_layouts.html"> Form Layouts </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_repeater.html"> Form Repeater </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_input_mask.html"> Form Input Mask </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_editable.html"> Form X-editable </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_wizard.html"> Form Wizard </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_icheck.html"> iCheck Controls </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_image_crop.html"> Image Cropping </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_fileupload.html"> Multiple File Upload </a>
-                                    </li>
-                                    <li>
-                                        <a href="form_dropzone.html"> Dropzone File Upload </a>
-                                    </li>
+
                                 </ul>
                             </li>
-                            <li class="dropdown more-dropdown-sub">
-                                <a href="?p=">
-                                    <i class="icon-wallet"></i> Portlets </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="portlet_boxed.html"> Boxed Portlets </a>
-                                    </li>
-                                    <li>
-                                        <a href="portlet_light.html"> Light Portlets </a>
-                                    </li>
-                                    <li>
-                                        <a href="portlet_solid.html"> Solid Portlets </a>
-                                    </li>
-                                    <li>
-                                        <a href="portlet_ajax.html"> Ajax Portlets </a>
-                                    </li>
-                                    <li>
-                                        <a href="portlet_draggable.html"> Draggable Portlets </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown more-dropdown-sub">
+                            <li class="dropdown">
                                 <a href="javascript:;">
-                                    <i class="icon-bar-chart"></i> Charts </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="charts_amcharts.html"> amChart </a>
-                                    </li>
-                                    <li>
-                                        <a href="charts_flotcharts.html"> Flot Charts </a>
-                                    </li>
-                                    <li>
-                                        <a href="charts_flowchart.html"> Flow Charts </a>
-                                    </li>
-                                    <li>
-                                        <a href="charts_google.html"> Google Charts </a>
-                                    </li>
-                                    <li>
-                                        <a href="charts_echarts.html"> eCharts </a>
-                                    </li>
-                                    <li>
-                                        <a href="charts_morris.html"> Morris Charts </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> HighCharts </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown more-dropdown-sub">
-                                <a href="javascript:;">
-                                    <i class="icon-cloud-upload"></i> Elements </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="elements_steps.html"> Steps </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements_lists.html"> Lists </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements_ribbons.html"> Ribbons </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements_overlay.html"> Overlays </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements_cards.html"> User Cards </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown more-dropdown-sub">
-                                <a href="javascript:;">
-                                    <i class="icon-pointer"></i> Maps </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="maps_google.html"> Google Maps </a>
-                                    </li>
-                                    <li>
-                                        <a href="maps_vector.html"> Vector Maps </a>
-                                    </li>
-                                </ul>
+                                    <i class="icon-calendar"></i> Schedules </a>
+
                             </li>
                         </ul>
                     </li>
