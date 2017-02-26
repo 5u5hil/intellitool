@@ -39,10 +39,10 @@
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
-                            <td> 4 </td>
+                            <td> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Projects">4</a> </td>
                             <td><span class="label label-sm label-success"> Active </span></td>
                             <td> 14th Jan 2017 </td>
-                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
+                            <td class="text-center"><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit"><i class='fa fa-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project"><i class='fa fa-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -50,10 +50,10 @@
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
-                            <td> 4 </td>
+                            <td> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Projects">4</a> </td>
                             <td><span class="label label-sm label-danger"> Suspended </span></td>
                             <td> 14th Jan 2017 </td>
-                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
+                            <td class="text-center"><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit"><i class='fa fa-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project"><i class='fa fa-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -61,10 +61,10 @@
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
-                            <td> 4 </td>
+                            <td> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Projects">4</a> </td>
                             <td><span class="label label-sm label-danger"> Suspended </span></td>
                             <td> 14th Jan 2017 </td>
-                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
+                            <td class="text-center"><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit"><i class='fa fa-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project"><i class='fa fa-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -72,10 +72,10 @@
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
-                            <td> 4 </td>
+                            <td> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Projects">4</a> </td>
                             <td><span class="label label-sm label-success"> Active </span></td>
                             <td> 14th Jan 2017 </td>
-                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
+                            <td class="text-center"><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit"><i class='fa fa-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project"><i class='fa fa-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -83,10 +83,10 @@
                             <td> Neel Shah </td>
                             <td> neel@neelkath.com</td>
                             <td> 8798798787 </td>
-                            <td> 4 </td>
+                            <td> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Projects">4</a> </td>
                             <td><span class="label label-sm label-danger"> Suspended </span></td>
                             <td> 14th Jan 2017 </td>
-                            <td class="text-center"><a href="" title="Edit"><i class='fa fa-pencil'></i></a> <a href="" title="Add Project"><i class='fa fa-plus'></i></a> <a href="" title="View Client Details"><i class='fa fa-search'></i></a> </td>
+                            <td class="text-center"><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit"><i class='fa fa-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project"><i class='fa fa-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details"><i class='fa fa-search'></i></a> </td>
                         </tr>
                     </tbody>
                 </table>
