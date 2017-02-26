@@ -12,9 +12,14 @@
  */
 Route::group(['namespace' => 'Admin'], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
-    
-     Route::get('/login', function () {
+
+    Route::get('/login', function () {
         return 'login';
+    });
+
+    Route::group(['prefix' => 'client'], function () {
+        Route::get('/', 'ClientController@index')->name('admin.client.list');
+        Route::get('/add', 'ClientController@add')->name('admin.client.add');
     });
 });
 

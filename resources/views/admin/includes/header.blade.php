@@ -191,11 +191,11 @@
             <!-- BEGIN HEADER MENU -->
             <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled  active open selected">
-                        <a href="javascript:;" class="text-uppercase">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/dashboard/',\Route::currentRouteName()) ? 'active open selected' : ''  }}">
+                        <a href="{{ route('admin.dashboard') }}" class="text-uppercase">
                             <i class="icon-home"></i> Dashboard </a>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(client|project|schedule)/',\Route::currentRouteName()) ? 'active open selected' : ''  }} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-puzzle"></i> Project Management </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
@@ -204,10 +204,10 @@
                                     <i class="icon-diamond"></i> Client </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="ui_colors.html"> Add New Client </a>
+                                        <a href="{{ route('admin.client.add') }}"> Add New Client </a>
                                     </li>
                                     <li>
-                                        <a href="ui_metronic_grid.html"> All Clients </a>
+                                        <a href="{{ route('admin.client.list') }}"> All Clients </a>
                                     </li>
                                 </ul>
                             </li>

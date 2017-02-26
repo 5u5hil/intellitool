@@ -2856,7 +2856,6 @@
 @endsection
 
 @section('mystyles')
-
 <style>
     .page-content{ padding-top: 30px; }
 </style>
