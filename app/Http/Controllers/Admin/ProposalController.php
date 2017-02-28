@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProposalController extends Controller
-{
+class ProposalController extends Controller {
+
     //
-    
-    function index(){
-  return view(config('constants.adminPages').'.proposal.index');
+
+    function index() {
+        return view(config('constants.adminPages') . '.proposal.index');
     }
+
 }
