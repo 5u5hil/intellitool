@@ -10,9 +10,6 @@ class ProposalController extends Controller
     //
     
     function index(){
-        $user = DB::table('test')->first();
-        echo "<pre>";
-        print_r($user);
-        exit;
+  return view(config('constants.adminPages').'.proposal.index');
     }
 }
