@@ -25,6 +25,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'proposal'], function () {
         Route::get('/', 'ProposalController@index')->name('admin.proposal.list');
         Route::get('/add', 'ClientController@add')->name('admin.proposal.add');
+        
     });
 
     Route::group(['prefix' => 'project'], function () {
