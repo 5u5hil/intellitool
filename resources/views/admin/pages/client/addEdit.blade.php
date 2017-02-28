@@ -16,7 +16,8 @@
 
 
 	<div class="row">
-		<div class="col-md-12">		
+		<div class="col-md-12">
+		<form action="#" class="repeater form-horizontal">
 			<div class="portlet box green">
 				<div class="portlet-title">
 					<div class="caption">
@@ -27,7 +28,6 @@
 				</div>
 				<div class="portlet-body form">
 					<!-- BEGIN FORM-->
-					<form action="#" class="form-horizontal">
 						<div class="form-body">
 							<div class="form-group">
 								<div class="col-md-4">
@@ -69,8 +69,6 @@
 								</div>	
 							</div>
 						</div>	
-						
-					</form>
 					<!-- END FORM-->
 				</div>
 			</div>	
@@ -85,32 +83,48 @@
 				</div>
 				<div class="portlet-body form">
 					<!-- BEGIN FORM-->
-					<form action="#" class="form-horizontal">
 						<div class="form-body">
-							<div class="form-group mt-repeater">
+							<div class="mt-repeater">
                                 <div data-repeater-list="group-c">
                                     <div data-repeater-item class="mt-repeater-item">
                                         <div class="row mt-repeater-row">
-                                            <div class="col-md-8">
-                                                <label class="control-label">Product Variation</label>
-                                                <input type="text" placeholder="Salted Tuna" class="form-control" /> </div>
-                                            <div class="col-md-3">
-                                                <label class="control-label">Qty</label>
-                                                <input type="text" placeholder="3" class="form-control" /> </div>
-                                            <div class="col-md-1">
-                                                <a href="javascript:;" data-repeater-delete class="btn btn-danger mt-repeater-delete">
-                                                    <i class="fa fa-close"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="col-md-12">
+                                               <div class="form-group">
+	                                               <div class="col-md-6">
+														<label>File Upload</label>
+														<div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
+	                                                        <div class="input-group">
+	                                                            <div class="form-control input-fixed" data-trigger="fileinput">
+	                                                                <i class="fa fa-file fileinput-exists"></i>&nbsp;
+	                                                                <span class="fileinput-filename"> </span>
+	                                                            </div>
+	                                                            <span class="input-group-addon btn default btn-file">
+	                                                                <span class="fileinput-new"> Select file </span>
+	                                                                <span class="fileinput-exists"> Change </span>
+	                                                                <input type="file" name="..."> </span>
+	                                                            <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+	                                                        </div>
+	                                                    </div>
+													</div>
+
+													<div class="col-md-5">
+														<label>Phone No.</label>
+														<input type="text" class="form-control" placeholder="Phone No.">
+													</div>
+		                                            <div class="col-md-1">
+		                                                <a href="javascript:;" data-repeater-delete class="btn btn-danger pull-right mt-repeater-delete">
+		                                                    <i class="fa fa-trash"></i>
+		                                                </a>
+		                                            </div>
+                                            	</div>
+                                        	</div>
+                                    	</div>
+                                	</div>
+                                </div>	
                                 <a href="javascript:;" data-repeater-create class="btn btn-info mt-repeater-add">
-                                    <i class="fa fa-plus"></i> Add Product Variation</a>
+                                    <i class="fa fa-plus"></i> Add New</a>
                             </div>
 						</div>	
-						
-					</form>
 					<!-- END FORM-->
 				</div>
 			</div>	
@@ -123,6 +137,7 @@
 					</div>
 				</div>
 			</div>
+		</form>	
 		</div>
 	</div>
 </div>

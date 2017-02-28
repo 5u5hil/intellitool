@@ -54,6 +54,10 @@
 <script src="{{ asset(config('constants.adminAssets').'layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'layouts/global/scripts/quick-nav.min.js') }}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.repeater.js') }}" type="text/javascript"></script>
+<script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
 <script type="text/javascript">
 $(function() {
     $('#datepicker').daterangepicker({
@@ -65,3 +69,55 @@ $(function() {
     });
 });
 </script>
+ <script>
+    $(document).ready(function () {
+        'use strict';
+
+        $('.repeater').repeater({
+            defaultValues: {
+                'textarea-input': 'foo',
+                'text-input': 'bar',
+                'select-input': 'B',
+                'checkbox-input': ['A', 'B'],
+                'radio-input': 'B'
+            },
+            show: function () {
+                $(this).slideDown();
+            },
+            hide: function (deleteElement) {
+                if(confirm('Are you sure you want to delete this element?')) {
+                    $(this).slideUp(deleteElement);
+                }
+            },
+            ready: function (setIndexes) {
+
+            }
+        });
+
+        window.outerRepeater = $('.outer-repeater').repeater({
+            isFirstItemUndeletable: true,
+            defaultValues: { 'text-input': 'outer-default' },
+            show: function () {
+                console.log('outer show');
+                $(this).slideDown();
+            },
+            hide: function (deleteElement) {
+                console.log('outer delete');
+                $(this).slideUp(deleteElement);
+            },
+            repeaters: [{
+                isFirstItemUndeletable: true,
+                selector: '.inner-repeater',
+                defaultValues: { 'inner-text-input': 'inner-default' },
+                show: function () {
+                    console.log('inner show');
+                    $(this).slideDown();
+                },
+                hide: function (deleteElement) {
+                    console.log('inner delete');
+                    $(this).slideUp(deleteElement);
+                }
+            }]
+        });
+    });
+    </script>

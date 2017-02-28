@@ -20,7 +20,7 @@
 <link href="{{ asset(config('constants.adminAssets').'layouts/layout5/css/layout.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'layouts/layout5/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="{{ asset(config('constants.adminAssets').'favicon.ico') }}" />
-
+<link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" />
 <style>   
     
     td a{
