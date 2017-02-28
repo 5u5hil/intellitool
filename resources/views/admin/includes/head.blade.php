@@ -21,13 +21,7 @@
 <link href="{{ asset(config('constants.adminAssets').'layouts/layout5/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="{{ asset(config('constants.adminAssets').'favicon.ico') }}" />
 
-<style> 
-
-    .page-logo {
-        width: 200px !important;
-        height: auto !important;
-        margin-top: -30px;
-    }
+<style>   
     
     td a{
         display: inline-block;

@@ -12,7 +12,7 @@ class ClientController extends Controller {
     }
 
     public function add() {
-        return view(config('constants.adminPages') . '.client.index');
+        return view(config('constants.adminPages') . '.client.addEdit');
     }
 
 }

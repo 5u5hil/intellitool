@@ -54,3 +54,14 @@
 <script src="{{ asset(config('constants.adminAssets').'layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'layouts/global/scripts/quick-nav.min.js') }}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+<script type="text/javascript">
+$(function() {
+    $('#datepicker').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+		locale: {
+            format: 'DD/MM/YYYY'
+		}
+    });
+});
+</script>
