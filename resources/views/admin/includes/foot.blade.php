@@ -43,9 +43,14 @@
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
+<script src="{{ asset(config('constants.adminAssets').'global/plugins/jstree/dist/jstree.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-multiselect/js/bootstrap-multiselect.js') }}" type="text/javascript"></script>
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'global/scripts/app.min.js') }}" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/ui-tree.min.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/components-bootstrap-multiselect.min.js') }}" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/dashboard.min.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
@@ -57,6 +62,7 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.repeater.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
+
 <!-- END PAGE LEVEL SCRIPTS -->
 <script type="text/javascript">
 $(function() {

@@ -4,9 +4,12 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <meta content="Infini Systems" name="author" />
 
+<!-- <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" /> -->
 
-<link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" />
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+<link href="{{ asset(config('constants.adminAssets').'global/css/open-sans-font.css') }}" rel="stylesheet" id="style_components" type="text/css" />
+<link href="{{ asset(config('constants.adminAssets').'global/css/oswald-font.css') }}" rel="stylesheet" id="style_components" type="text/css" />
+
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -21,6 +24,8 @@
 <link href="{{ asset(config('constants.adminAssets').'layouts/layout5/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="{{ asset(config('constants.adminAssets').'favicon.ico') }}" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset(config('constants.adminAssets').'global/plugins/jstree/dist/themes/default/style.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-multiselect/css/bootstrap-multiselect.css') }}" rel="stylesheet" type="text/css" />
 <style>   
     
     td a{

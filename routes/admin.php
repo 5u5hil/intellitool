@@ -41,6 +41,12 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'schedule'], function () {
         Route::get('/', 'ScheduleController@index')->name('admin.schedule.list');
     });
+    
+    Route::group(['prefix'=>'designation-level'],function(){
+       Route::get('/','DesignationLevelController@index')->name('admin.designation.level.list');
+       Route::get('/add/edit','DesignationLevelController@add')->name('admin.designation.level.add/edit');
+       Route::post('/save/update','DesignationLevelController@save')->name('admin.designation.level.save/update');
+    });
 
     Route::group(['prefix' => 'designation'], function () {
         Route::get('/', 'DesignationController@index')->name('admin.designation.list');

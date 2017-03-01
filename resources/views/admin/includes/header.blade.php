@@ -361,7 +361,7 @@
                                     <i class=" icon-globe-alt"></i> Global </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="ecommerce_index.html">
+                                        <a href="{{route('admin.designation.level.list')}}">
                                             <i class=""></i>  Designation Level  </a>
                                     </li>
                                
