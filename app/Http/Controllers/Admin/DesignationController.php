@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\EmpRole;
+use App\Models\Verticle;
 use App\Models\DesignationLevel;
 use App\Models\EmpPermission;
 use Illuminate\Support\Facades\Input;
@@ -25,6 +26,7 @@ class DesignationController extends Controller {
             if (strpos($value->getPrefix(), "admin") !== false) {
                 try {
                     $displayName = ucwords(strtolower(str_replace(".", " ", str_replace("admin.", "", $value->getName()))));
+                    $displayName1 = end((explode(".", $value->getName())));
 
                     $chkPerm = EmpPermission::where('name', '=', $value->getName())->first();
 
@@ -34,7 +36,7 @@ class DesignationController extends Controller {
                         $permissions = new EmpPermission();
 
                     $permissions->name = $value->getName();
-                    $permissions->display_name = @$displayName;
+                    $permissions->display_name = @$displayName1;
                     $permissions->description = "";
                     $permissions->prefix = @$value->getPrefix();
                     $permissions->save();
@@ -52,10 +54,17 @@ class DesignationController extends Controller {
         }
 
         $getRepoting = ['' => 'Please Select'];
-$designAll = EmpRole::all();
+        $designAll = EmpRole::all();
         foreach ($designAll as $dsg) {
             $getRepoting[$dsg->id] = $dsg->name;
         }
+
+        $verticles = Verticle::all();
+        $verticlesSel = ['' => 'Please Select'];
+        foreach ($verticles as $vert) {
+            $verticlesSel[$vert->id] = $vert->name;
+        }
+
 
         $perms = [];
         $i = 0;
@@ -67,7 +76,8 @@ $designAll = EmpRole::all();
             $i++;
         }
 
-        return view(config('constants.adminPages') . '.designation.addEdit', ['design' => $design, 'permissions' => $perms, 'getRepoting'=>$getRepoting,'desLevel' => $desLevel]);
+
+        return view(config('constants.adminPages') . '.designation.addEdit', ['design' => $design, 'permissions' => $perms, 'getRepoting' => $getRepoting, 'desLevel' => $desLevel, 'verticlesSel' => $verticlesSel]);
     }
 
     public function saveUpdate() {
@@ -75,8 +85,10 @@ $designAll = EmpRole::all();
         //dd(Input::all());
         $saveRole = EmpRole::findOrNew(Input::get('id'));
         $saveRole->name = Input::get('name');
-        $saveRole->display_name = Input::get('display_name');
-        $saveRole->description = Input::get("description");
+        $saveRole->display_name = Input::get('name');
+        $saveRole->parent_id = Input::get('parent_id');
+        $saveRole->designation_level_id = Input::get('designation_level_id');
+        $saveRole->verticle_id = Input::get('verticle_id');
         $saveRole->save();
 
         if (!empty(Input::get('chk'))) {

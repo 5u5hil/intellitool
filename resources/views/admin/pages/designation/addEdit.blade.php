@@ -10,10 +10,10 @@
             <li>
                 <a href="#">Home</a>
             </li>
-            <li class="active">Role</li>
+            <li class="active">Designation</li>
         </ol>
     </div>
-    
+
 
     <div class="row">
         <div class="col-md-12">
@@ -33,22 +33,21 @@
                     <!-- BEGIN FORM-->
                     <div class="form-body">
                         <div class="form-group">
-                            <div class="col-md-4">
-
+                            <div class="col-md-3">
                                 {{ Form::label('Designation', 'Designation') }}
-                                {{Form::text('designation',  null, ['class'=>'form-control','required'=>'true','placeholder'=>'Designation']) }}
-
+                                {{Form::text('name',  null, ['class'=>'form-control','required'=>'true','placeholder'=>'Designation']) }}
                             </div>	
-                            <div class="col-md-4">
-
+                            <div class="col-md-3">
                                 {{ Form::label('Reporting Designation', 'Reporting Designation') }}
-                                {{Form::select('parent_id',$getRepoting , null, ['class'=>'form-control','required'=>'true']) }}
-
+                                {{Form::select('parent_id',$getRepoting , @$design->parent_id or null , ['class'=>'form-control']) }}
                             </div>	
-                              <div class="col-md-4">
-
+                            <div class="col-md-3">
                                 {{ Form::label('Designation Level', 'Designation Level') }}
-                                {{Form::select('level_id',$desLevel , null, ['class'=>'form-control','required'=>'true']) }}
+                                {{Form::select('designation_level_id',$desLevel ,  @$design->designation_level_id or null , ['class'=>'form-control']) }}
+                            </div>
+                            <div class="col-md-3">
+                                {{ Form::label('Verticle', 'Verticle') }}
+                                {{Form::select('verticle_id',$verticlesSel ,  @$design->vertical_id or null , ['class'=>'form-control']) }}
 
                             </div>
                         </div>
@@ -61,71 +60,71 @@
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-user"></i>Role Permissions</div>
+                        <i class="fa fa-user"></i>Permissions</div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
                 </div>
                 <div class="portlet-body form">
-                       
-                  
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label class="mt-checkbox">   GRANT SYSTEM ACCESS  
+                                    <input type="checkbox" name="access_system">
+                                    <span></span>
+                                </label>
+                            </div>
+                            <div class="col-md-6 permDiv">
+                                <label class="mt-checkbox">   GRANT COMPLETE ACCESS
+                                    <input type="checkbox" name="chkAll">
+                                    <span></span>
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>	   
+
+
+
 
                     <!-- BEGIN FORM-->
-                    <div class="form-body">
-                        
-                      <input type="checkbox"  id="perm" name="chkAll" class="make-switch uppercase chkAll"  data-on="success" data-on-color="success" data-off-color="danger" data-size="small"> Grant Complete Access
-
-                        <div class="mt-repeater">
-                            <!--                            <div data-repeater-list="group-c">-->
-                            <div data-repeater-item class="mt-repeater-item">
-                                <div class="row mt-repeater-row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="mt-element-list">
-                                          
-                                                @foreach($permissions  as $permk => $permv)
-
-                                                <!--                                                    <div class="mt-list-head list-simple ext-1 font-white bg-grey-gallery">-->
-                                                <div class="list-head-title-container">
-                                                    <!--                                                            <div class="list-date">Nov 8, 2015</div>
-                                                    -->                                                            <h6 class="list-title uppercase">{{ $permk }}</h6>
-                                                </div>
-                                                <!--                                                    </div>-->
-                                                <div class="mt-list-container list-simple ext-1">
-                                                    @foreach($permv as $per)
-                                                    <ul>
-                                                        <li class="mt-list-item done">
-                                                            <div class="list-icon-container">
-                                                                <i class="icon-check"></i>
-                                                            </div>
-                                                            <div class="list-datetime">
-                                                                <input type="checkbox" id="perm{{ $per['id'] }}"  <?php echo in_array($per['id'], array_flatten($design->perms()->get(['id'])->toArray())) ? "checked" : ""  ?> class="make-switch uppercase" name="chk[]" value="{{@$per['id']}}" data-on="success" data-on-color="success" data-off-color="danger" data-size="small">
-
-                                                            </div>
-                                                            <div class="list-item-content">
-                                                                <h6 class="uppercase">
-                                                                    {{$per['perms'] }}
-                                                                </h6>
-                                                            </div>
-                                                        </li>
+                    <div class="form-body permDiv">
 
 
+                        <div class="form-group">
+
+                            @foreach($permissions  as $permk => $permv)
+                            <div class="m-heading-1 border-green m-bordered">
+                                <div class="form-group" style="margin: 0px;">
+                                    <div class="mt-checkbox-list">
+                                        <label class="mt-checkbox"> <h5 class='uppercase'> {{$permk}} </h5>
+                                            <input type="checkbox" name="chk_group[]" data-group='{{$permk}}'>
+                                            <span></span>
+                                        </label>
+
+                                    </div>
+                                    <div class="mt-checkbox-inline">
+                                        @foreach($permv as $per)
 
 
-                                                    </ul>
-                                                    @endforeach
-                                                </div>
-                                                @endforeach
-                                            </div>
+                                        <label class="mt-checkbox"> 
+                                            {{strtoupper($per['perms']) }}
+
+                                            <input type="checkbox" name="chk[]" data-per='{{$permk}}' value="{{@$per['id']}}" id="perm{{ $per['id'] }}"  <?php echo in_array($per['id'], array_flatten($design->perms()->get(['id'])->toArray())) ? "checked" : "" ?>>
+                                            <span></span>
+                                        </label> 
 
 
-
-
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
-                            <!--                            </div>	-->
+                            @endforeach
+
+
+
+
 
                         </div>
                     </div>	
@@ -149,18 +148,46 @@
 
 @section('myscripts')
 <script>
-  
-      
-        $(".chkAll").on("click",function () {
-              alert("sdf");
-            var checkbox = $(this);
-            var isChecked = checkbox.is(':checked');
-            if (isChecked) {
-                $("[name='chk[]']").attr('Checked', 'Checked');
-            } else {
-                $("[name='chk[]']").removeAttr('Checked');
-            }
-        }); 
-    
+
+    $(".permDiv").hide();
+    $("[name='chkAll']").on("click", function () {
+
+        var checkbox = $(this);
+        var isChecked = checkbox.is(':checked');
+        if (isChecked) {
+            $("[name='chk[]']").attr('Checked', 'Checked');
+            $("[name='chk_group[]']").attr('Checked', 'Checked');
+        } else {
+            $("[name='chk[]']").removeAttr('Checked');
+            $("[name='chk_group[]']").removeAttr('Checked');
+        }
+    });
+
+    $("[name='access_system'").click(function () {
+        var checkbox = $(this);
+        var isChecked = checkbox.is(':checked');
+
+        if (isChecked) {
+            $(".permDiv").show();
+        } else {
+            $(".permDiv").hide();
+        }
+
+
+    });
+
+    $("[name='chk_group[]'").click(function () {
+        var getattr = $(this).data('group');
+        var checkbox = $(this);
+        var isChecked = checkbox.is(':checked');
+
+        if (isChecked) {
+            $("[data-per='" + getattr + "']").attr('Checked', 'Checked');
+        } else {
+            $("[data-per='" + getattr + "']").removeAttr('Checked');
+        }
+
+    });
+
 </script>
 @endsection
