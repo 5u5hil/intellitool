@@ -21,12 +21,12 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Project Name</th>
-                            <th scope="col">Company Name</th>
-                            <th scope="col">Project Stage</th>
+                            <th scope="col">Client</th>
+                            <th scope="col">Proposal Stage</th>
                             <th scope="col">Quotation</th>
                             <th scope="col">Location</th>
                             <th scope="col">Created At</th>
-                            <th scope="col">Action</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

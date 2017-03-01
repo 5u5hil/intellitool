@@ -223,17 +223,10 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown more-dropdown-sub">
-                                <a href="javascript:;">
+                            <li class="dropdown ">
+                                <a href="{{ route('admin.project.list') }}">
                                     <i class="icon-puzzle"></i> Projects </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('admin.project.add') }}"> Add New Project </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('admin.project.list') }}"> All Projects </a>
-                                    </li>
-                                </ul>
+                 
                             </li>
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">

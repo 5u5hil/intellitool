@@ -25,12 +25,12 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'proposal'], function () {
         Route::get('/', 'ProposalController@index')->name('admin.proposal.list');
         Route::get('/add', 'ProposalController@add')->name('admin.proposal.add');
-
     });
 
     Route::group(['prefix' => 'project'], function () {
         Route::get('/', 'ProjectController@index')->name('admin.project.list');
         Route::get('/add', 'ProjectController@add')->name('admin.project.add');
+        Route::get('/edit', 'ProjectController@edit')->name('admin.project.edit');
     });
 
     Route::group(['prefix' => 'schedule-plan'], function () {
@@ -55,7 +55,6 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'role'], function () {
            
         });
-         
     });
 });
 

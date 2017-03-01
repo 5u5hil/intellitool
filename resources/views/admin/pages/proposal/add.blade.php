@@ -29,42 +29,43 @@
                         <div class="form-body">
                             <div class="form-group">
                                 <div class="col-md-4">
-                                    <label>Company Name</label>
-                                    <input type="text" class="form-control" placeholder="Company Name">
+                                    <label>Project Name</label>
+                                    <input type="text" class="form-control" placeholder="Project Name">
                                 </div>	
                                 <div class="col-md-4">
-                                    <label>Contact Name</label>
-                                    <input type="text" class="form-control" placeholder="Contact Name">
+                                    <label>Client</label>
+                                    <select class="form-control" name="options2">
+                                        <option value="">Select...</option>
+                                        <option value="Option 1">Neelkanth Business Group</option>
+                                        <option value="Option 2">Mernic Mall</option>
+                                    </select>
                                 </div>	
                                 <div class="col-md-4">
-                                    <label>Email Address</label>
-                                    <input type="text" class="form-control" placeholder="Email Address"> 	
+                                    <label>Contact Person</label>
+                                    <input type="text" class="form-control" placeholder="Contact Person">
                                 </div>	
                             </div>
                             <div class="form-group">
                                 <div class="col-md-4">
-                                    <label>Phone No.</label>
-                                    <input type="text" class="form-control" placeholder="Phone No.">
+                                    <label>Email Address</label>
+                                    <input type="text" class="form-control" placeholder="Email Address"> 	
+
+                                </div>	
+                                                 <div class="col-md-4">
+                                    <label>Phone No</label>
+                                    <input type="text" class="form-control" placeholder="Phone No"> 	
+
                                 </div>	
                                 <div class="col-md-4">
-                                    <label>Status</label>
+                                    <label>Proposal Stage</label>
                                     <select class="form-control" name="options2">
                                         <option value="">Select...</option>
-                                        <option value="Option 1">Active</option>
-                                        <option value="Option 2">Suspended</option>
-                                        <option value="Option 3">Inactive</option>
-                                        <option value="Option 4">Pending</option>
+                                        <option value="Option 1">Survey</option>
+                                        <option value="Option 2">SLA</option>
+                                        <option value="Option 3">Quotation</option>
                                     </select>	
                                 </div>	
-                                <div class="col-md-4">
-                                    <label>	Incubation Date</label>
-                                    <div class='input-group date'>
-                                        <input type='text' class="form-control" id="datepicker" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>	
+
                             </div>
                         </div>	
                         <!-- END FORM-->
@@ -74,7 +75,7 @@
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-user"></i>Basic Info </div>
+                            <i class="fa fa-user"></i>Quotation</div>
                         <div class="tools">
                             <a href="javascript:;" class="collapse"> </a>
                         </div>
@@ -88,26 +89,18 @@
                                         <div class="row mt-repeater-row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <div class="col-md-6">
-                                                        <label>File Upload</label>
-                                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
-                                                            <div class="input-group">
-                                                                <div class="form-control input-fixed" data-trigger="fileinput">
-                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                                                    <span class="fileinput-filename"> </span>
-                                                                </div>
-                                                                <span class="input-group-addon btn default btn-file">
-                                                                    <span class="fileinput-new"> Select file </span>
-                                                                    <span class="fileinput-exists"> Change </span>
-                                                                    <input type="file" name="..."> </span>
-                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                                                            </div>
-                                                        </div>
+                                                    <div class="col-md-4">
+                                                        <label>Quotation Item</label>
+                                                        <input type="text" class="form-control" placeholder="Quotation Item">
                                                     </div>
 
-                                                    <div class="col-md-5">
-                                                        <label>Phone No.</label>
-                                                        <input type="text" class="form-control" placeholder="Phone No.">
+                                                    <div class="col-md-4">
+                                                        <label>Quotation Note</label>
+                                                        <input type="text" class="form-control" placeholder="Quotation Note">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label>Amount</label>
+                                                        <input type="text" class="form-control" placeholder="Amount">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <a href="javascript:;" data-repeater-delete class="btn btn-danger pull-right mt-repeater-delete">

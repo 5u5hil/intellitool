@@ -13,9 +13,11 @@ class ProposalController extends Controller {
     function index() {
         return view(config('constants.adminPages') . '.proposal.index');
     }
-    
-    function add(){
-        return view(config('constants.adminPages').'.proposal.add');
+
+    function add() {
+        return view(config('constants.adminPages') . '.proposal.add');
     }
+
+
 
 }
