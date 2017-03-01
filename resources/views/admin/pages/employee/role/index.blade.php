@@ -23,11 +23,11 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Role</th>
-                             <th scope="col">Display Name</th>
+                            <th scope="col">Display Name</th>
                             <th scope="col">Description</th>
                             <th scope="col">Incubation Date</th>
                             <th></th>
-                      
+
                         </tr>
                     </thead>
                     <tbody>
@@ -38,10 +38,18 @@
                             <td>{{ $role->display_name }}  </td>
                             <td> {{ $role->description }} </td>
                             <td> {{ date("d-M-Y",strtotime($role->created_at)) }}</td>
-                            <td> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Projects">4</a> </td>
-                            <td><span class="label label-sm label-success"> Active </span></td>
-                            <td> 14th Jan 2017 </td>
-                            <td class="text-center"><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit"><i class='icon-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project"><i class='icon-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details"><i class='icon-magnifier'></i></a> </td>
+                            <td class="text-center">
+                                <a href="{{ route("admin.employee.role.add.edit",['id'=>$role->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Role">
+                                    <i class='icon-pencil'></i>
+                                </a> 
+                                <a href="{{ route("admin.employee.role.add.edit") }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Role">
+                                    <i class='icon-plus'></i>
+                                </a>
+                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details">
+                                    <i class='icon-magnifier'>
+
+                                    </i></a>
+                            </td>
                         </tr>
                         @endforeach
 
