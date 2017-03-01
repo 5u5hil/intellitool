@@ -195,7 +195,7 @@
                         <a href="{{ route('admin.dashboard') }}" class="text-uppercase">
                             <i class="icon-bar-chart"></i> Dashboard </a>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(client|project|schedule)/',\Route::currentRouteName()) ? 'active open selected' : ''  }} ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(client|project|proposal|schedule)/',\Route::currentRouteName()) ? 'active open selected' : ''  }} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-puzzle"></i> Project Management </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
