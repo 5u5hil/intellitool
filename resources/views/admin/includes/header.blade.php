@@ -273,10 +273,10 @@
                                 <a href="javascript:;"><i class=" icon-magic-wand"></i> Roles </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="table_datatables_managed.html"> Add Role </a>
+                                        <a href="{{ route('admin.employee.role.add.edit') }}"> Add Role </a>
                                     </li>
                                     <li>
-                                        <a href="table_datatables_buttons.html"> All Roles </a>
+                                        <a href="{{ route('admin.employee.role.list') }}"> All Roles </a>
                                     </li>
                                 </ul>
                             </li>
