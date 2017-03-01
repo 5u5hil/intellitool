@@ -42,15 +42,18 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/', 'ScheduleController@index')->name('admin.schedule.list');
     });
 
-    Route::group(['prefix' => 'role'], function () {
-        Route::get('/', 'RoleController@index')->name('admin.roles.list');
+    Route::group(['prefix' => 'designation'], function () {
+        Route::get('/', 'DesignationController@index')->name('admin.designation.list');
+        Route::get('/add/edit', 'DesignationController@addEdit')->name('admin.designation.add/edit');
+        Route::post('/save/update', 'DesignationController@saveUpdate')->name('admin.designation.save/update');
     });
 
+    
+    
+    
     Route::group(['prefix' => 'employee-management'], function () {
         Route::group(['prefix' => 'role'], function () {
-            Route::get('/', 'EmpRolesController@index')->name('admin.employee.role.list');
-            Route::get('/add-edit', 'EmpRolesController@addEdit')->name('admin.employee.role.add.edit');
-            Route::post('/save-update', 'EmpRolesController@saveUpdate')->name('admin.employee.role.save.update');
+           
         });
          
     });

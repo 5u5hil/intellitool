@@ -254,7 +254,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(designation)/',\Route::currentRouteName()) ? 'active open selected' : ''  }}"  >
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-briefcase"></i> Employee Management </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
@@ -270,13 +270,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown more-dropdown-sub">
-                                <a href="javascript:;"><i class=" icon-magic-wand"></i> Roles </a>
+                                <a href="javascript:;"><i class=" icon-magic-wand"></i> Designation </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('admin.employee.role.add.edit') }}"> Add Role </a>
+                                        <a href="{{ route('admin.designation.add/edit') }}"> Add Designation </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('admin.employee.role.list') }}"> All Roles </a>
+                                        <a href="{{ route('admin.designation.list') }}"> All Designation </a>
                                     </li>
                                 </ul>
                             </li>
@@ -362,9 +362,25 @@
 
                                 </ul>
                             </li>
+                            
+                                         <li class="dropdown more-dropdown-sub">
+                                <a href="javascript:;">
+                                    <i class=" icon-globe-alt"></i> Global </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="ecommerce_index.html">
+                                            <i class=""></i>  Designation Level  </a>
+                                    </li>
+                               
+
+                                </ul>
+                            </li>
+                            
                         </ul>
                       
                     </li>
+                    
+         
 
                 </ul>
             </div>

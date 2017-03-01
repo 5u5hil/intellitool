@@ -5,12 +5,12 @@
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Role Listing</h1>
+        <h1>Designation Listing</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="#">Home</a>
             </li>
-            <li class="active">Role</li>
+            <li class="active">Designation</li>
         </ol>
     </div>
 
@@ -31,18 +31,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($roles as $role)
+                        @foreach($designations as $dsg)
                         <tr>
-                            <td>{{$role->id}}</td>
-                            <td> {{ $role->name }} </td>
-                            <td>{{ $role->display_name }}  </td>
-                            <td> {{ $role->description }} </td>
-                            <td> {{ date("d-M-Y",strtotime($role->created_at)) }}</td>
+                            <td>{{$dsg->id}}</td>
+                            <td> {{ $dsg->name }} </td>
+                            <td>{{ $dsg->display_name }}  </td>
+                            <td> {{ $dsg->description }} </td>
+                            <td> {{ date("d-M-Y",strtotime($dsg->created_at)) }}</td>
                             <td class="text-center">
-                                <a href="{{ route("admin.employee.role.add.edit",['id'=>$role->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Role">
+                                <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit">
                                     <i class='icon-pencil'></i>
                                 </a> 
-                                <a href="{{ route("admin.employee.role.add.edit") }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Role">
+                                <a href="{{ route("admin.designation.add/Edit") }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add">
                                     <i class='icon-plus'></i>
                                 </a>
                                 <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details">

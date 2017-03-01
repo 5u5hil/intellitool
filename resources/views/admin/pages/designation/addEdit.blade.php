@@ -5,7 +5,7 @@
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Add New Role</h1>
+        <h1>Add New Designation</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="#">Home</a>
@@ -17,14 +17,14 @@
 
     <div class="row">
         <div class="col-md-12">
-            {{ Form::model($role, ['route' => 'admin.employee.role.save.update', 'class'=>'repeater form-horizontal','method'=>'post']) }}
+            {{ Form::model($design, ['route' => 'admin.designation.save/update', 'class'=>'repeater form-horizontal','method'=>'post']) }}
             {{ Form::hidden("id",null) }}
 
 
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-info"></i>General Information </div>
+                        <i class="icon-info"></i>General Information </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
@@ -35,21 +35,22 @@
                         <div class="form-group">
                             <div class="col-md-4">
 
-                                {{ Form::label('Role', 'Role') }}
-                                {{Form::text('name',  null, ['class'=>'form-control','required'=>'true','placeholder'=>'Role']) }}
+                                {{ Form::label('Designation', 'Designation') }}
+                                {{Form::text('designation',  null, ['class'=>'form-control','required'=>'true','placeholder'=>'Designation']) }}
 
                             </div>	
                             <div class="col-md-4">
 
-                                {{ Form::label('Display Name', 'Display Name') }}
-                                {{Form::text('display_name',  null, ['class'=>'form-control','required'=>'true','placeholder'=>'Display Name']) }}
+                                {{ Form::label('Reporting Designation', 'Reporting Designation') }}
+                                {{Form::select('parent_id',$getRepoting , null, ['class'=>'form-control','required'=>'true']) }}
 
                             </div>	
-                            <div class="col-md-4">
-                                {{ Form::label('Description', 'Description') }}
-                                {{Form::text('description',  null, ['class'=>'form-control','required'=>'true','placeholder'=>'Description']) }}
+                              <div class="col-md-4">
 
-                            </div>	
+                                {{ Form::label('Designation Level', 'Designation Level') }}
+                                {{Form::select('level_id',$desLevel , null, ['class'=>'form-control','required'=>'true']) }}
+
+                            </div>
                         </div>
 
                     </div>	
@@ -98,7 +99,7 @@
                                                                 <i class="icon-check"></i>
                                                             </div>
                                                             <div class="list-datetime">
-                                                                <input type="checkbox" id="perm{{ $per['id'] }}"  <?php echo in_array($per['id'], array_flatten($role->perms()->get(['id'])->toArray())) ? "checked" : ""  ?> class="make-switch uppercase" name="chk[]" value="{{@$per['id']}}" data-on="success" data-on-color="success" data-off-color="danger" data-size="small">
+                                                                <input type="checkbox" id="perm{{ $per['id'] }}"  <?php echo in_array($per['id'], array_flatten($design->perms()->get(['id'])->toArray())) ? "checked" : ""  ?> class="make-switch uppercase" name="chk[]" value="{{@$per['id']}}" data-on="success" data-on-color="success" data-off-color="danger" data-size="small">
 
                                                             </div>
                                                             <div class="list-item-content">
