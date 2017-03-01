@@ -5,12 +5,12 @@
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Add New Client</h1>
+        <h1>Add New Employee</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="#">Home</a>
             </li>
-            <li class="active">Client</li>
+            <li class="active">Employee</li>
         </ol>
     </div>
 

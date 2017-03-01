@@ -1,14 +1,16 @@
 @extends(config('constants.adminLayouts').'.default')
+
 @section('content')
+
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Proposal Listing</h1>
+        <h1>Schedule Plan Listing</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="#">Home</a>
             </li>
-            <li class="active">Proposal</li>
+            <li class="active">Schedule Plan</li>
         </ol>
     </div>
 
@@ -93,5 +95,4 @@
     </div>
 
 </div>
-
 @endsection

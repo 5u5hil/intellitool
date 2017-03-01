@@ -8,4 +8,7 @@ use App\Http\Controllers\Controller;
 class ScheduleController extends Controller
 {
     //
+    public function index(){
+        return view(config('constants.adminPages').'.schedule.index');
+    }
 }

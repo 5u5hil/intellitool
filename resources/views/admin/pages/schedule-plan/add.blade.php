@@ -4,12 +4,12 @@
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Add New Project</h1>
+        <h1>Add New Schedule Plan</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="#">Home</a>
             </li>
-            <li class="active">Project</li>
+            <li class="active">Schedule Plan</li>
         </ol>
     </div>
 
