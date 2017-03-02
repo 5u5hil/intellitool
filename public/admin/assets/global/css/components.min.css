@@ -65,3 +65,4 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
 .btn-group>.dropdown-menu:after, .dropdown-toggle>.dropdown-menu:after, .dropdown>.dropdown-menu:after{border: 0px!important;}
 .btn-group>.dropdown-menu:before, .dropdown-toggle>.dropdown-menu:before, .dropdown>.dropdown-menu:before{border: 0px!important;}
 .multiselect.dropdown-toggle{text-align: left!important;}
+.caret{text-align: right!important;}
