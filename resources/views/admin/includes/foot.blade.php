@@ -65,17 +65,17 @@
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script type="text/javascript">
-$(function() {
+$(function () {
     $('#datepicker').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true,
-		locale: {
+        locale: {
             format: 'DD/MM/YYYY'
-		}
+        }
     });
 });
 </script>
- <script>
+<script>
     $(document).ready(function () {
         'use strict';
 
@@ -91,7 +91,7 @@ $(function() {
                 $(this).slideDown();
             },
             hide: function (deleteElement) {
-                if(confirm('Are you sure you want to delete this element?')) {
+                if (confirm('Are you sure you want to delete this element?')) {
                     $(this).slideUp(deleteElement);
                 }
             },
@@ -102,7 +102,7 @@ $(function() {
 
         window.outerRepeater = $('.outer-repeater').repeater({
             isFirstItemUndeletable: true,
-            defaultValues: { 'text-input': 'outer-default' },
+            defaultValues: {'text-input': 'outer-default'},
             show: function () {
                 console.log('outer show');
                 $(this).slideDown();
@@ -112,18 +112,132 @@ $(function() {
                 $(this).slideUp(deleteElement);
             },
             repeaters: [{
-                isFirstItemUndeletable: true,
-                selector: '.inner-repeater',
-                defaultValues: { 'inner-text-input': 'inner-default' },
-                show: function () {
-                    console.log('inner show');
-                    $(this).slideDown();
-                },
-                hide: function (deleteElement) {
-                    console.log('inner delete');
-                    $(this).slideUp(deleteElement);
-                }
-            }]
+                    isFirstItemUndeletable: true,
+                    selector: '.inner-repeater',
+                    defaultValues: {'inner-text-input': 'inner-default'},
+                    show: function () {
+                        console.log('inner show');
+                        $(this).slideDown();
+                    },
+                    hide: function (deleteElement) {
+                        console.log('inner delete');
+                        $(this).slideUp(deleteElement);
+                    }
+                }]
         });
     });
-    </script>
+    $(document).ready(function() {
+        $('#example-allSelectedText-includeSelectAllOption').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: '400px',
+            allSelectedText: 'No option left ...'
+        });
+    });
+</script>
+<script type="text/javascript">
+    $.fn.extend({
+        treed: function (o) {
+
+            var openedClass = 'glyphicon-minus-sign';
+            var closedClass = 'glyphicon-plus-sign';
+
+            if (typeof o != 'undefined') {
+                if (typeof o.openedClass != 'undefined') {
+                    openedClass = o.openedClass;
+                }
+                if (typeof o.closedClass != 'undefined') {
+                    closedClass = o.closedClass;
+                }
+            }
+            ;
+
+            //initialize each of the top levels
+            var tree = $(this);
+            tree.addClass("tree");
+            tree.find('li').has("ul").each(function () {
+                var branch = $(this); //li with children ul
+                branch.prepend("<i class='indicator glyphicon " + closedClass + "'></i>");
+                branch.addClass('branch');
+                branch.on('click', function (e) {
+                    if (this == e.target) {
+                        var icon = $(this).children('i:first');
+                        icon.toggleClass(openedClass + " " + closedClass);
+                        $(this).children().children().toggle();
+                    }
+                })
+                branch.children().children().toggle();
+            });
+            //fire event from the dynamically added icon
+            tree.find('.branch .indicator').each(function () {
+                $(this).on('click', function () {
+                    $(this).closest('li').click();
+                });
+            });
+            //fire event to open branch if the li contains an anchor instead of text
+            tree.find('.branch>a').each(function () {
+                $(this).on('click', function (e) {
+                    $(this).closest('li').click();
+                    e.preventDefault();
+                });
+            });
+            //fire event to open branch if the li contains a button instead of text
+            tree.find('.branch>button').each(function () {
+                $(this).on('click', function (e) {
+                    $(this).closest('li').click();
+                    e.preventDefault();
+                });
+            });
+        }
+    });
+
+//Initialization of treeviews
+
+    $('#tree1').treed();
+    $('#tree2').treed();
+    $('#tree3').treed();
+    $('#tree4').treed();
+    $('#tree1 .branch').each(function () {
+        var icon = $(this).children('i:first');
+        icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+        $(this).children().children().show();
+    });
+
+    $('#tree2 .branch').each(function () {
+        var icon = $(this).children('i:first');
+        icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+        $(this).children().children().show();
+    });
+    $('#tree3 .branch').each(function () {
+        var icon = $(this).children('i:first');
+        icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+        $(this).children().children().show();
+    });
+    $('#tree4 .branch').each(function () {
+        var icon = $(this).children('i:first');
+        icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+        $(this).children().children().show();
+    });
+</script>
+
+<script>
+    $("#myModal").on("show", function () {    // wire up the OK button to dismiss the modal when shown
+        $("#myModal a.btn").on("click", function (e) {
+            console.log("button pressed");   // just as an example...
+            $("#myModal").modal('hide');     // dismiss the dialog
+        });
+    });
+    $("#myModal").on("hide", function () {    // remove the event listeners when the dialog is dismissed
+        $("#myModal a.btn").off("click");
+    });
+
+    $("#myModal").on("hidden", function () {  // remove the actual elements from the DOM when fully hidden
+        $("#myModal").remove();
+    });
+    $(document).on('click', '.addUsers', function () {
+        $("#myModal").modal({// wire up the actual modal functionality and show the dialog
+            "backdrop": "static",
+            "keyboard": true,
+            "show": true                     // ensure the modal is shown immediately
+        });
+    })
+</script>

@@ -37,7 +37,7 @@
                         <tr>
                             <td>{{$getLevel['id']}}</td>
                             <td> {{$getLevel['designation']}}</td>
-                            <td class="text-center"><a href="{{route("admin.designation.level.add/edit",['id'=>$getLevel['id']])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Project"><i class='icon-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Schedule"><i class='icon-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Project Details"><i class='icon-magnifier'></i></a> </td>
+                            <td class="text-center"><a href="{{route("admin.designation.level.add/edit",['id'=>$getLevel['id']])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Designation"><i class='icon-pencil'></i></a>  <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Designation"><i class='icon-magnifier'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Designation"><i class='icon-trash'></i></a> </td>
                         </tr>
                         @endforeach
                     </tbody>

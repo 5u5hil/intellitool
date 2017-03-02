@@ -75,7 +75,7 @@
                                 </label>
                             </div>
                             <div class="col-md-6 permDiv">
-                                <label class="mt-checkbox">   GRANT COMPLETE ACCESS
+                                <label class="mt-checkbox pull-right">   GRANT COMPLETE ACCESS
                                     <input type="checkbox" name="chkAll">
                                     <span></span>
                                 </label>
@@ -90,44 +90,36 @@
 
                     <!-- BEGIN FORM-->
                     <div class="form-body permDiv">
-
-
-                        <div class="form-group">
-
                             @foreach($permissions  as $permk => $permv)
-                            <div class="m-heading-1 border-green m-bordered">
-                                <div class="form-group" style="margin: 0px;">
-                                    <div class="mt-checkbox-list">
-                                        <label class="mt-checkbox"> <h5 class='uppercase'> {{$permk}} </h5>
-                                            <input type="checkbox" name="chk_group[]" data-group='{{$permk}}'>
-                                            <span></span>
-                                        </label>
-
-                                    </div>
-                                    <div class="mt-checkbox-inline">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="background: #f9f9f9;">
+                                    <h4 class="panel-title uppercase">
+                                        {{$permk}}
+                                       <div class="pull-right">
+                                            <label class="mt-checkbox"> Select All  
+                                                <input type="checkbox" name="chk_group[]" data-group='{{$permk}}'>
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mt-checkbox-inline" style="padding:10px 20px;">
                                         @foreach($permv as $per)
-
-
                                         <label class="mt-checkbox"> 
                                             {{strtoupper($per['perms']) }}
 
                                             <input type="checkbox" name="chk[]" data-per='{{$permk}}' value="{{@$per['id']}}" id="perm{{ $per['id'] }}"  <?php echo in_array($per['id'], array_flatten($design->perms()->get(['id'])->toArray())) ? "checked" : "" ?>>
                                             <span></span>
                                         </label> 
-
-
                                         @endforeach
                                     </div>
-                                </div>
+                               </div> 
+                               </div>
                             </div>
                             @endforeach
-
-
-
-
-
-                        </div>
-                    </div>	
+                        </div>	
                     <!-- END FORM-->
                 </div>
             </div>	

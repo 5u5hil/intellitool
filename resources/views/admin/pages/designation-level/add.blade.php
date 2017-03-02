@@ -15,44 +15,50 @@
 
     <div class="row">
         <div class="col-md-12">
-             {{ Form::model($designationLevel, ['route' => ['admin.designation.level.save/update',$designationLevel['id']], 'class'=>'repeater form-horizontal','id'=>'designationLevelForm','method'=>'post']) }}
-                {{csrf_field()}}
-                <div class="portlet box green">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-user"></i>Basic Info </div>
-                        <div class="tools">
-                            <a href="javascript:;" class="collapse"> </a>
+
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-user"></i>Basic Info </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"> </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    {{ Form::model($designationLevel, ['route' => ['admin.designation.level.save/update',$designationLevel['id']], 'class'=>'repeater form-horizontal','id'=>'designationLevelForm','method'=>'post']) }}
+                    {{csrf_field()}}
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Designation Level</label>
+                                {{Form::text('designation',  null, ['class'=>'form-control']) }}
+                            </div>	
+
                         </div>
-                    </div>
-                    <div class="portlet-body form">
-                        <!-- BEGIN FORM-->
-                        <div class="form-body">
-                            <div class="form-group">
-                                <div class="col-md-4">
-                                    <label>Designation Level</label>
-                                    {{Form::text('designation',  null, ['class'=>'form-control']) }}
-                                </div>	
-
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-4">
                                 <button type="submit" class="btn green">Submit</button>
-                                <button type="button" class="btn default">Cancel</button>
-                                </div>
+                                <a href="<?= route('admin.designation.level.list') ?>" class="btn default">Cancel</a>
                             </div>
-                        </div>	
-                        <!-- END FORM-->
+                        </div>
+                    </div>	
+                    <!-- END FORM-->
+                    {{ Form::close() }}
+                    @foreach($errors->all() as $getMessage)
+                    {{$getMessage}}
+                    @endforeach
+                </div>
 
-                    </div>
 
-
-                </div>	
-
+            </div>	
 
 
 
-            {{ Form::close() }}
+
+
+
+
         </div>
     </div>
 </div>

@@ -41,19 +41,19 @@
                                     </select>
                                 </div>	
                                 <div class="col-md-4">
-                                    <label>Contact Person</label>
-                                    <input type="text" class="form-control" placeholder="Contact Person">
+                                    <label>Client Coordinator</label>
+                                    <input type="text" class="form-control" placeholder="Client Coordinator">
                                 </div>	
                             </div>
                             <div class="form-group">
                                 <div class="col-md-4">
-                                    <label>Email Address</label>
-                                    <input type="text" class="form-control" placeholder="Email Address"> 	
+                                    <label>Client Coordinator Email</label>
+                                    <input type="text" class="form-control" placeholder="Client Coordinator Email"> 	
 
                                 </div>	
-                                                 <div class="col-md-4">
-                                    <label>Phone No</label>
-                                    <input type="text" class="form-control" placeholder="Phone No"> 	
+                                <div class="col-md-4">
+                                    <label>Client Coordinator Phone</label>
+                                    <input type="text" class="form-control" placeholder="Client Coordinator Phone"> 	
 
                                 </div>	
                                 <div class="col-md-4">
@@ -66,6 +66,16 @@
                                     </select>	
                                 </div>	
 
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label>Vertical Opted For</label>
+                                    <select class="form-control" name="options2">
+                                        <option value="">Select...</option>
+                                        <option value="Option 1">Security</option>
+                                        <option value="Option 2">Housekeeping</option>
+                                    </select>	
+                                </div>	
                             </div>
                         </div>	
                         <!-- END FORM-->
@@ -91,7 +101,11 @@
                                                 <div class="form-group">
                                                     <div class="col-md-4">
                                                         <label>Quotation Item</label>
-                                                        <input type="text" class="form-control" placeholder="Quotation Item">
+                                                        <select class="form-control" name="options2">
+                                                            <option value="">Select...</option>
+                                                            <option value="Option 1">Neelkanth Group</option>
+                                                            <option value="Option 2">Ruby Tower</option>
+                                                        </select>
                                                     </div>
 
                                                     <div class="col-md-4">

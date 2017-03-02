@@ -8,7 +8,7 @@ class DesignationLevel extends Model {
 
     protected $table = 'designation_levels';
     public $timestamps = false;
-    
+    public $rules=['designation'=>'required'];
         protected $fillable = [
         'designation'
     ];
