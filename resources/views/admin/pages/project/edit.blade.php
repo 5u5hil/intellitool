@@ -87,14 +87,14 @@
                                                 <input type="text" placeholder="" class="form-control">
                                             </div>  
                                             <div class="col-md-4">
-                                                <label class="control-label">Select Zone</label>
+                                                <label class="control-label">Parent Zone</label>
                                                  <select id="example-allSelectedText-includeSelectAllOption" multiple="multiple">
-                                                    <option value="Accord">- Accord</option>
+                                                    <option value="Accord">Accord</option>
                                                     <option value="Duster">-- Duster</option>
                                                     <option value="Esteem">--- Esteem</option>
                                                     <option value="Fiero">---- Fiero</option>
-                                                    <option value="Lancer">----- Lancer</option>
-                                                    <option value="Phantom">------ Phantom</option>
+                                                    <option value="Lancer">--- Lancer</option>
+                                                    <option value="Phantom">-- Phantom</option>
                                                 </select>
                                             </div>  
                                             <div class="col-md-2">
@@ -333,14 +333,16 @@
 <!-- set up the modal to start hidden and fade in and out -->
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content">        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
             <!-- dialog body -->
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-
                 <div class="form-group">
                     <label class="control-label">Select Role</label>
-                    <div class="input-group col-md-8">           
+                    <div class="input-group col-md-12">           
                         <select class="form-control" name="options2">
                             <option value="">Select...</option>
                             <option value="housekeeping">Housekeeping</option>
@@ -350,7 +352,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label">Assign Employee</label>
-                    <div class="input-group col-md-8">                   
+                    <div class="input-group col-md-12">                   
                         <select class="form-control" name="options2">
                             <option value="">Select...</option>
                             <option value="housekeeping">Jignesh Reddy</option>
@@ -361,7 +363,10 @@
             </div>
 
             <!-- dialog buttons -->
-            <div class="modal-footer"><button type="button" class="btn btn-primary ">Assign</button></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ">Assign</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
