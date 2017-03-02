@@ -39,15 +39,15 @@
                             </div>	
                             <div class="col-md-3">
                                 {{ Form::label('Reporting Designation', 'Reporting Designation') }}
-                                {{Form::select('parent_id',$getRepoting , @$design->parent_id or null , ['class'=>'form-control']) }}
+                                {{Form::select('parent_id',@$getRepoting , @$design->parent_id or null , ['class'=>'form-control']) }}
                             </div>	
                             <div class="col-md-3">
                                 {{ Form::label('Designation Level', 'Designation Level') }}
-                                {{Form::select('designation_level_id',$desLevel ,  @$design->designation_level_id or null , ['class'=>'form-control']) }}
+                                {{Form::select('designation_level_id',@$desLevel ,  @$design->designation_level_id or null , ['class'=>'form-control']) }}
                             </div>
                             <div class="col-md-3">
                                 {{ Form::label('Verticle', 'Verticle') }}
-                                {{Form::select('verticle_id',$verticlesSel ,  @$design->vertical_id or null , ['class'=>'form-control']) }}
+                                {{Form::select('verticle_id',@$verticlesSel ,  @$design->verticle_id or null , ['class'=>'form-control']) }}
 
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <div class="col-md-6">
                                 <label class="mt-checkbox">   GRANT SYSTEM ACCESS  
-                                    <input type="checkbox" name="access_system">
+                                    <input type="checkbox" name="system_access" value="{{ $design->system_access or 0 }}" {{ ($design->system_access == 1)?'checked':''}} >
                                     <span></span>
                                 </label>
                             </div>
@@ -141,7 +141,14 @@
 @section('myscripts')
 <script>
 
+
+if($("[name='system_access'").val() !== "0")
+    $(".permDiv").show();
+else
     $(".permDiv").hide();
+    
+    
+    
     $("[name='chkAll']").on("click", function () {
 
         var checkbox = $(this);
@@ -155,14 +162,16 @@
         }
     });
 
-    $("[name='access_system'").click(function () {
+    $("[name='system_access'").click(function () {
         var checkbox = $(this);
         var isChecked = checkbox.is(':checked');
 
         if (isChecked) {
             $(".permDiv").show();
+            $("[name='system_access'").val(1);
         } else {
             $(".permDiv").hide();
+            $("[name='system_access'").val(0);
         }
 
 

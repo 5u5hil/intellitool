@@ -24,7 +24,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Role</th>
                             <th scope="col">Display Name</th>
-                            <th scope="col">Description</th>
+                         
                             <th scope="col">Incubation Date</th>
                             <th></th>
 
@@ -36,7 +36,7 @@
                             <td>{{$dsg->id}}</td>
                             <td> {{ $dsg->name }} </td>
                             <td>{{ $dsg->display_name }}  </td>
-                            <td> {{ $dsg->description }} </td>
+                     
                             <td> {{ date("d-M-Y",strtotime($dsg->created_at)) }}</td>
                             <td class="text-center">
                                 <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit">
