@@ -10,7 +10,9 @@ use App\Models\DesignationLevel;
 use App\Models\EmpPermission;
 use Illuminate\Support\Facades\Input;
 use App\Library\Helper;
+use App\Models\DesignationHasVerticle;
 use Route;
+use DB;
 
 class DesignationController extends Controller {
 
@@ -66,44 +68,27 @@ class DesignationController extends Controller {
     }
 
     public function addEdit() {
+
         $design = EmpRole::findOrNew(Input::get('id'));
-
-
-        $permissions = EmpPermission::get(['id', 'prefix', 'display_name']);
+        $permissions = DB::table("emp_permissions")->get(['id', 'display_name', 'description']);
         $perms = [];
         $i = 0;
-        foreach ($permissions as $prmk => $prmv) {
-            $getEnd = end((explode("/", $prmv->prefix)));
-            $perms[$getEnd][$i]['perms'] = $prmv->display_name;
-            $perms[$getEnd][$i]['id'] = $prmv->id;
-            $perms[$getEnd][$i]['routes'] = $prmv->prefix;
+        foreach ($permissions as $prmv) {
+            $perms[$prmv->description][$i]['perms'] = $prmv->display_name;
+            $perms[$prmv->description][$i]['id'] = $prmv->id;
             $i++;
         }
 
-        $designationlavels = DesignationLevel::orderBy("designation", "asc")->get(['id', 'designation']);
-        $desLevel = ['' => 'Please Select'];
-        foreach ($designationlavels as $desg) {
-            $desLevel[$desg->id] = $desg->designation;
-        }
-        $designAll = EmpRole::orderBy("name", "asc");
+        $desLevel = DB::table("designation_levels")->orderBy("designation", "asc")->pluck('designation', 'id')->prepend('Please Select', '');
+
+
+        $designAll = DB::table('emp_roles')->orderBy("name", "asc");
         if (!empty(Input::get('id')))
             $designAll = $designAll->where("id", "!=", Input::get('id'));
 
-        $getRepoting = ['' => 'Please Select'];
+        $getRepoting = $designAll->pluck('name', 'id')->prepend('Please Select', '');
 
-        //  $designAll = $this->buildTree($designAll->get()->toArray());
-
-        $new = [];
-        foreach ($designAll->get() as $dsg) {
-            $getRepoting[$dsg['id']] = $dsg['name'];
-        }
-
-
-        $verticles = Verticle::all();
-        $verticlesSel = ['' => 'Please Select'];
-        foreach ($verticles as $vert) {
-            $verticlesSel[$vert->id] = $vert->name;
-        }
+        $verticlesSel = DB::table('verticles')->pluck('name', 'id')->prepend('Please Select', '');
 
         return view(config('constants.adminPages') . '.designation.addEdit', ['design' => $design, 'permissions' => $perms, 'getRepoting' => $getRepoting, 'desLevel' => $desLevel, 'verticlesSel' => $verticlesSel]);
     }
@@ -116,13 +101,27 @@ class DesignationController extends Controller {
         $saveRole->display_name = Input::get('name');
         $saveRole->parent_id = Input::get('parent_id');
         $saveRole->designation_level_id = Input::get('designation_level_id');
-        $saveRole->verticle_id = Input::get('verticle_id');
+
         $saveRole->system_access = Input::get('system_access');
         $saveRole->save();
 
         if (!empty(Input::get('chk'))) {
             $saveRole->perms()->sync(Input::get('chk'));
         }
+
+
+
+
+        if (!empty(Input::get('verticle_ids'))) {
+
+            $verticles = [];
+            foreach (Input::get('verticle_ids') as $verid) {
+                array_push($verticles, new DesignationHasVerticle(['verticle_id' => $verid]));
+            }
+            $saveRole->verticles()->delete();
+            $saveRole->verticles()->saveMany($verticles);
+        }
+
 
         return redirect()->route('admin.designation.list');
     }
@@ -143,8 +142,9 @@ class DesignationController extends Controller {
 
                     $permissions->name = $value->getName();
                     $permissions->display_name = @$displayName1;
-                    $permissions->description = "";
+
                     $permissions->prefix = @$value->getPrefix();
+                    $permissions->description = end((explode("/", $permissions->prefix)));
                     $permissions->save();
                 } catch (\Illuminate\Database\QueryException $e) {
                     
