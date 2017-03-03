@@ -14,7 +14,7 @@ class DesignationLevelController extends Controller {
     //
 
     public function index() {
-        $getDesignationLevel = DesignationLevel::paginate(20);
+        $getDesignationLevel = DesignationLevel::paginate(4);
 
         return view(config('constants.adminPages') . '.designation-level.index', ['designationLevel' => $getDesignationLevel]);
     }

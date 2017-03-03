@@ -88,6 +88,7 @@
                                     <div data-repeater-item class="mt-repeater-item">
                                         <div class="row mt-repeater-row">
                                             <div class="col-md-12">
+                                            <div class="input-group control-group after-add-more col-md-12">
                                                 <div class="form-group">
                                                     <div class="col-md-6">
                                                         <label>File Upload</label>
@@ -110,18 +111,52 @@
                                                         <label>Phone No.</label>
                                                         <input type="text" class="form-control" placeholder="Phone No.">
                                                     </div>
-                                                    <div class="col-md-1">
-                                                        <a href="javascript:;" data-repeater-delete class="btn btn-danger pull-right mt-repeater-delete">
+                                                     <div class="col-md-1">
+                                                    <label></label>
+                                                        <button class="btn btn-danger pull-right remove" style="margin-top: 20px;">
                                                             <i class="fa fa-trash"></i>
-                                                        </a>
+                                                        </button>
                                                     </div>
                                                 </div>
+                                            </div>   
+                                             <div class="copy hide">
+                                                <div class="form-group">
+                                                    <div class="col-md-6">
+                                                        <label>File Upload</label>
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
+                                                            <div class="input-group">
+                                                                <div class="form-control input-fixed" data-trigger="fileinput">
+                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                                    <span class="fileinput-filename"> </span>
+                                                                </div>
+                                                                <span class="input-group-addon btn default btn-file">
+                                                                    <span class="fileinput-new"> Select file </span>
+                                                                    <span class="fileinput-exists"> Change </span>
+                                                                    <input type="file" name="..."> </span>
+                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-5">
+                                                        <label>Phone No.</label>
+                                                        <input type="text" class="form-control" placeholder="Phone No.">
+                                                    </div>
+                                                     <div class="col-md-1">
+                                                    <label></label>
+                                                        <button class="btn btn-danger pull-right remove" style="margin-top: 20px;">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>   
                                             </div>
                                         </div>
                                     </div>
                                 </div>	
-                                <a href="javascript:;" data-repeater-create class="btn btn-info mt-repeater-add">
-                                    <i class="fa fa-plus"></i> Add New</a>
+                                <div class="input-group-btn col-md-12" style="padding: 0px;"> 
+                                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                                </div>
                             </div>
                         </div>	
                         <!-- END FORM-->

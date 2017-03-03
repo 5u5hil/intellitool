@@ -76,61 +76,75 @@ $(function () {
 });
 </script>
 <script>
-    $(document).ready(function () {
-        'use strict';
-
-        $('.repeater').repeater({
-            defaultValues: {
-                'textarea-input': 'foo',
-                'text-input': 'bar',
-                'select-input': 'B',
-                'checkbox-input': ['A', 'B'],
-                'radio-input': 'B'
-            },
-            show: function () {
-                $(this).slideDown();
-            },
-            hide: function (deleteElement) {
-                if (confirm('Are you sure you want to delete this element?')) {
-                    $(this).slideUp(deleteElement);
-                }
-            },
-            ready: function (setIndexes) {
-
-            }
-        });
-
-        window.outerRepeater = $('.outer-repeater').repeater({
-            isFirstItemUndeletable: true,
-            defaultValues: {'text-input': 'outer-default'},
-            show: function () {
-                console.log('outer show');
-                $(this).slideDown();
-            },
-            hide: function (deleteElement) {
-                console.log('outer delete');
-                $(this).slideUp(deleteElement);
-            },
-            repeaters: [{
-                    isFirstItemUndeletable: true,
-                    selector: '.inner-repeater',
-                    defaultValues: {'inner-text-input': 'inner-default'},
-                    show: function () {
-                        console.log('inner show');
-                        $(this).slideDown();
-                    },
-                    hide: function (deleteElement) {
-                        console.log('inner delete');
-                        $(this).slideUp(deleteElement);
-                    }
-                }]
+    $(document).ready(function() {
+        $('#selectAllOption').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: '100%',
+            allSelectedText: 'No option left ...'
         });
     });
     $(document).ready(function() {
-        $('#example-allSelectedText-includeSelectAllOption').multiselect({
+        $('#selectAllOption1').multiselect({
             includeSelectAllOption: true,
-            buttonWidth: '400px',
+            buttonWidth: '100%',
             allSelectedText: 'No option left ...'
+        });
+        $('#selectAllOption2').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: '100%',
+            allSelectedText: 'No option left ...'
+        });
+        $('.selectAllOption3').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: '100%',
+            allSelectedText: 'No option left ...'
+        });
+    });
+    $(document).ready(function() {
+        $('#example-optgroup-buttonText').multiselect({
+            enableClickableOptGroups: true,
+            buttonWidth: '100%',
+            buttonText: function(options, select) {
+                
+                // First consider the simple cases, i.e. disabled and empty.
+                if (this.disabledText.length > 0
+                        && (this.disableIfEmpty || select.prop('disabled'))
+                        && options.length == 0) {
+ 
+                    return this.disabledText;
+                }
+                else if (options.length === 0) {
+                    return this.nonSelectedText;
+                }
+ 
+                var $select = $(select);
+                var $optgroups = $('optgroup', $select);
+ 
+                var delimiter = this.delimiterText;
+                var text = '';
+ 
+                // Go through groups.
+                $optgroups.each(function() {
+                    var $selectedOptions = $('option:selected', this);
+                    var $options = $('option', this);
+ 
+                    if ($selectedOptions.length == $options.length) {
+                        text += $(this).attr('label') + delimiter;
+                    }
+                    else {
+                        $selectedOptions.each(function() {
+                            text += $(this).text() + delimiter;
+                        });
+                    }
+                });
+ 
+                var $remainingOptions = $('option:selected', $select).not('optgroup option');
+                $remainingOptions.each(function() {
+                    text += $(this).text() + delimiter;
+                });
+ 
+                return text.substr(0, text.length - 2);
+            }
         });
     });
 </script>
@@ -240,4 +254,26 @@ $(function () {
             "show": true                     // ensure the modal is shown immediately
         });
     })
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $(".add-more").click(function(){ 
+          var html = $(".copy").html();
+          $(".after-add-more").after(html);
+      });
+      $(document).on("click",".remove",function(){ 
+          $(this).parents(".form-group").remove();
+      });
+    });
+
+    $(document).ready(function() {
+      $(".add-more1").click(function(){ 
+          var html = $(".copy1").html();
+          $(".after-add-more1").after(html);
+      });
+      $("body").on("click",".remove1",function(){ 
+          $(this).parents(".form-group").remove();
+      });
+    });
 </script>

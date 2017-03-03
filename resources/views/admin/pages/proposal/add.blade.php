@@ -19,7 +19,7 @@
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-user"></i>Basic Info </div>
+                            <i class="icon-tag"></i>Proposal Info </div>
                         <div class="tools">
                             <a href="javascript:;" class="collapse"> </a>
                         </div>
@@ -42,20 +42,15 @@
                                 </div>	
                                 <div class="col-md-4">
                                     <label>Client Coordinator</label>
-                                    <input type="text" class="form-control" placeholder="Client Coordinator">
-                                </div>	
+                                    <select id="selectAllOption2" multiple="multiple">
+                                        <option value="Accord">Jigar Shah</option>
+                                        <option value="Duster">Karan Droh</option>
+                                        <option value="Duster">James Anderson</option>
+                                        <option value="Duster">Jiten Parab</option>
+                                    </select> </div>	
                             </div>
                             <div class="form-group">
-                                <div class="col-md-4">
-                                    <label>Client Coordinator Email</label>
-                                    <input type="text" class="form-control" placeholder="Client Coordinator Email"> 	
 
-                                </div>	
-                                <div class="col-md-4">
-                                    <label>Client Coordinator Phone</label>
-                                    <input type="text" class="form-control" placeholder="Client Coordinator Phone"> 	
-
-                                </div>	
                                 <div class="col-md-4">
                                     <label>Proposal Stage</label>
                                     <select class="form-control" name="options2">
@@ -65,18 +60,19 @@
                                         <option value="Option 3">Quotation</option>
                                     </select>	
                                 </div>	
-
-                            </div>
-                            <div class="form-group">
                                 <div class="col-md-4">
-                                    <label>Vertical Opted For</label>
-                                    <select class="form-control" name="options2">
-                                        <option value="">Select...</option>
+                                    <label>Verticals Opted For</label>
+                                    <select class='selectAllOption3' multiple="multiple">
                                         <option value="Option 1">Security</option>
                                         <option value="Option 2">Housekeeping</option>
                                     </select>	
+                                </div>
+                                  <div class="col-md-4">
+                                    <label>Location</label>
+                                    <input type="text" class="form-control" placeholder="Location">
                                 </div>	
                             </div>
+
                         </div>	
                         <!-- END FORM-->
                     </div>
@@ -85,7 +81,7 @@
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-user"></i>Quotation</div>
+                            <i class="icon-envelope"></i>Quotation</div>
                         <div class="tools">
                             <a href="javascript:;" class="collapse"> </a>
                         </div>
@@ -98,13 +94,15 @@
                                     <div data-repeater-item class="mt-repeater-item">
                                         <div class="row mt-repeater-row">
                                             <div class="col-md-12">
+                                                <div class="input-group control-group after-add-more col-md-12">
                                                 <div class="form-group">
                                                     <div class="col-md-4">
                                                         <label>Quotation Item</label>
                                                         <select class="form-control" name="options2">
                                                             <option value="">Select...</option>
-                                                            <option value="Option 1">Neelkanth Group</option>
-                                                            <option value="Option 2">Ruby Tower</option>
+                                                            <option value="Option 1">Janitors</option>
+                                                            <option value="Option 2">Machineries</option>
+                                                            <option value="Option 2">Supervisors</option>
                                                         </select>
                                                     </div>
 
@@ -117,17 +115,48 @@
                                                         <input type="text" class="form-control" placeholder="Amount">
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <a href="javascript:;" data-repeater-delete class="btn btn-danger pull-right mt-repeater-delete">
+                                                    <label></label>
+                                                        <button class="btn btn-danger pull-right remove" style="margin-top: 20px;">
                                                             <i class="fa fa-trash"></i>
-                                                        </a>
+                                                        </button>
                                                     </div>
+                                                </div>
+                                                </div>
+                                               <div class="copy hide">
+                                                <div class="form-group">
+                                                    <div class="col-md-4">
+                                                        <label>Quotation Item</label>
+                                                        <select class="form-control" name="options2">
+                                                            <option value="">Select...</option>
+                                                            <option value="Option 1">Janitors</option>
+                                                            <option value="Option 2">Machineries</option>
+                                                            <option value="Option 2">Supervisors</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <label>Quotation Note</label>
+                                                        <input type="text" class="form-control" placeholder="Quotation Note">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label>Amount</label>
+                                                        <input type="text" class="form-control" placeholder="Amount">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                    <label></label>
+                                                        <button class="btn btn-danger pull-right remove" style="margin-top: 20px;">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>	
-                                <a href="javascript:;" data-repeater-create class="btn btn-info mt-repeater-add">
-                                    <i class="fa fa-plus"></i> Add New</a>
+                                <div class="input-group-btn col-md-12" style="padding: 0px;"> 
+                                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                                </div>
                             </div>
                         </div>	
                         <!-- END FORM-->

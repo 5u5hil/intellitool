@@ -201,7 +201,7 @@
                         <ul class="dropdown-menu dropdown-menu-fw">
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
-                                    <i class="icon-diamond"></i> Client </a>
+                                    <i class="icon-diamond"></i> Clients </a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{ route('admin.client.add') }}"> Add New Client </a>

@@ -22,7 +22,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Company Name</th>
+                            <th scope="col">Company</th>
                             <th scope="col">Contact Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>

@@ -21,10 +21,10 @@
                     <div class="tabbable-custom ">
                         <ul class="nav nav-tabs ">
 
-                            <li class="active">
+                            <li >
                                 <a href="#tab_5_1" data-toggle="tab"> General Info </a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="#tab_5_2" data-toggle="tab"> Zone Management</a>
                             </li>
                             <li>
@@ -32,26 +32,27 @@
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tab_5_1">
+                            <div class="tab-pane " id="tab_5_1">
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="form-group">
                                             <div class="col-md-4">
                                                 <label class="control-label">Project Name</label>
-                                                <input type="text" placeholder="" class="form-control">
+                                                <input type="text" value="Neelkanth Business Park" placeholder="Project Name" class="form-control">
                                             </div>  
                                             <div class="col-md-4">
-                                                <label class="control-label">Company Name</label>
-                                                <select class="form-control" name="options2">
-                                                    <option value="">Select...</option>
-                                                    <option value="housekeeping">Company Name 1</option>
-                                                    <option value="security">Company Name 2</option>
-                                                </select>
+                                                <label class="control-label">Client</label>
+                                                <input type="text" disabled="" value="Neelkanth Group" class="form-control">
+
                                             </div>  
                                             <div class="col-md-4">
-                                                <label class="control-label">Number Of Zone</label>
-                                                <input type="text" placeholder="" class="form-control">   
-                                            </div>  
+                                                <label>Client Coordinator</label>
+                                                <select id="selectAllOption2" multiple="multiple">
+                                                    <option value="Accord">Jigar Shah</option>
+                                                    <option value="Duster">Karan Droh</option>
+                                                    <option value="Duster">James Anderson</option>
+                                                    <option value="Duster">Jiten Parab</option>
+                                                </select> </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-4">
@@ -64,38 +65,63 @@
                                             </div>  
                                             <div class="col-md-4">
                                                 <label class="control-label">Location</label>
-                                                <input type="text" placeholder="" class="form-control">
+                                                <input type="text" placeholder="Location" value="Mumbai" class="form-control">
                                             </div>  
                                             <div class="col-md-4">
                                                 <label class="control-label">Verticals</label>
-                                                <select class="form-control" name="options2">
-                                                    <option value="">Select...</option>
-                                                    <option value="housekeeping">Housekeeping</option>
-                                                    <option value="security">Security</option>
-                                                </select>   
+                                                <select class='selectAllOption3' multiple="multiple">
+                                                    <option value="Option 1">Security</option>
+                                                    <option value="Option 2">Housekeeping</option>
+                                                </select>	 
                                             </div>  
                                         </div>
                                     </div>
                                 </div> 
                             </div>
-                            <div class="tab-pane" id="tab_5_2">
+                            <div class="tab-pane active" id="tab_5_2">
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <div class="col-md-4">
+                                            <div class="col-md-2">
                                                 <label class="control-label">Zone Name</label>
-                                                <input type="text" placeholder="" class="form-control">
+                                                <input type="text" placeholder="Zone Name" class="form-control">
                                             </div>  
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <label class="control-label">Parent Zone</label>
-                                                 <select id="example-allSelectedText-includeSelectAllOption" multiple="multiple">
-                                                    <option value="Accord">Accord</option>
-                                                    <option value="Duster">-- Duster</option>
-                                                    <option value="Esteem">--- Esteem</option>
-                                                    <option value="Fiero">---- Fiero</option>
-                                                    <option value="Lancer">--- Lancer</option>
-                                                    <option value="Phantom">-- Phantom</option>
+                                                <select class='selectAllOption3' multiple="multiple">
+                                                    <option value="Accord">Neelkanth Business Park</option>
+                                                    <option value="Duster">- Compound</option>
+                                                    <option value="Esteem">- Gate 1</option>
+                                                    <option value="Fiero">- Gate 2</option>
+                                                    <option value="Fiero">- Gate 3</option>
+                                                    <option value="Fiero">- Wing A</option>
+                                                    <option value="Fiero">-- Reception</option>
+                                                    <option value="Fiero">-- Ground Floor</option>
+                                                    <option value="Fiero">--- Shop 1</option>
+                                                    <option value="Fiero">--- Shop 2</option>
+                                                    <option value="Fiero">-- First Floor</option>
+                                                    <option value="Fiero">--- Office 101</option>
+                                                    <option value="Fiero">---- Conference Room</option>
+                                                    <option value="Fiero">---- Toilet</option>
+                                                    <option value="Fiero">--- Office 102</option>
+                                                    <option value="Fiero">--- Corridor</option>
+                                                    <option value="Fiero">--- General Men's Toilet</option>
+                                                    <option value="Fiero">--- General Women's Toilet</option>
+                                                    <option value="Fiero">-- Second Floor</option>
+                                                    <option value="Fiero">-- Third Floor</option>
+                                                    <option value="Fiero">-- Fourth Floor</option>
+                                                    <option value="Fiero">- Wing B</option>
+                                                    <option value="Fiero">- Wing C</option>
+                                                    <option value="Fiero">- Wing D</option>
+
                                                 </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="control-label">Verticals</label>
+                                                 <select class='selectAllOption3' multiple="multiple">
+                                        <option selected value="Option 1">Security</option>
+                                        <option selected value="Option 2">Housekeeping</option>
+                                    </select>
                                             </div>  
                                             <div class="col-md-2">
                                                 <label class="control-label" style="margin-top: 40px;"></label>
@@ -112,42 +138,52 @@
                                         <hr>
                                         <div class="portlet-body">
                                             <ul id="tree1">
-                                                <li><a href="#">TECH</a>
+                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-pencil"></i><i class="icon-trash"></i>
                                                     <ul>
-                                                        <li>Company Maintenance</li>
-                                                        <li>Employees
+                                                        <li>Compound<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                        <li>Gate 1<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                        <li>Gate 2<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                        <li>Gate 3<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                        <li>Wing A<i class="icon-pencil"></i><i class="icon-trash"></i>
                                                             <ul>
-                                                                <li>Reports
+                                                                <li>Reception<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                <li>Ground Floor<i class="icon-pencil"></i><i class="icon-trash"></i>
                                                                     <ul>
-                                                                        <li>Report1</li>
-                                                                        <li>Report2</li>
-                                                                        <li>Report3</li>
+                                                                        <li>Shop 001<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                        <li>Shop 002<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+
                                                                     </ul>
+
                                                                 </li>
-                                                                <li>Employee Maint.</li>
+                                                                <li>First Floor<i class="icon-pencil"></i><i class="icon-trash"></i>
+
+                                                                    <ul>
+                                                                        <li> Office 101 <i class="icon-pencil"></i><i class="icon-trash"></i>
+                                                                            <ul>
+                                                                                <li>Conference Room<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                                <li>Toilet<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li>Office 102<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                        <li>Corridor<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                        <li>General Men's Toilet<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                        <li>General Women's Toilet<i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li>Second Floor <i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                <li>Third Floor <i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                                <li>Fouth Floor <i class="icon-pencil"></i><i class="icon-trash"></i></li>
                                                             </ul>
+
                                                         </li>
-                                                        <li>Human Resources</li>
+                                                        <li>Wing B <i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                        <li>Wing C <i class="icon-pencil"></i><i class="icon-trash"></i></li>
+                                                        <li>Wing D <i class="icon-pencil"></i><i class="icon-trash"></i></li>
+
                                                     </ul>
                                                 </li>
-                                                <li>XRP
-                                                    <ul>
-                                                        <li>Company Maintenance</li>
-                                                        <li>Employees
-                                                            <ul>
-                                                                <li>Reports
-                                                                    <ul>
-                                                                        <li>Report1</li>
-                                                                        <li>Report2</li>
-                                                                        <li>Report3</li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li>Employee Maint.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>Human Resources</li>
-                                                    </ul>
-                                                </li>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -167,146 +203,90 @@
                                                 <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                                     <div class="panel-body">
 
-                                                        <div class="form-body">
-                                                            <ul id="tree2">
-                                                                <li><a href="#">TECH</a><i class="icon-plus addUsers"></i>
+                                                    <div class="portlet-body">
+                                            <ul id="tree2">
+                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addUsers"></i>
+                                                    <ul>
+                                                        <li>Compound<i class="icon-plus addUsers"></i></li>
+                                                        <li>Gate 1<i class="icon-plus addUsers"></i></li>
+                                                        <li>Gate 2<i class="icon-plus addUsers"></i></li>
+                                                        <li>Gate 3<i class="icon-plus addUsers"></i></li>
+                                                        <li>Wing A<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)
+                                                            <ul>
+                                                                <li>Reception<i class="icon-plus addUsers"></i></li>
+                                                                <li>Ground Floor<i class="icon-plus addUsers"></i>
                                                                     <ul>
-                                                                        <li>Company Maintenance<i class="icon-plus addUsers"></i></li>
-                                                                        <li>Employees<i class="icon-plus addUsers"></i>
+                                                                        <li>Shop 001<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Shop 002<i class="icon-plus addUsers"></i></li>
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li>First Floor<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Andrew Simons,Aron Linch)
+
+                                                                    <ul>
+                                                                        <li> Office 101<i class="icon-plus addUsers"></i> 
                                                                             <ul>
-                                                                                <li>Reports<i class="icon-plus addUsers"></i>
-                                                                                    <ul>
-                                                                                        <li>Report1<i class="icon-plus addUsers"></i></li>
-                                                                                        <li>Report2<i class="icon-plus addUsers"></i></li>
-                                                                                        <li>Report3<i class="icon-plus addUsers"></i></li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>Employee Maint.<i class="icon-plus addUsers"></i></li>
+                                                                                <li>Conference Room<i class="icon-plus addUsers"></i></li>
+                                                                                <li>Toilet<i class="icon-plus addUsers"></i></li>
                                                                             </ul>
                                                                         </li>
-                                                                        <li>Human Resources<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Office 102<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Corridor<i class="icon-plus addUsers"></i></li>
+                                                                        <li>General Men's Toilet<i class="icon-plus addUsers"></i></li>
+                                                                        <li>General Women's Toilet<i class="icon-plus addUsers"></i></li>
                                                                     </ul>
+
                                                                 </li>
-                                                                <li>XRP<i class="icon-plus addUsers"></i>
-                                                                    <ul>
-                                                                        <li>Company Maintenance<i class="icon-plus addUsers"></i></li>
-                                                                        <li>Employees<i class="icon-plus addUsers"></i>
-                                                                            <ul>
-                                                                                <li>Reports<i class="icon-plus addUsers"></i>
-                                                                                    <ul>
-                                                                                        <li>Report1<i class="icon-plus addUsers"></i></li>
-                                                                                        <li>Report2<i class="icon-plus addUsers"></i></li>
-                                                                                        <li>Report3<i class="icon-plus addUsers"></i></li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>Employee Maint.<i class="icon-plus addUsers"></i></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li>Human Resources<i class="icon-plus addUsers"></i></li>
-                                                                    </ul>
-                                                                </li>
+                                                                <li>Second Floor<i class="icon-plus addUsers"></i></li>
+                                                                <li>Third Floor<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Rob Daniel,Ricky Trek,Bray Wayatt)</li>
+                                                                <li>Fouth Floor<i class="icon-plus addUsers"></i></li>
                                                             </ul>
-                                                        </div>
+
+                                                        </li>
+                                                        <li>Wing B<i class="icon-plus addUsers"></i></li>
+                                                        <li>Wing C<i class="icon-plus addUsers"></i></li>
+                                                        <li>Wing D<i class="icon-plus addUsers"></i></li>
+
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                               
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <h4 class="panel-title">
-                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2" aria-expanded="false"> Security </a>
-                                                    </h4>
-                                                </div>
-                                                <div id="collapse_2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                                    <div class="panel-body" >
-                                                        <div class="form-body">
-                                                            <ul id="tree3">
-                                                                <li><a href="#">TECH</a>
-                                                                    <ul>
-                                                                        <li>Company Maintenance</li>
-                                                                        <li>Employees
-                                                                            <ul>
-                                                                                <li>Reports
-                                                                                    <ul>
-                                                                                        <li>Report1</li>
-                                                                                        <li>Report2</li>
-                                                                                        <li>Report3</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>Employee Maint.</li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li>Human Resources</li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li>XRP
-                                                                    <ul>
-                                                                        <li>Company Maintenance</li>
-                                                                        <li>Employees
-                                                                            <ul>
-                                                                                <li>Reports
-                                                                                    <ul>
-                                                                                        <li>Report1</li>
-                                                                                        <li>Report2</li>
-                                                                                        <li>Report3</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>Employee Maint.</li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li>Human Resources</li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </div> </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3" aria-expanded="false">Machinery </a>
+                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3" aria-expanded="false">Security </a>
                                                     </h4>
                                                 </div>
                                                 <div id="collapse_3" class="panel-collapse in" >
                                                     <div class="panel-body">
                                                         <div class="form-body">
-                                                            <ul id="tree4">
-                                                                <li><a href="#">TECH</a>
-                                                                    <ul>
-                                                                        <li>Company Maintenance</li>
-                                                                        <li>Employees
-                                                                            <ul>
-                                                                                <li>Reports
-                                                                                    <ul>
-                                                                                        <li>Report1</li>
-                                                                                        <li>Report2</li>
-                                                                                        <li>Report3</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>Employee Maint.</li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li>Human Resources</li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li>XRP
-                                                                    <ul>
-                                                                        <li>Company Maintenance</li>
-                                                                        <li>Employees
-                                                                            <ul>
-                                                                                <li>Reports
-                                                                                    <ul>
-                                                                                        <li>Report1</li>
-                                                                                        <li>Report2</li>
-                                                                                        <li>Report3</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                                <li>Employee Maint.</li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li>Human Resources</li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
+                                                                            <ul id="tree3">
+                                                            <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addUsers"></i>
+                                                                <ul>
+                                                                    <li>Compound<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Sin Cara,Roman Reign)</li>
+                                                                    <li>Gate 1<i class="icon-plus addUsers"></i></li>
+                                                                    <li>Gate 2<i class="icon-plus addUsers"></i></li>
+                                                                    <li>Gate 3<i class="icon-plus addUsers"></i></li>
+                                                                    <li>Wing A<i class="icon-plus addUsers"></i>
+                                                                        <ul>
+                                                                            <li>Reception<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)</li>
+                                                                        </ul>
+
+                                                                    </li>
+                                                                    <li>Wing B<i class="icon-plus addUsers"></i></li>
+                                                                    <li>Wing C<i class="icon-plus addUsers"></i></li>
+                                                                    <li>Wing D<i class="icon-plus addUsers"></i></li>
+
+                                                                </ul>
+                                                            </li>
+
+                                                        </ul>
                                                         </div> </div>
                                                 </div>
                                             </div>
@@ -342,11 +322,18 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label class="control-label">Select Role</label>
-                    <div class="input-group col-md-12">           
-                        <select class="form-control" name="options2">
-                            <option value="">Select...</option>
-                            <option value="housekeeping">Housekeeping</option>
-                            <option value="security">Security</option>
+                    <div class="input-group col-md-12">    
+                        <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
+                            <optgroup class="group-1" label="Housekeeping">
+                                <option value="1-1">Option 1.1</option>
+                                <option value="1-2">Option 1.2</option>
+                                <option value="1-3">Option 1.3</option>
+                            </optgroup>
+                            <optgroup class="group-2" label="Security">
+                                <option value="2-1">Option 2.1</option>
+                                <option value="2-2">Option 2.2</option>
+                                <option value="2-3">Option 2.3</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>
