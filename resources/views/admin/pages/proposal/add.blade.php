@@ -163,7 +163,92 @@
                         <!-- END FORM-->
                     </div>
                 </div>	
-
+  <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-docs"></i>Supporting Documents </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse"> </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <div class="form-body">
+                            <div class="mt-repeater">
+                                <div data-repeater-list="inner-group">
+                                    <div data-repeater-item class="inner">
+                                        <div class="row mt-repeater-row">
+                                        <div class="col-md-12">
+                                            <div class="input-group control-group1 after-add-more1 col-md-12">
+                                                <div class="form-group">
+                                                    <div class="col-md-6">
+                                                        <label>File Upload</label>
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
+                                                            <div class="input-group">
+                                                                <div class="form-control input-fixed" data-trigger="fileinput">
+                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                                    <span class="fileinput-filename"> </span>
+                                                                </div>
+                                                                <span class="input-group-addon btn default btn-file">
+                                                                    <span class="fileinput-new"> Select file </span>
+                                                                    <span class="fileinput-exists"> Change </span>
+                                                                    <input type="file" name="..."> </span>
+                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <label>Document Title</label>
+                                                        <input type="text" class="form-control" placeholder="Document Title">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <button class="btn btn-danger pull-right remove1" style="margin-top: 20px;">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           <div class="copy1 hide">
+                                                <div class="form-group">
+                                                    <div class="col-md-6">
+                                                        <label>File Upload</label>
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
+                                                            <div class="input-group">
+                                                                <div class="form-control input-fixed" data-trigger="fileinput">
+                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                                    <span class="fileinput-filename"> </span>
+                                                                </div>
+                                                                <span class="input-group-addon btn default btn-file">
+                                                                    <span class="fileinput-new"> Select file </span>
+                                                                    <span class="fileinput-exists"> Change </span>
+                                                                    <input type="file" name="..."> </span>
+                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <label>Document Title</label>
+                                                        <input type="text" class="form-control" placeholder="Document Title">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <button class="btn btn-danger pull-right remove1" style="margin-top: 20px;">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       </div> 
+                                    </div>
+                                </div>	
+                                <div class="input-group-btn col-md-12" style="padding: 0px;"> 
+                                    <button class="btn btn-success add-more1" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                                </div>
+                            </div>
+                        </div>	
+                        <!-- END FORM-->
+                    </div>
+                </div>	  
                 <div class="form-actions">
                     <div class="row">
                         <div class="col-md-offset-5 col-md-6">

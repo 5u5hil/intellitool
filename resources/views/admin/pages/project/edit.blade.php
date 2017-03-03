@@ -21,10 +21,10 @@
                     <div class="tabbable-custom ">
                         <ul class="nav nav-tabs ">
 
-                            <li >
+                            <li class="active">
                                 <a href="#tab_5_1" data-toggle="tab"> General Info </a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="#tab_5_2" data-toggle="tab"> Zone Management</a>
                             </li>
                             <li>
@@ -32,7 +32,7 @@
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane " id="tab_5_1">
+                            <div class="tab-pane active" id="tab_5_1">
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="form-group">
@@ -47,7 +47,7 @@
                                             </div>  
                                             <div class="col-md-4">
                                                 <label>Client Coordinator</label>
-                                                <select id="selectAllOption2" multiple="multiple">
+                                                <select class="selectAllOption2" multiple="multiple">
                                                     <option value="Accord">Jigar Shah</option>
                                                     <option value="Duster">Karan Droh</option>
                                                     <option value="Duster">James Anderson</option>
@@ -78,7 +78,7 @@
                                     </div>
                                 </div> 
                             </div>
-                            <div class="tab-pane active" id="tab_5_2">
+                            <div class="tab-pane" id="tab_5_2">
                                 <div class="portlet-body form">
                                     <div class="form-body">
                                         <div class="form-group">
