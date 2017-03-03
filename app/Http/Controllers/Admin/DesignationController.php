@@ -14,7 +14,7 @@ use App\Models\DesignationHasVerticle;
 use Route;
 use DB;
 
-class DesignationController extends Controller {
+class DesignationController extends Controller  {
 
     public function index() {
         $designations = EmpRole::all();
@@ -88,9 +88,22 @@ class DesignationController extends Controller {
         return $categories;
     }
 
+private function getCategories($parentId = null)
+{
+    $categories = [];
 
+    foreach(EmpRole::where('parent_id', null)->get() as $category)
+    {
+        $categories = [
+            'item' => $category,
+            'children' => $this->getCategories($category->id)
+        ];
+    }
+
+    return $categories;
+}
     public function addEdit() {
-        dd($this->ancestors(EmpRole));
+    
 
         $design = EmpRole::findOrNew(Input::get('id'));
         $permissions = DB::table("emp_permissions")->get(['id', 'display_name', 'description']);

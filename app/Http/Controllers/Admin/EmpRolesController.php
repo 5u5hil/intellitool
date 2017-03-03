@@ -14,7 +14,7 @@ class EmpRolesController extends Controller {
 
     public function index() {
         
-        dd($this->ancestors());
+       
         $roles = EmpRole::all();
         return view(config('constants.adminPages') . '.employee.role.index', ['roles' => $roles]);
     }
