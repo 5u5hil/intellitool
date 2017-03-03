@@ -63,6 +63,9 @@
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.repeater.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
 
+
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.validate.min') }}" type="text/javascript"></script>
+
 <!-- END PAGE LEVEL SCRIPTS -->
 <script type="text/javascript">
 $(function () {

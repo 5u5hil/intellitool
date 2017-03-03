@@ -8,7 +8,7 @@
         <h1>Add New Employee</h1>
         <ol class="breadcrumb">
             <li>
-                <a href="#">Home</a>
+                <a href="{{ route('admin.dashboard') }}">Home</a>
             </li>
             <li class="active">Employee</li>
         </ol>

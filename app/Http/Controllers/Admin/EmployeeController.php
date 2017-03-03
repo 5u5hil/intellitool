@@ -21,6 +21,9 @@ class EmployeeController extends Controller {
     public function addEdit() {
         $employee = Employee::findOrNew(Input::get('id'));
         $roles = EmpRole::orderBy("name", "asc")->pluck('name', 'id')->prepend("Please Select", "");
+    //    dd($employee->pluck('first_name','id'));
+        
+        
         return view(Config('constants.adminPages') . '.employee.addEdit', ['employee' => $employee, 'roles' => $roles]);
     }
 
