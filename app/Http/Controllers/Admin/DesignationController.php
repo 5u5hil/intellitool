@@ -10,6 +10,7 @@ use App\Models\DesignationLevel;
 use App\Models\EmpPermission;
 use Illuminate\Support\Facades\Input;
 use App\Library\Helper;
+use App\Models\DesignationHasVerticle;
 use Route;
 use DB;
 
@@ -67,9 +68,9 @@ class DesignationController extends Controller {
     }
 
     public function addEdit() {
-        
+
         $design = EmpRole::findOrNew(Input::get('id'));
-        $permissions = DB::table("emp_permissions")->get(['id', 'display_name','description']);
+        $permissions = DB::table("emp_permissions")->get(['id', 'display_name', 'description']);
         $perms = [];
         $i = 0;
         foreach ($permissions as $prmv) {
@@ -78,19 +79,18 @@ class DesignationController extends Controller {
             $i++;
         }
 
-        $desLevel = DB::table("designation_levels")->orderBy("designation", "asc")->pluck('designation','id')->prepend('Please Select','');
-      
-        
-        $designAll = DB::table('emp_roles')->orderBy("name","asc");
+        $desLevel = DB::table("designation_levels")->orderBy("designation", "asc")->pluck('designation', 'id')->prepend('Please Select', '');
+
+
+        $designAll = DB::table('emp_roles')->orderBy("name", "asc");
         if (!empty(Input::get('id')))
             $designAll = $designAll->where("id", "!=", Input::get('id'));
 
-        $getRepoting = $designAll->pluck('name','id')->prepend('Please Select','');
+        $getRepoting = $designAll->pluck('name', 'id')->prepend('Please Select', '');
 
-        $verticlesSel = DB::table('verticles')->pluck('name','id')->prepend('Please Select','');
-  
+        $verticlesSel = DB::table('verticles')->pluck('name', 'id')->prepend('Please Select', '');
+
         return view(config('constants.adminPages') . '.designation.addEdit', ['design' => $design, 'permissions' => $perms, 'getRepoting' => $getRepoting, 'desLevel' => $desLevel, 'verticlesSel' => $verticlesSel]);
-
     }
 
     public function saveUpdate() {
@@ -101,13 +101,27 @@ class DesignationController extends Controller {
         $saveRole->display_name = Input::get('name');
         $saveRole->parent_id = Input::get('parent_id');
         $saveRole->designation_level_id = Input::get('designation_level_id');
-        $saveRole->verticle_id = Input::get('verticle_id');
+
         $saveRole->system_access = Input::get('system_access');
         $saveRole->save();
 
         if (!empty(Input::get('chk'))) {
             $saveRole->perms()->sync(Input::get('chk'));
         }
+
+
+
+
+        if (!empty(Input::get('verticle_ids'))) {
+
+            $verticles = [];
+            foreach (Input::get('verticle_ids') as $verid) {
+                array_push($verticles, new DesignationHasVerticle(['verticle_id' => $verid]));
+            }
+            $saveRole->verticles()->delete();
+            $saveRole->verticles()->saveMany($verticles);
+        }
+
 
         return redirect()->route('admin.designation.list');
     }
@@ -128,7 +142,7 @@ class DesignationController extends Controller {
 
                     $permissions->name = $value->getName();
                     $permissions->display_name = @$displayName1;
-                  
+
                     $permissions->prefix = @$value->getPrefix();
                     $permissions->description = end((explode("/", $permissions->prefix)));
                     $permissions->save();

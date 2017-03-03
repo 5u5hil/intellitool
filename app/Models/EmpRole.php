@@ -10,4 +10,9 @@ class EmpRole extends EntrustRole
         'description' => 'required',
         'name' => 'required'
     ];
+      
+      
+      public function verticles(){
+          return $this->hasMany("App\Models\DesignationHasVerticle","designation_id");
+      }
 }

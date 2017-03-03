@@ -5,6 +5,8 @@ $adminContstants = [
     'adminPages' => 'admin.pages',
     'adminLayouts' => 'admin.layouts',
     'adminIncludes' => 'admin.includes',
+    'adminPaginateNo' => 10,
+    
 ];
 
 $frontendConstants = [];

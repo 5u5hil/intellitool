@@ -13,6 +13,16 @@
             <li class="active">Designation</li>
         </ol>
     </div>
+    <?php
+    $vertids = $design->verticles()->get(['verticle_id']);
+    $arrV=[];
+    $vetArr = [];
+    foreach($vertids as $vid){
+        array_push($arrV,$vid->verticle_id);
+    }
+   
+    ?>
+    
 
 
     <div class="row">
@@ -45,9 +55,21 @@
                                 {{ Form::label('Designation Level', 'Designation Level') }}
                                 {{Form::select('designation_level_id',@$desLevel ,  @$design->designation_level_id or null , ['class'=>'form-control']) }}
                             </div>
+                    
+                            
+<!--                               <label class="control-label">Parent Zone</label>
+                                                 <select id="example-allSelectedText-includeSelectAllOption" multiple="multiple">
+                                                    <option value="Accord">Accord</option>
+                                                    <option value="Duster">-- Duster</option>
+                                                    <option value="Esteem">--- Esteem</option>
+                                                    <option value="Fiero">---- Fiero</option>
+                                                    <option value="Lancer">--- Lancer</option>
+                                                    <option value="Phantom">-- Phantom</option>
+                                                </select>-->
                             <div class="col-md-3">
-                                {{ Form::label('Verticle', 'Verticle') }}
-                                {{Form::select('verticle_id',@$verticlesSel ,  @$design->verticle_id or null , ['class'=>'form-control']) }}
+                                {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
+                                  
+                                {{Form::select('verticle_ids[]',@$verticlesSel ,$arrV, ['class'=>'form-control','multiple'=>'multiple']) }}
 
                             </div>
                         </div>

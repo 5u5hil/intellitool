@@ -54,7 +54,11 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::post('/save/update', 'DesignationController@saveUpdate')->name('admin.designation.save/update');
     });
 
-    
+       Route::group(['prefix' => 'employee'], function () {
+        Route::get('/', 'EmployeeController@index')->name('admin.employee.list');
+        Route::get('/add/edit', 'EmployeeController@addEdit')->name('admin.employee.add/edit');
+        Route::post('/save/update', 'EmployeeController@saveUpdate')->name('admin.employee.save/update');
+    });
     
     
     Route::group(['prefix' => 'employee-management'], function () {

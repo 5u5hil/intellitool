@@ -42,7 +42,7 @@
                                 <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit">
                                     <i class='icon-pencil'></i>
                                 </a> 
-                                <a href="{{ route("admin.designation.save/update") }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add">
+                                <a href="{{ route("admin.designation.add/edit") }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add">
                                     <i class='icon-plus'></i>
                                 </a>
                                 <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details">
