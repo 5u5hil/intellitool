@@ -68,8 +68,7 @@
                                                 </select>-->
                             <div class="col-md-3">
                                 {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
-                                  
-                                {{Form::select('verticle_ids[]',@$verticlesSel ,$arrV, ['class'=>'form-control','multiple'=>'multiple']) }}
+                                {{Form::select('verticle_ids[]',@$verticlesSel ,$arrV, ['id'=>"example-allSelectedText-includeSelectAllOption",'multiple'=>'multiple']) }}
 
                             </div>
                         </div>

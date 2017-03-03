@@ -247,7 +247,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(designation)/',\Route::currentRouteName()) ? 'active open selected' : ''  }}"  >
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(designation|employee)/',\Route::currentRouteName()) ? 'active open selected' : ''  }}"  >
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-briefcase"></i> Employee Management </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
@@ -255,10 +255,10 @@
                                 <a href="javascript:;">  <i class="icon-users"></i> Employees </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="table_datatables_managed.html"> Add New Employee </a>
+                                        <a href="{{route('admin.employee.add/edit') }}"> Add New Employee </a>
                                     </li>
                                     <li>
-                                        <a href="table_datatables_buttons.html"> All Employees </a>
+                                        <a href="{{route('admin.employee.list') }}"> All Employees </a>
                                     </li>
                                 </ul>
                             </li>

@@ -6,11 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
-class Employee extends Authenticatable
-{
+class Employee extends Authenticatable {
+
     protected $table = 'employee';
-    use Notifiable,EntrustUserTrait;
-    
+
+    use Notifiable,
+        EntrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -29,4 +30,24 @@ class Employee extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function rules($id = null, $merge = []) {
+        return array_merge(
+                [
+            'name' => 'required',
+        
+            'email' => 'required|email|unique:employee',
+            'phone' => 'required|numeric|unique:employee',
+                ], $merge);
+    }
+
+    public $messages = [
+        'name.required' => 'Name is required.',
+        'email.unique' => 'Email Id have been already taken',
+        'email.required' => 'Email Id is required',
+        'phone.required' => 'Phone is required',
+        'phone.unique' => 'Phone number have been already taken',
+        'phone.numeric' => 'Phone number should be valid'
+    ];
+
 }
