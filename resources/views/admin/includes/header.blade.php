@@ -247,7 +247,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(designation|employee)/',\Route::currentRouteName()) ? 'active open selected' : ''  }}"  >
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{ preg_match('/(designation|employee)/',\Route::currentRouteName() ) && !preg_match('/(admin.designation.level.list)/',\Route::currentRouteName()) ? 'active open selected' : ''  }}"  >
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-briefcase"></i> Employee Management </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
@@ -275,7 +275,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(designation-level)/',\Route::currentRouteName())?'active open selected':''}} ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list)/',\Route::currentRouteName())?'active open selected':''}} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-layers"></i> Masters </a>
                         <ul class="dropdown-menu dropdown-menu-fw">

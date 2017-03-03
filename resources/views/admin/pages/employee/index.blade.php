@@ -26,7 +26,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
-                            <th scope="col">Incubation Date</th>
+                            <th scope="col">Joining Date</th>
                             <th></th>
                         </tr>
                     </thead>
