@@ -316,34 +316,38 @@
         <div class="modal-content">        
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title"> Employee Assignment </h4>
             </div>
             <!-- dialog body -->
             <div class="modal-body">
                 <div class="form-group">
                     <label class="control-label">Select Role</label>
-                    <div class="input-group col-md-12">    
-                        <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
-                            <optgroup class="group-1" label="Housekeeping">
-                                <option value="1-1">Option 1.1</option>
-                                <option value="1-2">Option 1.2</option>
-                                <option value="1-3">Option 1.3</option>
-                            </optgroup>
-                            <optgroup class="group-2" label="Security">
-                                <option value="2-1">Option 2.1</option>
-                                <option value="2-2">Option 2.2</option>
-                                <option value="2-3">Option 2.3</option>
-                            </optgroup>
+                    <div class="input-group col-md-12">  
+
+                        <select class='selectAllOption3' multiple="multiple">
+                            <option value="Accord">Neelkanth Business Park</option>
+                            <option value="Duster">- Compound</option>
+                            <option value="Esteem">-- Gate 1</option>
+                            <option value="Fiero">--- Gate 2</option>
+                            <option value="Fiero">---- Gate 3</option>
                         </select>
+
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Assign Employee</label>
-                    <div class="input-group col-md-12">                   
-                        <select class="form-control" name="options2">
-                            <option value="">Select...</option>
-                            <option value="housekeeping">Jignesh Reddy</option>
-                            <option value="security">Karan Kenny</option>
+                    <div class="input-group col-md-12">             
+                        <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
+                            <optgroup label="Housekeeping">
+                                <option value="1-1">Option 1.1</option>
+                                <option value="1-2">Option 1.2</option>
+                                <option value="1-3">Option 1.3</option>
+                            </optgroup>
+                            <optgroup label="Security">
+                                <option value="2-1">Option 2.1</option>
+                                <option value="2-2">Option 2.2</option>
+                                <option value="2-3">Option 2.3</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>

@@ -42,12 +42,13 @@
                                 </div>	
                                 <div class="col-md-4">
                                     <label>Client Coordinator</label>
-                                    <select id="selectAllOption2" multiple="multiple">
+                                    <select class="selectAllOption2" multiple="multiple">
                                         <option value="Accord">Jigar Shah</option>
-                                        <option value="Duster">Karan Droh</option>
-                                        <option value="Duster">James Anderson</option>
-                                        <option value="Duster">Jiten Parab</option>
-                                    </select> </div>	
+                                        <option value="Duster1">Karan Droh</option>
+                                        <option value="Duster2">James Anderson</option>
+                                        <option value="Duster3">Jiten Parab</option>
+                                    </select> 
+                                </div>	
                             </div>
                             <div class="form-group">
 

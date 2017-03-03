@@ -78,31 +78,30 @@ $(function () {
 <script>
     $(document).ready(function() {
         $('#selectAllOption').multiselect({
-            includeSelectAllOption: true,
+            includeSelectAllOption: false,
             buttonWidth: '100%',
-            allSelectedText: 'No option left ...'
+            //allSelectedText: 'No option left ...'
         });
     });
     $(document).ready(function() {
         $('#selectAllOption1').multiselect({
-            includeSelectAllOption: true,
+            includeSelectAllOption: false,
             buttonWidth: '100%',
-            allSelectedText: 'No option left ...'
+            //allSelectedText: 'No option left ...'
         });
-        $('#selectAllOption2').multiselect({
-            includeSelectAllOption: true,
+        $('.selectAllOption2').multiselect({
+            includeSelectAllOption: false,
             buttonWidth: '100%',
-            allSelectedText: 'No option left ...'
+            //allSelectedText: 'No option left ...'
         });
         $('.selectAllOption3').multiselect({
-            includeSelectAllOption: true,
+            includeSelectAllOption: false,
             buttonWidth: '100%',
-            allSelectedText: 'No option left ...'
+            //allSelectedText: 'No option left ...'
         });
     });
     $(document).ready(function() {
         $('#example-optgroup-buttonText').multiselect({
-            enableClickableOptGroups: true,
             buttonWidth: '100%',
             buttonText: function(options, select) {
                 

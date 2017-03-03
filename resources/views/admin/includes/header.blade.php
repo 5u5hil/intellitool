@@ -275,7 +275,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(designation-level)/',\Route::currentRouteName())?'active open selected':''}} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-layers"></i> Masters </a>
                         <ul class="dropdown-menu dropdown-menu-fw">
