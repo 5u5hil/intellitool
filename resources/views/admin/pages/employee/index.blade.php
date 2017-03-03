@@ -39,15 +39,13 @@
                             <td> {{ $emp->name }}</td>
                             <td> {{$emp->email }}</td>
                             <td> {{ $emp->phone }}</td>
-                            <td> {{ date("d-M-Y",strtotime($emp->created_at)) }}</td>
+                            <td> {{ date("d M Y",strtotime($emp->created_at)) }}</td>
                             <td class="text-center">
-                                <a href="{{ route('admin.employee.add/edit',['id'=>$emp->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit">
+                                <a href="{{ route('admin.employee.add/edit',['id'=>$emp->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Employee Details">
                                     <i class='icon-pencil'></i>
                                 </a>
-                                <a href="{{ route('admin.employee.add/edit')  }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Project">
-                                    <i class='icon-plus'></i>
-                                </a>
-                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details">
+                            
+                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Employee Details">
                                     <i class='icon-magnifier'></i>
                                 </a>
                             </td>

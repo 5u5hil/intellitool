@@ -263,13 +263,13 @@
                                 </ul>
                             </li>
                             <li class="dropdown more-dropdown-sub">
-                                <a href="javascript:;"><i class=" icon-magic-wand"></i> Designation </a>
+                                <a href="javascript:;"><i class=" icon-magic-wand"></i> Designations </a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{ route('admin.designation.add/edit') }}"> Add Designation </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('admin.designation.list') }}"> All Designation </a>
+                                        <a href="{{ route('admin.designation.list') }}"> All Designations </a>
                                     </li>
                                 </ul>
                             </li>

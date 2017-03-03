@@ -36,32 +36,55 @@
                                 {!!Form::label('Employee Code','Employee Code') !!}
                                 {!! Form::text('emp_code',null, ["class"=>'form-control' ,"placeholder"=>'Employee Code', "required"]) !!}
                             </div>
-                            <div class="col-md-4">
-                                {!!Form::label('Role','Role') !!}
-                                {!! Form::select('roles',$roles,!empty($employee->roles()->first()->id)?$employee->roles()->first()->id:null,["class"=>'form-control m-b' , "required"]) !!}
-                            </div>
-                            <div class="col-md-4">
-                                {!!Form::label('Name','Name') !!}
-                                {!! Form::text('name',null, ["class"=>'form-control' ,"placeholder"=>'Name', "required"]) !!}
+							  <div class="col-md-4">
+                                {!!Form::label('First Name','First Name') !!}
+                                {!! Form::text('first_name',null, ["class"=>'form-control' ,"placeholder"=>'First Name', "required"]) !!}
                             </div>	
+							  <div class="col-md-4">
+                                {!!Form::label('Last Name','Last Name') !!}
+                                {!! Form::text('last_name',null, ["class"=>'form-control' ,"placeholder"=>'Last Name', "required"]) !!}
+                            </div>	
+                          
+                          
 
                         </div>
                         <div class="form-group">
+						  <div class="col-md-4">
+                                {!!Form::label('Designation','Designation') !!}
+                                {!! Form::select('roles',$roles,!empty($employee->roles()->first()->id)?$employee->roles()->first()->id:null,["class"=>'form-control m-b' , "required"]) !!}
+                            </div>
+						  <div class="col-md-4">
+                                {!!Form::label('Reports To','Reports to') !!}
+                                {!! Form::select('reports_to',[],null, ["class"=>'form-control', "required",'id'=>"selectAllOption"]) !!}
+                            </div>	
                             <div class="col-md-4">
                                 {!!Form::label('Email','Email') !!}
                                 {!! Form::email('email',null, ["class"=>'form-control' ,"placeholder"=>'Email']) !!}
                             </div>	
+                         
+
+                        </div>
+						
+						       <div class="form-group">
+						
                             <div class="col-md-4">
                                 {!!Form::label('Password','Password') !!}
                                 {!! Form::password('password', ["class"=>'form-control' ,"placeholder"=>'Password']) !!}
+                            </div>
+							 <div class="col-md-4">
+                                {!!Form::label('Confirm Password','Confirm Password') !!}
+                                {!! Form::password('confirm_password', ["class"=>'form-control' ,"placeholder"=>'Confirm Password']) !!}
                             </div>
                             <div class="col-md-4">
                                 {!!Form::label('Phone','Phone') !!}
                                 {!! Form::text('phone',null, ["class"=>'form-control' ,"placeholder"=>'Phone', "required"]) !!}
                             </div>	
 
-
                         </div>
+						
+						
+						
+						
                     </div>	
                     <!-- END FORM-->
                 </div>

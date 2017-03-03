@@ -39,13 +39,11 @@
                      
                             <td> {{ date("d-M-Y",strtotime($dsg->created_at)) }}</td>
                             <td class="text-center">
-                                <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit">
+                                <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Designation">
                                     <i class='icon-pencil'></i>
                                 </a> 
-                                <a href="{{ route("admin.designation.add/edit") }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add">
-                                    <i class='icon-plus'></i>
-                                </a>
-                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Client Details">
+                             
+                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Designation">
                                     <i class='icon-magnifier'>
 
                                     </i></a>

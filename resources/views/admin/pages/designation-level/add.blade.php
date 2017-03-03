@@ -42,12 +42,26 @@
                                 <a href="<?= route('admin.designation.level.list') ?>" class="btn default">Cancel</a>
                             </div>
                         </div>
+
+                        @foreach($errors->all() as $getMessage)
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger">
+                                    <p>{{$getMessage}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
                     </div>	
                     <!-- END FORM-->
+
                     {{ Form::close() }}
-                    @foreach($errors->all() as $getMessage)
-                    {{$getMessage}}
-                    @endforeach
+
+
+
+
+
                 </div>
 
 
