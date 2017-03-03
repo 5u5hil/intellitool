@@ -66,7 +66,7 @@
                                                     <option value="Lancer">--- Lancer</option>
                                                     <option value="Phantom">-- Phantom</option>
                                                 </select>-->
-                            <div class="col-md-3">
+                            <div class="col-md-3"> 
                                 {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
                                 {{Form::select('verticle_ids[]',@$verticlesSel ,$arrV, ['id'=>"example-allSelectedText-includeSelectAllOption",'multiple'=>'multiple']) }}
 
