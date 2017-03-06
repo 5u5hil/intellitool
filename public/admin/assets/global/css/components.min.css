@@ -68,3 +68,4 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
 .caret{float: right!important; margin-top: 8px;}
 .multiselect-container{width: 100%!important;}
 .multiselect-container>li.multiselect-group label{padding: 3px 20px 3px 10px!important;}
+.dropdown-fw:hover ul.dropdown-menu-fw{display: block; z-index: 1111!important;}

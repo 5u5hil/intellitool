@@ -312,18 +312,30 @@
 </div>
 <!-- set up the modal to start hidden and fade in and out -->
 <div id="myModal" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">        
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title"> Employee Assignment </h4>
             </div>
             <!-- dialog body -->
-            <div class="modal-body">
-                <div class="form-group">
+            <div class="modal-body col-md-12">
+               <div class="input-group control-group after-add-more col-md-12"> 
+                <div class="form-group col-md-4">
+                    <label class="control-label">Shift</label>
+                    <div class="input-group col-md-12"> 
+                        <select class='selectAllOption3' multiple="multiple">
+                            <option value="shift-a">Shift A</option>
+                            <option value="shift-b">Shift B</option>
+                            <option value="shift-c">Shift C</option>
+                            <option value="shift-d">Shift D</option>
+                            <option value="shift-e">Shift E</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
                     <label class="control-label">Select Role</label>
-                    <div class="input-group col-md-12">  
-
+                    <div class="input-group col-md-12"> 
                         <select class='selectAllOption3' multiple="multiple">
                             <option value="Accord">Neelkanth Business Park</option>
                             <option value="Duster">- Compound</option>
@@ -331,10 +343,9 @@
                             <option value="Fiero">--- Gate 2</option>
                             <option value="Fiero">---- Gate 3</option>
                         </select>
-
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label class="control-label">Assign Employee</label>
                     <div class="input-group col-md-12">             
                         <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
@@ -350,9 +361,56 @@
                             </optgroup>
                         </select>
                     </div>
+                </div> 
+               </div>   
+                <div class="copy hide">
+                    <div class="form-group col-md-4">
+                    <label class="control-label">Shift</label>
+                    <div class="input-group col-md-12"> 
+                        <select class='selectAllOption3' multiple="multiple">
+                            <option value="shift-a">Shift A</option>
+                            <option value="shift-b">Shift B</option>
+                            <option value="shift-c">Shift C</option>
+                            <option value="shift-d">Shift D</option>
+                            <option value="shift-e">Shift E</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Select Role</label>
+                    <div class="input-group col-md-12"> 
+                        <select class='selectAllOption3' multiple="multiple">
+                            <option value="Accord">Neelkanth Business Park</option>
+                            <option value="Duster">- Compound</option>
+                            <option value="Esteem">-- Gate 1</option>
+                            <option value="Fiero">--- Gate 2</option>
+                            <option value="Fiero">---- Gate 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Assign Employee</label>
+                    <div class="input-group col-md-12">             
+                        <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
+                            <optgroup label="Housekeeping">
+                                <option value="1-1">Option 1.1</option>
+                                <option value="1-2">Option 1.2</option>
+                                <option value="1-3">Option 1.3</option>
+                            </optgroup>
+                            <optgroup label="Security">
+                                <option value="2-1">Option 2.1</option>
+                                <option value="2-2">Option 2.2</option>
+                                <option value="2-3">Option 2.3</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div> 
+               </div> 
+               <div class="input-group-btn col-md-12"> 
+                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                </div> 
             </div>
-
+           <div class="col-md-12"> <hr></div>
             <!-- dialog buttons -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary ">Assign</button>

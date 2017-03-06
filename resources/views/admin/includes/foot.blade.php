@@ -278,14 +278,3 @@ $(function () {
 
 
 </script>
-<script type="text/javascript">
-    $(function(){
-    $(".dropdown-fw").hover(function(){
-    $(this).find(".dropdown-menu-fw").fadeIn();
-    }
-    ,function(){
-        $(this).find(".dropdown-menu-fw").fadeOut();
-    }
-    );        
-    });    
-</script>
