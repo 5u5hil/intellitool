@@ -13,7 +13,21 @@
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/moment.min.js') }}" type="text/javascript"></script>
+
+
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}" type="text/javascript"></script>
+
+
+<script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
+
+
+<script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset(config('constants.adminAssets').'global/scripts/app.min.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/components-date-time-pickers.min.js') }}" type="text/javascript"></script>
+
+
+
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/morris/raphael-min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
@@ -62,6 +76,9 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.repeater.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
+
+
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.validate.min.js') }}" type="text/javascript"></script>
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script type="text/javascript">

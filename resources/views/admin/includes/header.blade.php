@@ -226,7 +226,7 @@
                             <li class="dropdown ">
                                 <a href="{{ route('admin.project.list') }}">
                                     <i class="icon-puzzle"></i> Projects </a>
-                 
+
                             </li>
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
@@ -275,10 +275,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list)/',\Route::currentRouteName())?'active open selected':''}} ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list|admin.shift.list)/',\Route::currentRouteName())?'active open selected':''}} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-layers"></i> Masters </a>
-                        <ul class="dropdown-menu dropdown-menu-fw">
+                        <ul class="dropdown-menu dropdown-menu-fw"   style="{{preg_match('/(admin.designation.level.list|admin.shift.list)/',\Route::currentRouteName())?'display:block':''}}">
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class="icon-home"></i> House Keeping </a>
@@ -298,7 +298,7 @@
 
                                 </ul>
                             </li>
-                             <li class="dropdown more-dropdown-sub">
+                            <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class="icon-lock"></i> Security </a>
                                 <ul class="dropdown-menu">
@@ -317,7 +317,7 @@
 
                                 </ul>
                             </li>
-                             <li class="dropdown more-dropdown-sub">
+                            <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class="icon-chemistry"></i> Machinery & Engineering </a>
                                 <ul class="dropdown-menu">
@@ -336,7 +336,7 @@
 
                                 </ul>
                             </li>
-                             <li class="dropdown more-dropdown-sub">
+                            <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class=" icon-cup"></i> Pantry </a>
                                 <ul class="dropdown-menu">
@@ -355,8 +355,8 @@
 
                                 </ul>
                             </li>
-                            
-                                         <li class="dropdown more-dropdown-sub">
+
+                            <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class=" icon-globe-alt"></i> Global </a>
                                 <ul class="dropdown-menu">
@@ -364,16 +364,20 @@
                                         <a href="{{route('admin.designation.level.list')}}">
                                             <i class=""></i>  Designation Level  </a>
                                     </li>
-                               
+                                    <li>
+                                        <a href="{{route('admin.shift.list')}}">
+                                            <i class=""></i> Shifts  </a>
+                                    </li>
+
 
                                 </ul>
                             </li>
-                            
+
                         </ul>
-                      
+
                     </li>
-                    
-         
+
+
 
                 </ul>
             </div>

@@ -13,10 +13,24 @@ use Route;
 class EmpRolesController extends Controller {
 
     public function index() {
+        
+       
         $roles = EmpRole::all();
         return view(config('constants.adminPages') . '.employee.role.index', ['roles' => $roles]);
     }
 
+        public function ancestors()
+{
+    $ancestors = $this->where('id', '=', $this->parent_id)->get();
+
+    while ($ancestors->last() && $ancestors->last()->parent_id !== null)
+    {
+        $parent = $this->where('id', '=', $ancestors->last()->parent_id)->get();
+        $ancestors = $ancestors->merge($parent);
+    }
+
+    return $ancestors;
+}
     public function addEdit() {
 
         $role = EmpRole::findOrNew(Input::get('id'));

@@ -15,6 +15,8 @@
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css" />
+
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset(config('constants.adminAssets').'global/plugins/jqvmap/jqvmap/jqvmap.css') }}" rel="stylesheet" type="text/css" />

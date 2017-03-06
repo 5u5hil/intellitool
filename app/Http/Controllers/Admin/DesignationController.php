@@ -14,28 +14,49 @@ use App\Models\DesignationHasVerticle;
 use Route;
 use DB;
 
-class DesignationController extends Controller {
+class DesignationController extends Controller  {
 
     public function index() {
         $designations = EmpRole::all();
         return view(config('constants.adminPages') . '.designation.index', ['designations' => $designations]);
     }
 
-    public function buildTree($ar, $pid = null) {
+    public function buildTree($ar, $pid = null,$dash=null) {
         $op = array();
+        $newArr = [];
+      
         foreach ($ar as $item) {
+          
             if ($item['parent_id'] == $pid) {
-                $op[$item['id']] = array(
-                    'name' => $item['name'],
-                    'id' => $item['id'],
-                    'parent_id' => $item['parent_id']
-                );
+                
+                if($pid == null){
+                $op[$item['id']][] = $item['name'];
+//                        array(
+//                    'name' => $item['name'],
+//                    'id' => $item['id'],
+//                    'parent_id' => $item['parent_id']
+//                );
+                }else{
+                      $op[$item['id']][] = $dash."".$item['name'];
+//                              array(
+//                    'name' => $dash."".$item['name'],
+//                    'id' => $item['id'],
+//                    'parent_id' => $item['parent_id']
+//                ); 
+                }
+              $dash .= "-"; 
                 // using recursion
-                $children = $this->buildTree($ar, $item['id']);
+                $children = $this->buildTree($ar, $item['id'],$dash);
                 if ($children) {
-                    $op[$item['id']]['children'] = $children;
+                   
+                    $op[$item['id']][] = $children;
+                  
+                     
                 }
             }
+            
+          
+            
         }
         return $op;
     }
@@ -67,7 +88,22 @@ class DesignationController extends Controller {
         return $categories;
     }
 
+private function getCategories($parentId = null)
+{
+    $categories = [];
+
+    foreach(EmpRole::where('parent_id', null)->get() as $category)
+    {
+        $categories = [
+            'item' => $category,
+            'children' => $this->getCategories($category->id)
+        ];
+    }
+
+    return $categories;
+}
     public function addEdit() {
+    
 
         $design = EmpRole::findOrNew(Input::get('id'));
         $permissions = DB::table("emp_permissions")->get(['id', 'display_name', 'description']);
@@ -82,10 +118,16 @@ class DesignationController extends Controller {
         $desLevel = DB::table("designation_levels")->orderBy("designation", "asc")->pluck('designation', 'id')->prepend('Please Select', '');
 
 
-        $designAll = DB::table('emp_roles')->orderBy("name", "asc");
+       $designAll = EmpRole::orderBy("name", "asc");
         if (!empty(Input::get('id')))
             $designAll = $designAll->where("id", "!=", Input::get('id'));
 
+        
+     // $roleArr = $this->buildTree($designAll->get()->toArray());
+        
+        
+        
+      
         $getRepoting = $designAll->pluck('name', 'id')->prepend('Please Select', '');
 
         $verticlesSel = DB::table('verticles')->pluck('name', 'id')->prepend('Please Select', '');
@@ -100,8 +142,8 @@ class DesignationController extends Controller {
         $saveRole->name = Input::get('name');
         $saveRole->display_name = Input::get('name');
         $saveRole->parent_id = Input::get('parent_id');
+        
         $saveRole->designation_level_id = Input::get('designation_level_id');
-
         $saveRole->system_access = Input::get('system_access');
         $saveRole->save();
 
