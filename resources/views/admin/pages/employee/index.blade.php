@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{$emp->id}}</td>
                             <td>{{ $emp->emp_code }} </td>
-                            <td> {{ $emp->name }}</td>
+                            <td> {{ $emp->firstname }}</td>
                             <td> {{$emp->email }}</td>
                             <td> {{ $emp->phone }}</td>
                             <td> {{ date("d M Y",strtotime($emp->created_at)) }}</td>
@@ -44,7 +44,6 @@
                                 <a href="{{ route('admin.employee.add/edit',['id'=>$emp->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Employee Details">
                                     <i class='icon-pencil'></i>
                                 </a>
-                            
                                 <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Employee Details">
                                     <i class='icon-magnifier'></i>
                                 </a>

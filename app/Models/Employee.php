@@ -33,21 +33,26 @@ class Employee extends Authenticatable {
 
     public static function rules($id = null, $merge = []) {
         return array_merge(
-                [
-            'name' => 'required',
-        
-            'email' => 'required|email|unique:employee',
-            'phone' => 'required|numeric|unique:employee',
+             [
+            'roles' => 'required',
+            'firstname' => 'required',
+            'email' => 'required|email|unique:employee' . ($id ? ",email,$id" : ''),
+            'phone' => 'required|numeric|unique:employee' . ($id ? ",phone,$id" : '')
                 ], $merge);
     }
 
     public $messages = [
-        'name.required' => 'Name is required.',
+        'roles.required' => 'Designation is required.',
         'email.unique' => 'Email Id have been already taken',
         'email.required' => 'Email Id is required',
         'phone.required' => 'Phone is required',
         'phone.unique' => 'Phone number have been already taken',
         'phone.numeric' => 'Phone number should be valid'
     ];
+    
+    
+      public function reportto(){
+          return $this->hasMany("App\Models\EmployeeReportTo","employee_id");
+      }
 
 }
