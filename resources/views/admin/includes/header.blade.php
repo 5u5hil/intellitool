@@ -275,10 +275,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list|admin.shift.list)/',\Route::currentRouteName())?'active open selected':''}} ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list|admin.designation.level.add\/edit|admin.shift.list|admin.shift.add\/edit)/',\Route::currentRouteName())?'active open selected':''}} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-layers"></i> Masters </a>
-                        <ul class="dropdown-menu dropdown-menu-fw"   style="{{preg_match('/(admin.designation.level.list|admin.shift.list)/',\Route::currentRouteName())?'display:block':''}}">
+                        <ul class="dropdown-menu dropdown-menu-fw"   style="{{preg_match('/(admin.designation.level.list|admin.designation.level.add\/edit|admin.shift.list|admin.shift.add\/edit)/',\Route::currentRouteName())?'display:block':''}}">
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class="icon-home"></i> House Keeping </a>

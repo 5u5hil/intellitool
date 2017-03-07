@@ -54,5 +54,9 @@ class Employee extends Authenticatable {
       public function reportto(){
           return $this->hasMany("App\Models\EmployeeReportTo","employee_id");
       }
+      
+      public function employeereportsto(){
+          return $this->belongsToMany("App\Models\Employee","employee_reports_to","employee_id","report_to");
+      }
 
 }

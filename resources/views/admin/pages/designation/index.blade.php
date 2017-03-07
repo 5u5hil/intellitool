@@ -22,9 +22,9 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Display Name</th>
-                         
+                            <th scope="col">Designation</th>
+                            <th scope="col">Designation Level</th>
+                            <th scope="col">Verticle</th>
                             <th scope="col">Incubation Date</th>
                             <th></th>
 
@@ -35,17 +35,30 @@
                         <tr>
                             <td>{{$dsg->id}}</td>
                             <td> {{ $dsg->name }} </td>
-                            <td>{{ $dsg->display_name }}  </td>
-                     
-                            <td> {{ date("d-M-Y",strtotime($dsg->created_at)) }}</td>
+                            <td>{{ $dsg->designationlevel()->first()->designation }}  </td>
+                            <td>
+                                <?php 
+                                if(!empty($dsg->designationverticles()->get(['verticles.name','verticles.id']))){
+                                    echo "<ul>";
+                                    foreach($dsg->designationverticles()->get(['verticles.name']) as $dverT){
+                                        echo "<li>".$dverT->name."</li>";
+                                    }
+                                    
+                                    echo "</ul>";
+                                    
+                                }
+                                
+                                ?>
+                                
+                            </td>
+
+                            <td> {{ date("d M Y",strtotime($dsg->created_at)) }}</td>
                             <td class="text-center">
                                 <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Designation">
                                     <i class='icon-pencil'></i>
                                 </a> 
-                             
                                 <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Designation">
                                     <i class='icon-magnifier'>
-
                                     </i></a>
                             </td>
                         </tr>

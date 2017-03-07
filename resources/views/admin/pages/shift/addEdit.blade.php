@@ -3,12 +3,12 @@
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Add New Designation Level</h1>
+        <h1>Add New Shift</h1>
         <ol class="breadcrumb">
             <li>
-                <a href="#">Home</a>
+                <a href="{{route('admin.dashboard')}}">Home</a>
             </li>
-            <li class="active">Designation Level </li>
+            <li class="active">Shift</li>
         </ol>
     </div>
 
@@ -19,7 +19,7 @@
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-user"></i>Basic Info </div>
+                        <i class="fa fa-clock-o"></i>Shifts</div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
@@ -43,14 +43,14 @@
                                     <div class="col-md-9">
                                         <div class="md-radio-list">
                                             <div class="md-radio">
-                                                <input type="radio" id="activeYes" name="active" value="1" checked="{{ ($shift->active==1)?'checked':''  }}" class="md-radiobtn">
+                                                <input type="radio" id="activeYes" name="active" value="1" <?= ($shift->active == 1) ? "checked='checked'" : '' ?>   class="md-radiobtn">
                                                 <label for="activeYes">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> Yes</label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="activeNo" checked="{{ ($shift->active==0)?'checked':''  }}"  name="active" value="0" class="md-radiobtn">
+                                                <input type="radio" id="activeNo" <?= ($shift->active == 0) ? 'checked="checked"' : '' ?> name="active" value="0" class="md-radiobtn">
                                                 <label for="activeNo">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
@@ -123,4 +123,47 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('myscripts')
+<script>
+
+    $("#shiftForm").validate({
+        rules: {
+            name: {
+                required: true
+            },
+            starttime: {
+                required: true
+            },
+            endtime: {
+                required: true
+
+            }
+
+
+        },
+        messages: {
+            name: {
+                required: "Name is required"
+            },
+            starttime: {
+                required: "Start Time is required"
+            },
+            endtime: {
+                required: "End Time is required"
+            }
+
+        },
+        errorPlacement: function (error, element) {
+            var name = $(element).attr("name");
+
+            var errorDiv = $(element).parent();
+            errorDiv.append(error);
+            // error.appendTo($("#" + name + "_validate"));
+        }
+
+    });
+
+</script>
 @endsection
