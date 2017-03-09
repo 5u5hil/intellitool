@@ -30,6 +30,9 @@
                             <li>
                                 <a href="#tab_5_3" data-toggle="tab"> Employee Assignment </a>
                             </li>
+                            <li>
+                                <a href="#tab_5_4" data-toggle="tab"> Asset Management</a>
+                            </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_5_1">
@@ -118,10 +121,10 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label class="control-label">Verticals</label>
-                                                 <select class='selectAllOption3' multiple="multiple">
-                                        <option selected value="Option 1">Security</option>
-                                        <option selected value="Option 2">Housekeeping</option>
-                                    </select>
+                                                <select class='selectAllOption3' multiple="multiple">
+                                                    <option selected value="Option 1">Security</option>
+                                                    <option selected value="Option 2">Housekeeping</option>
+                                                </select>
                                             </div>  
                                             <div class="col-md-2">
                                                 <label class="control-label" style="margin-top: 40px;"></label>
@@ -203,60 +206,60 @@
                                                 <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                                     <div class="panel-body">
 
-                                                    <div class="portlet-body">
-                                            <ul id="tree2">
-                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addUsers"></i>
-                                                    <ul>
-                                                        <li>Compound<i class="icon-plus addUsers"></i></li>
-                                                        <li>Gate 1<i class="icon-plus addUsers"></i></li>
-                                                        <li>Gate 2<i class="icon-plus addUsers"></i></li>
-                                                        <li>Gate 3<i class="icon-plus addUsers"></i></li>
-                                                        <li>Wing A<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)
-                                                            <ul>
-                                                                <li>Reception<i class="icon-plus addUsers"></i></li>
-                                                                <li>Ground Floor<i class="icon-plus addUsers"></i>
+                                                        <div class="portlet-body">
+                                                            <ul id="tree2">
+                                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addUsers"></i>
                                                                     <ul>
-                                                                        <li>Shop 001<i class="icon-plus addUsers"></i></li>
-                                                                        <li>Shop 002<i class="icon-plus addUsers"></i></li>
-
-                                                                    </ul>
-
-                                                                </li>
-                                                                <li>First Floor<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Andrew Simons,Aron Linch)
-
-                                                                    <ul>
-                                                                        <li> Office 101<i class="icon-plus addUsers"></i> 
+                                                                        <li>Compound<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Gate 1<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Gate 2<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Gate 3<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing A<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)
                                                                             <ul>
-                                                                                <li>Conference Room<i class="icon-plus addUsers"></i></li>
-                                                                                <li>Toilet<i class="icon-plus addUsers"></i></li>
+                                                                                <li>Reception<i class="icon-plus addUsers"></i></li>
+                                                                                <li>Ground Floor<i class="icon-plus addUsers"></i>
+                                                                                    <ul>
+                                                                                        <li>Shop 001<i class="icon-plus addUsers"></i></li>
+                                                                                        <li>Shop 002<i class="icon-plus addUsers"></i></li>
+
+                                                                                    </ul>
+
+                                                                                </li>
+                                                                                <li>First Floor<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Andrew Simons,Aron Linch)
+
+                                                                                    <ul>
+                                                                                        <li> Office 101<i class="icon-plus addUsers"></i> 
+                                                                                            <ul>
+                                                                                                <li>Conference Room<i class="icon-plus addUsers"></i></li>
+                                                                                                <li>Toilet<i class="icon-plus addUsers"></i></li>
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                        <li>Office 102<i class="icon-plus addUsers"></i></li>
+                                                                                        <li>Corridor<i class="icon-plus addUsers"></i></li>
+                                                                                        <li>General Men's Toilet<i class="icon-plus addUsers"></i></li>
+                                                                                        <li>General Women's Toilet<i class="icon-plus addUsers"></i></li>
+                                                                                    </ul>
+
+                                                                                </li>
+                                                                                <li>Second Floor<i class="icon-plus addUsers"></i></li>
+                                                                                <li>Third Floor<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Rob Daniel,Ricky Trek,Bray Wayatt)</li>
+                                                                                <li>Fouth Floor<i class="icon-plus addUsers"></i></li>
                                                                             </ul>
+
                                                                         </li>
-                                                                        <li>Office 102<i class="icon-plus addUsers"></i></li>
-                                                                        <li>Corridor<i class="icon-plus addUsers"></i></li>
-                                                                        <li>General Men's Toilet<i class="icon-plus addUsers"></i></li>
-                                                                        <li>General Women's Toilet<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing B<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing C<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing D<i class="icon-plus addUsers"></i></li>
+
                                                                     </ul>
-
                                                                 </li>
-                                                                <li>Second Floor<i class="icon-plus addUsers"></i></li>
-                                                                <li>Third Floor<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Rob Daniel,Ricky Trek,Bray Wayatt)</li>
-                                                                <li>Fouth Floor<i class="icon-plus addUsers"></i></li>
+
                                                             </ul>
-
-                                                        </li>
-                                                        <li>Wing B<i class="icon-plus addUsers"></i></li>
-                                                        <li>Wing C<i class="icon-plus addUsers"></i></li>
-                                                        <li>Wing D<i class="icon-plus addUsers"></i></li>
-
-                                                    </ul>
-                                                </li>
-
-                                            </ul>
-                                        </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                               
+
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <h4 class="panel-title">
@@ -266,27 +269,132 @@
                                                 <div id="collapse_3" class="panel-collapse in" >
                                                     <div class="panel-body">
                                                         <div class="form-body">
-                                                                            <ul id="tree3">
-                                                            <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addUsers"></i>
-                                                                <ul>
-                                                                    <li>Compound<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Sin Cara,Roman Reign)</li>
-                                                                    <li>Gate 1<i class="icon-plus addUsers"></i></li>
-                                                                    <li>Gate 2<i class="icon-plus addUsers"></i></li>
-                                                                    <li>Gate 3<i class="icon-plus addUsers"></i></li>
-                                                                    <li>Wing A<i class="icon-plus addUsers"></i>
-                                                                        <ul>
-                                                                            <li>Reception<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)</li>
-                                                                        </ul>
+                                                            <ul id="tree3">
+                                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addUsers"></i>
+                                                                    <ul>
+                                                                        <li>Compound<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Sin Cara,Roman Reign)</li>
+                                                                        <li>Gate 1<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Gate 2<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Gate 3<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing A<i class="icon-plus addUsers"></i>
+                                                                            <ul>
+                                                                                <li>Reception<i class="icon-plus addUsers"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)</li>
+                                                                            </ul>
 
-                                                                    </li>
-                                                                    <li>Wing B<i class="icon-plus addUsers"></i></li>
-                                                                    <li>Wing C<i class="icon-plus addUsers"></i></li>
-                                                                    <li>Wing D<i class="icon-plus addUsers"></i></li>
+                                                                        </li>
+                                                                        <li>Wing B<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing C<i class="icon-plus addUsers"></i></li>
+                                                                        <li>Wing D<i class="icon-plus addUsers"></i></li>
 
-                                                                </ul>
-                                                            </li>
+                                                                    </ul>
+                                                                </li>
 
-                                                        </ul>
+                                                            </ul>
+                                                        </div> </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_5_4">
+                                <div class="portlet-body">
+                                    <div class="portlet-body form">
+                                        <div class="panel-group accordion" id="accordion1">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4" aria-expanded="false"> Housekeeping </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapse_4" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                    <div class="panel-body">
+
+                                                        <div class="portlet-body">
+                                                            <ul id="tree5">
+                                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addAsset"></i>
+                                                                    <ul>
+                                                                        <li>Compound<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Gate 1<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Gate 2<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Gate 3<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Wing A<i class="icon-plus addAsset"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)
+                                                                            <ul>
+                                                                                <li>Reception<i class="icon-plus addAsset"></i></li>
+                                                                                <li>Ground Floor<i class="icon-plus addAsset"></i>
+                                                                                    <ul>
+                                                                                        <li>Shop 001<i class="icon-plus addAsset"></i></li>
+                                                                                        <li>Shop 002<i class="icon-plus addAsset"></i></li>
+
+                                                                                    </ul>
+
+                                                                                </li>
+                                                                                <li>First Floor<i class="icon-plus addAsset"></i><i class="icon-pencil"></i>(Andrew Simons,Aron Linch)
+
+                                                                                    <ul>
+                                                                                        <li> Office 101<i class="icon-plus addUsers"></i> 
+                                                                                            <ul>
+                                                                                                <li>Conference Room<i class="icon-plus addAsset"></i></li>
+                                                                                                <li>Toilet<i class="icon-plus addAsset"></i></li>
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                        <li>Office 102<i class="icon-plus addAsset"></i></li>
+                                                                                        <li>Corridor<i class="icon-plus addAsset"></i></li>
+                                                                                        <li>General Men's Toilet<i class="icon-plus addAsset"></i></li>
+                                                                                        <li>General Women's Toilet<i class="icon-plus addAsset"></i></li>
+                                                                                    </ul>
+
+                                                                                </li>
+                                                                                <li>Second Floor<i class="icon-plus addAsset"></i></li>
+                                                                                <li>Third Floor<i class="icon-plus addAsset"></i><i class="icon-pencil"></i>(Rob Daniel,Ricky Trek,Bray Wayatt)</li>
+                                                                                <li>Fouth Floor<i class="icon-plus addAsset"></i></li>
+                                                                            </ul>
+
+                                                                        </li>
+                                                                        <li>Wing B<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Wing C<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Wing D<i class="icon-plus addAsset"></i></li>
+
+                                                                    </ul>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5" aria-expanded="false">Engineering & Machinery </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapse_5" class="panel-collapse in" >
+                                                    <div class="panel-body">
+                                                        <div class="form-body">
+                                                            <ul id="tree6">
+                                                                <li><a href="#">Neelkanth Business Park</a><i class="icon-plus addAsset"></i>
+                                                                    <ul>
+                                                                        <li>Compound<i class="icon-plus addAsset"></i><i class="icon-pencil"></i>(Sin Cara,Roman Reign)</li>
+                                                                        <li>Gate 1<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Gate 2<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Gate 3<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Wing A<i class="icon-plus addAsset"></i>
+                                                                            <ul>
+                                                                                <li>Reception<i class="icon-plus addAsset"></i><i class="icon-pencil"></i>(Carlos Henry,Kane Williamson,Harley Manson)</li>
+                                                                            </ul>
+
+                                                                        </li>
+                                                                        <li>Wing B<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Wing C<i class="icon-plus addAsset"></i></li>
+                                                                        <li>Wing D<i class="icon-plus addAsset"></i></li>
+
+                                                                    </ul>
+                                                                </li>
+
+                                                            </ul>
                                                         </div> </div>
                                                 </div>
                                             </div>
@@ -319,98 +427,115 @@
                 <h4 class="modal-title"> Employee Assignment </h4>
             </div>
             <!-- dialog body -->
-            <div class="modal-body col-md-12">
-               <div class="input-group control-group after-add-more col-md-12"> 
-                <div class="form-group col-md-4">
-                    <label class="control-label">Shift</label>
-                    <div class="input-group col-md-12"> 
-                        <select class='selectAllOption3' multiple="multiple">
-                            <option value="shift-a">Shift A</option>
-                            <option value="shift-b">Shift B</option>
-                            <option value="shift-c">Shift C</option>
-                            <option value="shift-d">Shift D</option>
-                            <option value="shift-e">Shift E</option>
-                        </select>
+            <div class="modal-body">
+                <div class="input-group control-group after-add-more col-md-12"> 
+                    <div class="form-group">
+                    <div class="col-md-4">
+                        <label class="control-label">Shift</label>
+                        <div class="input-group col-md-12"> 
+                            <select class='form-control'>
+                                <option value="shift-a">Shift A</option>
+                                <option value="shift-b">Shift B</option>
+                                <option value="shift-c">Shift C</option>
+                                <option value="shift-d">Shift D</option>
+                                <option value="shift-e">Shift E</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label class="control-label">Select Role</label>
-                    <div class="input-group col-md-12"> 
-                        <select class='selectAllOption3' multiple="multiple">
-                            <option value="Accord">Neelkanth Business Park</option>
-                            <option value="Duster">- Compound</option>
-                            <option value="Esteem">-- Gate 1</option>
-                            <option value="Fiero">--- Gate 2</option>
-                            <option value="Fiero">---- Gate 3</option>
-                        </select>
+                    <div class="col-md-4">
+                        <label class="control-label">Select Role</label>
+                        <div class="input-group col-md-12"> 
+                            <select class='selectAllOption3' multiple="multiple">
+                                <option value="Accord">Supervisor</option>
+                                <option value="Duster">Administrator</option>
+                                <option value="Esteem">Janitor</option>
+                                <option value="Fiero">Senior Supervisor</option>
+                                <!--                            <option value="Fiero"></option>-->
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label class="control-label">Assign Employee</label>
-                    <div class="input-group col-md-12">             
-                        <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
-                            <optgroup label="Housekeeping">
-                                <option value="1-1">Option 1.1</option>
-                                <option value="1-2">Option 1.2</option>
-                                <option value="1-3">Option 1.3</option>
-                            </optgroup>
-                            <optgroup label="Security">
-                                <option value="2-1">Option 2.1</option>
-                                <option value="2-2">Option 2.2</option>
-                                <option value="2-3">Option 2.3</option>
-                            </optgroup>
-                        </select>
+                    <div class="col-md-3">
+                        <label class="control-label">Assign Employee</label>
+                        <div class="input-group col-md-12">             
+                            <select class="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
+                                <optgroup label="Senior Supervisor">
+                                    <option value="1-1">John</option>
+                                    <option value="1-2">Smith</option>
+                                    <option value="1-3">Bhavana</option>
+                                </optgroup>
+                                <optgroup label="Supervisor">
+                                    <option value="2-1">Leena</option>
+                                    <option value="2-2">Sushil</option>
+                                    <option value="2-3">Sachin</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>                     
+                    <div class="col-md-1">
+                    <label></label>
+                        <button href="#" class="btn btn-danger pull-right remove" style="margin-top: 25px;">
+                            <i class="fa fa-trash"></i>
+                        </button>
                     </div>
-                </div> 
-               </div>   
+                    </div>
+                </div>   
                 <div class="copy hide">
-                    <div class="form-group col-md-4">
-                    <label class="control-label">Shift</label>
-                    <div class="input-group col-md-12"> 
-                        <select class='selectAllOption3' multiple="multiple">
-                            <option value="shift-a">Shift A</option>
-                            <option value="shift-b">Shift B</option>
-                            <option value="shift-c">Shift C</option>
-                            <option value="shift-d">Shift D</option>
-                            <option value="shift-e">Shift E</option>
-                        </select>
+                    <div class="form-group">
+                    <div class="col-md-4">
+                        <label class="control-label">Shift</label>
+                        <div class="input-group col-md-12"> 
+                            <select class='form-control' >
+                                <option value="shift-a">Shift A</option>
+                                <option value="shift-b">Shift B</option>
+                                <option value="shift-c">Shift C</option>
+                                <option value="shift-d">Shift D</option>
+                                <option value="shift-e">Shift E</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label class="control-label">Select Role</label>
-                    <div class="input-group col-md-12"> 
-                        <select class='selectAllOption3' multiple="multiple">
-                            <option value="Accord">Neelkanth Business Park</option>
-                            <option value="Duster">- Compound</option>
-                            <option value="Esteem">-- Gate 1</option>
-                            <option value="Fiero">--- Gate 2</option>
-                            <option value="Fiero">---- Gate 3</option>
-                        </select>
+                    <div class="col-md-4">
+                        <label class="control-label">Select Role</label>
+                        <div class="input-group col-md-12"> 
+                            <select class='selectAllOption3' multiple="multiple">
+                                <option value="Accord">Supervisor</option>
+                                <option value="Duster">Administrator</option>
+                                <option value="Esteem">Janitor</option>
+                                <option value="Fiero">Senior Supervisor</option>
+                                <!--                            <option value="Fiero"></option>-->
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label class="control-label">Assign Employee</label>
-                    <div class="input-group col-md-12">             
-                        <select id="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
-                            <optgroup label="Housekeeping">
-                                <option value="1-1">Option 1.1</option>
-                                <option value="1-2">Option 1.2</option>
-                                <option value="1-3">Option 1.3</option>
-                            </optgroup>
-                            <optgroup label="Security">
-                                <option value="2-1">Option 2.1</option>
-                                <option value="2-2">Option 2.2</option>
-                                <option value="2-3">Option 2.3</option>
-                            </optgroup>
-                        </select>
+                    <div class="col-md-3">
+                        <label class="control-label">Assign Employee</label>
+                        <div class="input-group col-md-12">             
+                            <select class="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
+                                <optgroup label="Senior Supervisor">
+                                    <option value="1-1">John</option>
+                                    <option value="1-2">Smith</option>
+                                    <option value="1-3">Bhavana</option>
+                                </optgroup>
+                                <optgroup label="Supervisor">
+                                    <option value="2-1">Leena</option>
+                                    <option value="2-2">Sushil</option>
+                                    <option value="2-3">Sachin</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>                     
+                    <div class="col-md-1">
+                    <label></label>
+                        <button href="#" class="btn btn-danger pull-right remove" style="margin-top: 25px;">
+                            <i class="fa fa-trash"></i>
+                        </button>
                     </div>
-                </div> 
-               </div> 
-               <div class="input-group-btn col-md-12"> 
-                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                    </div>
                 </div> 
             </div>
-           <div class="col-md-12"> <hr></div>
+
+                <div class="form-group input-group-btn" style="padding:10px 30px;"> 
+                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                </div> 
+            
             <!-- dialog buttons -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary ">Assign</button>
@@ -419,5 +544,64 @@
         </div>
     </div>
 </div>
+
+
+
+<div id="assetModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Assign Asset </h4>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body col-md-12">
+                <div class="input-group control-group  col-md-12"> 
+                      <div class="form-group col-md-6">
+                        <label class="control-label">Asset Category</label>
+                        <div class="input-group col-md-12"> 
+                            <select class='selectAllOption3' multiple="multiple">
+                                <option value="Accord">Electricals</option>
+                                <option value="Duster">Air Conditioners</option>
+                                <option value="Esteem">PHE</option>
+                                <option value="Fiero">HAVC</option>
+                                <!--                            <option value="Fiero"></option>-->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label"> Asset</label>
+                        <div class="input-group col-md-12">           
+                            <select class="example-optgroup-buttonText" style="width: 100%;" multiple="multiple">
+                                <optgroup label="Electricals">
+                                    <option value="1-1">Vacuum Cleaner</option>
+                                    <option value="1-2">Polishing Machine</option>
+                                    <option value="1-3">Vapor Cleaning Machine</option>
+                                </optgroup>
+                                <optgroup label="Air Conditioners">
+                                    <option value="2-1">AC</option>
+                                    <option value="2-2">Equipment1</option>
+                                    <option value="2-3">Equipment2</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>   
+               
+<!--                <div class="input-group-btn col-md-12"> 
+                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                </div> -->
+            </div>
+            <div class="col-md-12"> <hr></div>
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ">Assign</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 

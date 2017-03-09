@@ -1,0 +1,215 @@
+@extends(config('constants.adminLayouts').'.default')
+@section('content')
+<div class="page-content">
+    <!-- BEGIN BREADCRUMBS -->
+    <div class="breadcrumbs">
+        <h1>Add New Asset</h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="{{route('admin.dashboard')}}">Home</a>
+            </li>
+            <li class="active">Asset</li>
+        </ol>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-clock-o"></i>Asset</div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"> </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <!--                    Form::model($shift, ['route' => 'admin.shift.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) -->
+                    {{ Form::open(['class'=>'repeater form-horizontal']) }}
+                    {{ Form::hidden("id",null) }}
+
+                    <div class="form-body">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Machine Name</label>
+                                {{Form::text('machine_name',  null, ['class'=>'form-control',"placeholder"=>"Machine Name"]) }}
+                            </div>	
+
+                            <div class="col-md-4">
+                                <label>Asset Category</label>
+                                {{Form::select('asset_category',[""=>"Please Select","1"=>"Electrical","2"=>"Air Conditioner","3"=>"PHE"] , null, ['class'=>'form-control']) }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Vertical</label>
+                                {{Form::select('verticals',[""=>"Please Select","1"=>"House Keeping","2"=>"Food","3"=>"Security"] , null, ['class'=>'form-control']) }}
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Model</label>
+                                {{Form::text('modle',  null, ['class'=>'form-control']) }}
+                            </div>	
+
+                            <div class="col-md-4">
+                                <label>Serial Number</label>
+                                {{Form::text('serial_number',  null, ['class'=>'form-control']) }}
+                            </div>	
+
+
+                            <div class="col-md-4">
+                                <label>Description</label>
+                                {{Form::text('description',  null, ['class'=>'form-control']) }}
+                            </div>	
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-md-4">
+                                <label>Make</label>
+                                {{Form::select('make', [""=>"Please Select",'0'=>"make1",'1'=>'make2','3'=>'make3'], null, ['class'=>'form-control']) }}
+                            </div>
+                            <div class="col-md-4">
+                                <label>Installation Date</label>
+                                <div class='input-group date'>
+                                    {{Form::text('installation_date',  null, ['class'=>'form-control','id'=>"datepicker"]) }}
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>                            </div>	
+
+
+                            <div class="col-md-4">
+                                <label>Warranty Upto</label>
+                                <div class='input-group date'>
+                                    {{Form::text('warranty_upto',  null, ['class'=>'form-control','id'=>"datepicker"]) }}
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>	
+                        </div>
+
+                        <div class="form-group">
+
+
+                            <div class="col-md-4">
+                                <label> AMC Start Date</label>
+                                <div class='input-group date'>
+                                    {{Form::text('amc_start_date',  null, ['class'=>'form-control','id'=>"datepicker"]) }}
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>	
+
+                            <div class="col-md-4">
+                                <label> AMC End Date</label>
+                                <div class='input-group date'>
+                                    {{Form::text('amc_end_date',  null, ['class'=>'form-control','id'=>"datepicker"]) }}
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>	
+
+                            <div class="col-md-4">
+                                <label> AMC Vendor</label>
+                                <div class='input-group date'>
+                                    {{Form::text('amc_vendor',  null, ['class'=>'form-control','id'=>"datepicker"]) }}
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>                            </div>	
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <label>Installation Location</label>
+                                {{Form::text('installation_location',  null, ['class'=>'form-control']) }}
+                            </div>	
+
+
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <button type="submit" class="btn green">Submit</button>
+                                <a href="{{route('admin.shift.list')}}" class="btn default">Cancel</a>
+                            </div>
+                        </div>
+
+
+
+                    </div>	
+                    <!-- END FORM-->
+
+                    {{ Form::close() }}
+
+
+
+
+
+                </div>
+
+
+            </div>	
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('myscripts')
+<script>
+
+    $("#shiftForm").validate({
+        rules: {
+            name: {
+                required: true
+            },
+            starttime: {
+                required: true
+            },
+            endtime: {
+                required: true
+
+            }
+
+
+        },
+        messages: {
+            name: {
+                required: "Name is required"
+            },
+            starttime: {
+                required: "Start Time is required"
+            },
+            endtime: {
+                required: "End Time is required"
+            }
+
+        },
+        errorPlacement: function (error, element) {
+            var name = $(element).attr("name");
+
+            var errorDiv = $(element).parent();
+            errorDiv.append(error);
+            // error.appendTo($("#" + name + "_validate"));
+        }
+
+    });
+
+</script>
+@endsection

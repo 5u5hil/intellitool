@@ -233,7 +233,7 @@
                                     <i class="icon-settings"></i> Schedule Planning </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('admin.schedule.plan.add') }}"> Add New Plan</a>
+                                        <a href="{{ route('admin.schedule.plan.add/edit') }}"> Add New Plan</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('admin.schedule.plan.list') }}"> All Plans </a>
@@ -275,10 +275,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list|admin.designation.level.add\/edit|admin.shift.list|admin.shift.add\/edit)/',\Route::currentRouteName())?'active open selected':''}} ">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled {{preg_match('/(admin.designation.level.list|admin.designation.level.add\/edit|admin.shift.list|admin.shift.add\/edit|admin.asset.category.list|admin.asset.list|admin.asset.add\/edit|admin.asset.category.add\/edit|admin.activity.add\/edit|admin.activity.list|admin.vendor.list|admin.vendor.add\/edit)/',\Route::currentRouteName())?'active open selected':''}} ">
                         <a href="javascript:;" class="text-uppercase">
                             <i class="icon-layers"></i> Masters </a>
-                        <ul class="dropdown-menu dropdown-menu-fw"   style="{{preg_match('/(admin.designation.level.list|admin.designation.level.add\/edit|admin.shift.list|admin.shift.add\/edit)/',\Route::currentRouteName())?'display:block':''}}">
+                        <ul class="dropdown-menu dropdown-menu-fw"   style="{{preg_match('/(admin.designation.level.list|admin.designation.level.add\/edit|admin.shift.list|admin.shift.add\/edit|admin.asset.category.list|admin.asset.list|admin.asset.add\/edit|admin.asset.category.add\/edit|admin.activity.add\/edit|admin.activity.list|admin.vendor.list|admin.vendor.add\/edit)/',\Route::currentRouteName())?'display:block':''}}">
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
                                     <i class="icon-home"></i> House Keeping </a>
@@ -338,20 +338,20 @@
                             </li>
                             <li class="dropdown more-dropdown-sub">
                                 <a href="javascript:;">
-                                    <i class=" icon-cup"></i> Pantry </a>
+                                    <i class="icon-cup"></i> Food </a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="ecommerce_index.html">
-                                            <i class="icon-home"></i> Security </a>
+                                            <i class=""></i> Food Categories</a>
                                     </li>
                                     <li>
                                         <a href="ecommerce_orders.html">
-                                            <i class="icon-basket"></i> Machinery & Engineering </a>
+                                            <i class=""></i>Food Items </a>
                                     </li>
-                                    <li>
+<!--                                    <li>
                                         <a href="ecommerce_orders_view.html">
                                             <i class="icon-tag"></i> Pantry </a>
-                                    </li>
+                                    </li>-->
 
                                 </ul>
                             </li>
@@ -367,6 +367,25 @@
                                     <li>
                                         <a href="{{route('admin.shift.list')}}">
                                             <i class=""></i> Shifts  </a>
+                                    </li>
+                                       <li>
+                                        <a href="{{route('admin.asset.category.list')}}">
+                                            <i class=""></i> Asset Categories </a>
+                                    </li>
+
+
+                                       <li>
+                                        <a href="{{route('admin.asset.list')}}">
+                                            <i class=""></i> Assets </a>
+                                    </li>
+
+                                       <li>
+                                        <a href="{{route('admin.activity.list')}}">
+                                            <i class=""></i> Activities </a>
+                                    </li>
+                                                                  <li>
+                                        <a href="{{route('admin.vendor.list')}}">
+                                            <i class=""></i> Vendors </a>
                                     </li>
 
 

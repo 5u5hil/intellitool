@@ -14,6 +14,6 @@ class SchedulePlanController extends Controller
     }
     
     public function add(){
-        return view(config('constants.adminPages').'.schedule-plan.add');
+        return view(config('constants.adminPages').'.schedule-plan.addEdit');
     }
 }

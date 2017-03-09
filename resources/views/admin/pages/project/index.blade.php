@@ -39,7 +39,15 @@
                             <td> Yes</td>
                             <td> Mumbai </td>
                             <td> Housekeeping </td>
-                            <td class="text-center"><a href="{{route('admin.project.edit')}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Project"><i class='icon-pencil'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Schedule"><i class='icon-plus'></i></a> <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Project Details"><i class='icon-magnifier'></i></a> </td>
+                            <td class="text-center">
+                                <a href="{{route('admin.project.edit')}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Project"><i class='icon-pencil'></i></a> 
+                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Schedule">
+                                    <i class='icon-plus'></i>
+                                </a> 
+                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Project Details">
+                                        <i class='icon-magnifier'></i>
+                                </a> 
+                            </td>
                         </tr>
 
                     </tbody>

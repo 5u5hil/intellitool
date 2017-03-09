@@ -93,14 +93,14 @@ $(function () {
 });
 </script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#selectAllOption').multiselect({
             includeSelectAllOption: false,
             buttonWidth: '100%',
             //allSelectedText: 'No option left ...'
         });
     });
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#selectAllOption1').multiselect({
             includeSelectAllOption: false,
             buttonWidth: '100%',
@@ -117,48 +117,48 @@ $(function () {
             //allSelectedText: 'No option left ...'
         });
     });
-    $(document).ready(function() {
-        $('#example-optgroup-buttonText').multiselect({
+    $(document).ready(function () {
+        $('.example-optgroup-buttonText').multiselect({
             buttonWidth: '100%',
-            buttonText: function(options, select) {
-                
+            buttonText: function (options, select) {
+
                 // First consider the simple cases, i.e. disabled and empty.
                 if (this.disabledText.length > 0
                         && (this.disableIfEmpty || select.prop('disabled'))
                         && options.length == 0) {
- 
+
                     return this.disabledText;
                 }
                 else if (options.length === 0) {
                     return this.nonSelectedText;
                 }
- 
+
                 var $select = $(select);
                 var $optgroups = $('optgroup', $select);
- 
+
                 var delimiter = this.delimiterText;
                 var text = '';
- 
+
                 // Go through groups.
-                $optgroups.each(function() {
+                $optgroups.each(function () {
                     var $selectedOptions = $('option:selected', this);
                     var $options = $('option', this);
- 
+
                     if ($selectedOptions.length == $options.length) {
                         text += $(this).attr('label') + delimiter;
                     }
                     else {
-                        $selectedOptions.each(function() {
+                        $selectedOptions.each(function () {
                             text += $(this).text() + delimiter;
                         });
                     }
                 });
- 
+
                 var $remainingOptions = $('option:selected', $select).not('optgroup option');
-                $remainingOptions.each(function() {
+                $remainingOptions.each(function () {
                     text += $(this).text() + delimiter;
                 });
- 
+
                 return text.substr(0, text.length - 2);
             }
         });
@@ -226,6 +226,8 @@ $(function () {
     $('#tree2').treed();
     $('#tree3').treed();
     $('#tree4').treed();
+    $('#tree5').treed();
+    $('#tree6').treed();
     $('#tree1 .branch').each(function () {
         var icon = $(this).children('i:first');
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
@@ -247,6 +249,18 @@ $(function () {
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
         $(this).children().children().show();
     });
+
+    $('#tree5 .branch').each(function () {
+        var icon = $(this).children('i:first');
+        icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+        $(this).children().children().show();
+    });
+    $('#tree6 .branch').each(function () {
+        var icon = $(this).children('i:first');
+        icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+        $(this).children().children().show();
+    });
+
 </script>
 
 <script>
@@ -269,28 +283,43 @@ $(function () {
             "keyboard": true,
             "show": true                     // ensure the modal is shown immediately
         });
+    });
+    $(document).on('click', '.addAsset', function () {
+        $("#assetModal").modal({// wire up the actual modal functionality and show the dialog
+            "backdrop": "static",
+            "keyboard": true,
+            "show": true                     // ensure the modal is shown immediately
+        });
     })
+
 </script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-      $(".add-more").click(function(){ 
-          var html = $(".copy").html();
-          $(".after-add-more").after(html);
-      });
-      $(document).on("click",".remove",function(){ 
-          $(this).parents(".form-group").remove();
-      });
+    $(document).ready(function () {
+        $(".add-more").click(function () {
+            var html = $(".copy").html();
+            $(".after-add-more").after(html);
+        });
+        $(document).on("click", ".remove", function () {
+            $(this).parents(".form-group").remove();
+        });
+
+        $(".add-more-asset").click(function () {
+            var html = $(".copyasset").html();
+            $(".after-add-more-asset").after(html);
+        });
+
+
     });
 
-    $(document).ready(function() {
-      $(".add-more1").click(function(){ 
-          var html = $(".copy1").html();
-          $(".after-add-more1").after(html);
-      });
-      $("body").on("click",".remove1",function(){ 
-          $(this).parents(".form-group").remove();
-      });
+    $(document).ready(function () {
+        $(".add-more1").click(function () {
+            var html = $(".copy1").html();
+            $(".after-add-more1").after(html);
+        });
+        $("body").on("click", ".remove1", function () {
+            $(this).parents(".form-group").remove();
+        });
     });
 
 

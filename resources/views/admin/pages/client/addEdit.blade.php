@@ -94,7 +94,8 @@
                                                         <div class="col-md-4">
                                                             <label>Coordinator Name</label>
                                                             <input type="text" class="form-control" placeholder="Coordinator Name">
-                                                        </div>	<div class="col-md-4">
+                                                        </div>	
+                                                        <div class="col-md-4">
                                                             <label>Coordinator Email</label>
                                                             <input type="text" class="form-control" placeholder="Coordinator Email">
                                                         </div>

@@ -35,7 +35,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::group(['prefix' => 'schedule-plan'], function () {
         Route::get('/', 'SchedulePlanController@index')->name('admin.schedule.plan.list');
-        Route::get('/add', 'SchedulePlanController@add')->name('admin.schedule.plan.add');
+        Route::get('/add/edit', 'SchedulePlanController@add')->name('admin.schedule.plan.add/edit');
     });
 
     Route::group(['prefix' => 'schedule'], function () {
@@ -64,7 +64,28 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/add/edit', 'ShiftController@addEdit')->name('admin.shift.add/edit');
         Route::post('/save/update', 'ShiftController@saveUpdate')->name('admin.shift.save/update');
     });
+    
+         Route::group(['prefix' => 'asset-category'], function () {
+        Route::get('/', 'AssetCategoryController@index')->name('admin.asset.category.list');
+        Route::get('/add/edit', 'AssetCategoryController@addEdit')->name('admin.asset.category.add/edit');
+    });
 
+      Route::group(['prefix' => 'asset'], function () {
+        Route::get('/', 'AssetController@index')->name('admin.asset.list');
+        Route::get('/add/edit', 'AssetController@addEdit')->name('admin.asset.add/edit');
+    });
+
+      Route::group(['prefix' => 'activity'], function () {
+        Route::get('/', 'ActivityController@index')->name('admin.activity.list');
+        Route::get('/add/edit', 'ActivityController@addEdit')->name('admin.activity.add/edit');
+    });
+
+    
+    
+      Route::group(['prefix' => 'vendor'], function () {
+        Route::get('/', 'VendorController@index')->name('admin.vendor.list');
+        Route::get('/add/edit', 'VendorController@addEdit')->name('admin.vendor.add/edit');
+    });
     Route::group(['prefix' => 'employee-management'], function () {
         Route::group(['prefix' => 'role'], function () {
             
