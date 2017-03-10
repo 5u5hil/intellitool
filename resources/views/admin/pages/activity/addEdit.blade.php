@@ -44,11 +44,11 @@
                                 {{Form::select('verticals',[""=>"Please Select","1"=>"House Keeping","2"=>"Food","3"=>"Security"] , null, ['class'=>'form-control','id'=>"selectAllOption",'multiple'=>'multiple']) }}
                             </div>
                             
-                                      <div class="col-md-4">
-                                <div class="form-group form-md-radios">
-                                    <label class="col-md-3 control-label" for="form_control_1">Active</label>
+                            <div class="col-md-4">
+                                <div class="form-group form-md-radios top15">
+                                    <label class="col-md-2 control-label" for="form_control_1">Active</label>
                                     <div class="col-md-9">
-                                        <div class="md-radio-list">
+                                        <div class="md-radio-inline">
                                             <div class="md-radio">
                                                 <input type="radio" id="activeYes" name="active" value="1"   class="md-radiobtn">
                                                 <label for="activeYes">

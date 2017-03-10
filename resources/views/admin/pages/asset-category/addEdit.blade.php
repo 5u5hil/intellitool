@@ -33,15 +33,15 @@
                         <div class="form-group">
                             <div class="col-md-6">
                                 <label>Name</label>
-                                {{Form::text('name',  null, ['class'=>'form-control']) }}
+                                {{Form::text('name',  null, ['class'=>'form-control',"placeholder"=>"Name"]) }}
                                 <div class="error">{{ $errors->first('name') }}</div>
                             </div>	
 
                             <div class="col-md-6">
-                                <div class="form-group form-md-radios">
-                                    <label class="col-md-3 control-label" for="form_control_1">Active</label>
+                                <div class="form-group form-md-radios top15">
+                                    <label class="col-md-1 control-label" for="form_control_1">Active</label>
                                     <div class="col-md-9">
-                                        <div class="md-radio-list">
+                                        <div class="md-radio-inline">
                                             <div class="md-radio">
                                                 <input type="radio" id="activeYes" name="active" value="1"   class="md-radiobtn">
                                                 <label for="activeYes">

@@ -30,14 +30,14 @@
                     {{csrf_field()}}
                     <div class="form-body">
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label>Designation Level</label>
-                                {{Form::text('designation',  null, ['class'=>'form-control']) }}
+                                {{Form::text('designation',  null, ['class'=>'form-control',"placeholder"=>"Designation Level"]) }}
                             </div>	
 
                         </div>
                         <div class="form-group">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <button type="submit" class="btn green">Submit</button>
                                 <a href="<?= route('admin.designation.level.list') ?>" class="btn default">Cancel</a>
                             </div>

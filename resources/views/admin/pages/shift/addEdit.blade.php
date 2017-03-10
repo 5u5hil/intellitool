@@ -33,15 +33,15 @@
                         <div class="form-group">
                             <div class="col-md-6">
                                 <label>Name</label>
-                                {{Form::text('name',  null, ['class'=>'form-control']) }}
+                                {{Form::text('name',  null, ['class'=>'form-control',"placeholder"=>"Name"]) }}
                                 <div class="error">{{ $errors->first('name') }}</div>
                             </div>	
 
                             <div class="col-md-6">
-                                <div class="form-group form-md-radios">
-                                    <label class="col-md-3 control-label" for="form_control_1">Active</label>
+                                <div class="form-group form-md-radios top15">
+                                    <label class="col-md-1 control-label" for="form_control_1">Active</label>
                                     <div class="col-md-9">
-                                        <div class="md-radio-list">
+                                        <div class="md-radio-inline">
                                             <div class="md-radio">
                                                 <input type="radio" id="activeYes" name="active" value="1" <?= ($shift->active == 1) ? "checked='checked'" : '' ?>   class="md-radiobtn">
                                                 <label for="activeYes">
@@ -56,21 +56,19 @@
                                                     <span class="check"></span>
                                                     <span class="box"></span> No </label>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6">
 
-                                <label class="control-label">Start Time</label>
+                                <label>Start Time</label>
 
                                 <div class="input-icon">
                                     <i class="fa fa-clock-o"></i>
-                                    <input type="text" class="form-control timepicker timepicker-default" value="{{ $shift->starttime or null}}" name='starttime'>
+                                    <input type="text" class="form-control timepicker timepicker-default" placeholder="Start Time" value="{{ $shift->starttime or null}}" name='starttime'>
                                 </div>
 
                                 <div class="error">{{ $errors->first('starttime') }}</div>
@@ -79,11 +77,11 @@
 
                             <div class="col-md-6">
 
-                                <label class="control-label">End Time</label>
+                                <label>End Time</label>
 
                                 <div class="input-icon">
                                     <i class="fa fa-clock-o"></i>
-                                    <input type="text" value="{{ $shift->endtime or null}}" class="form-control timepicker timepicker-default" name='endtime' > </div>
+                                    <input type="text" placeholder="End Time" value="{{ $shift->endtime or null}}" class="form-control timepicker timepicker-default" name='endtime' > </div>
 
                                 <div class="error">{{ $errors->first('endtime') }}</div>
 
