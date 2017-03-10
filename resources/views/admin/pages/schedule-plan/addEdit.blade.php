@@ -15,146 +15,408 @@
 
 
     <div class="row">
-        <div class="col-md-12">
-            <form action="#" class="repeater form-horizontal">
-                <div class="portlet box green">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-user"></i>General Information</div>
-                        <div class="tools">
-                            <a href="javascript:;" class="collapse"> </a>
-                        </div>
-                    </div>
-                    <div class="portlet-body form">
-                        <!-- BEGIN FORM-->
-                        <div class="form-body">
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <label class="control-label">Shift</label>
-                                    <div class="input-group col-md-12"> 
-                                        <select class='form-control' >
-                                            <option value="shift-a">Shift A</option>
-                                            <option value="shift-b">Shift B</option>
-                                            <option value="shift-c">Shift C</option>
-                                            <option value="shift-d">Shift D</option>
-                                            <option value="shift-e">Shift E</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-6"> 
-                                    {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
-                                    {{Form::select('verticle_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
 
-                                </div>
+        <div class="page-content-row">
+
+            <!-- END PAGE SIDEBAR -->
+            <div class="page-content-col">
+
+                <form action="#" class="repeater form-horizontal">
+
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-info-circle"></i>General Information</div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse"> </a>
                             </div>
-
-                        </div>	
-                        <!-- END FORM-->
-                    </div>
-                </div>	
-
-                <div class="portlet box green">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-clock"></i>Schedule </div>
-                        <div class="tools">
-                            <a href="javascript:;" class="collapse"> </a>
                         </div>
-                    </div>
-                    <div class="portlet-body form">
-                        <!-- BEGIN FORM-->
-                        <div class="form-body">
-                            <div class="mt-repeater">
-                                <div data-repeater-list="group-c">
-                                    <div data-repeater-item class="mt-repeater-item">
-                                        <div class="row mt-repeater-row">
-                                            <div class="col-md-12">
-                                                <div class="input-group control-group after-add-more col-md-12">
-                                                    <div class="form-group">
-                                                        <div class="col-md-6">
-                                                            <label>File Upload</label>
-                                                            <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
-                                                                <div class="input-group">
-                                                                    <div class="form-control input-fixed" data-trigger="fileinput">
-                                                                        <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                                                        <span class="fileinput-filename"> </span>
-                                                                    </div>
-                                                                    <span class="input-group-addon btn default btn-file">
-                                                                        <span class="fileinput-new"> Select file </span>
-                                                                        <span class="fileinput-exists"> Change </span>
-                                                                        <input type="file" name="..."> </span>
-                                                                    <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                        <div class="portlet-body form">
+                            <!-- BEGIN FORM-->
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Project</label>
+                                        <div class="input-group col-md-12"> 
+                                            <select class='form-control' >
+                                                <option value="">Please Select</option>
+                                                <option value="1">Neelkanth Business Park</option>
+                                                <option value="2">Neelkanth Corporate Park</option>
+                                                <option value="3">Neelkanth Kingdom</option>
 
-                                                        <div class="col-md-5">
-                                                            <label>Phone No.</label>
-                                                            <input type="text" class="form-control" placeholder="Phone No.">
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <label></label>
-                                                            <button class="btn btn-danger pull-right remove" style="margin-top: 20px;">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>   
-                                                <div class="copy hide">
-                                                    <div class="form-group">
-                                                        <div class="col-md-6">
-                                                            <label>File Upload</label>
-                                                            <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
-                                                                <div class="input-group">
-                                                                    <div class="form-control input-fixed" data-trigger="fileinput">
-                                                                        <i class="fa fa-file fileinput-exists"></i>&nbsp;
-                                                                        <span class="fileinput-filename"> </span>
-                                                                    </div>
-                                                                    <span class="input-group-addon btn default btn-file">
-                                                                        <span class="fileinput-new"> Select file </span>
-                                                                        <span class="fileinput-exists"> Change </span>
-                                                                        <input type="file" name="..."> </span>
-                                                                    <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-5">
-                                                            <label>Phone No.</label>
-                                                            <input type="text" class="form-control" placeholder="Phone No.">
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <label></label>
-                                                            <button class="btn btn-danger pull-right remove" style="margin-top: 20px;">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>   
-                                            </div>
+                                            </select>
                                         </div>
                                     </div>
-                                </div>	
-                                <div class="input-group-btn col-md-12" style="padding: 0px;"> 
-                                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+
+                                    <div class="col-md-6"> 
+                                        {{ Form::label('Vertical', 'Vertical',['class'=>'control-label']) }}
+                                        {{Form::select('verticle_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
+
+                                    </div>
+                                </div>
+
+                            </div>	
+                            <!-- END FORM-->
+                        </div>
+                    </div>	
+
+
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-tasks"></i>Schedule Plan</div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse"> </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                <a href="javascript:;" class="reload"> </a>
+                                <a href="javascript:;" class="remove"> </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="form-group">
+
+
+
+
+                                    <div class="input-group control-group col-md-12"> 
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label">Zone</label>
+                                                <select class='selectAllOption3' multiple="multiple" >
+                                                    <option value="1">Neelkanth Business Park</option>
+                                                    <option value="2">- Compound</option>
+                                                    <option value="3">- Gate 1</option>
+                                                    <option value="4">- Gate 2</option>
+                                                    <option value="5">- Gate 3</option>
+                                                    <option value="6">- Wing A</option>
+                                                    <option value="7">-- Reception</option>
+                                                    <option value="8">-- Ground Floor</option>
+                                                    <option value="9">--- Shop 1</option>
+                                                    <option value="10">--- Shop 2</option>
+                                                    <option value="11">-- First Floor</option>
+                                                    <option value="12">--- Office 101</option>
+                                                    <option value="13">---- Conference Room</option>
+                                                    <option value="14">---- Toilet</option>
+                                                    <option value="15">--- Office 102</option>
+                                                    <option value="16">--- Corridor</option>
+                                                    <option value="17">--- General Men's Toilet</option>
+                                                    <option value="18">--- General Women's Toilet</option>
+                                                    <option value="19">-- Second Floor</option>
+                                                    <option value="20">-- Third Floor</option>
+                                                    <option value="21">-- Fourth Floor</option>
+                                                    <option value="22">- Wing B</option>
+                                                    <option value="23">- Wing C</option>
+                                                    <option value="24">- Wing D</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <a href="javascript:;" data-repeater-create class="btn btn-circle btn-icon-only btn-default add-schedule-group">
+                                                    <i class="fa fa-plus"></i></a>
+
+                                                <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-replica">
+                                                    <i class="fa fa-copy"></i></a>
+                                                <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-delete">
+                                                    <i class="fa fa-close"></i></a>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-2">
+
+                                                <label class="control-label">Shift</label>
+                                                <div class="input-group col-md-12"> 
+                                                    <select class='form-control selectAllOption3'>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Shift A</option>
+                                                        <option value="2">Shift B</option>
+                                                        <option value="3">Shift C</option>
+                                                        <option value="4">Shift D</option>
+                                                        <option value="5">Shift E</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <label class="control-label">Assign Employee</label>
+                                                <div class="input-group col-md-12">             
+                                                    <select class="example-optgroup-buttonText selectAllOption3" style="width: 100%;" multiple="multiple">
+                                                        <optgroup label="Senior Supervisor">
+                                                            <option value="1">John</option>
+                                                            <option value="2">Smith</option>
+                                                            <option value="3">Bhavana</option>
+                                                        </optgroup>
+                                                        <optgroup label="Supervisor">
+                                                            <option value="4">Leena</option>
+                                                            <option value="5">Sushil</option>
+                                                            <option value="6">Sachin</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </div>   
+                                            <div class="col-md-2">
+                                                <label class="control-label">Activity</label>
+                                                <div class="input-group col-md-12"> 
+                                                    <select class='form-control selectAllOption3'>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Cleaning</option>
+                                                        <option value="2">Dusting</option>
+                                                        <option value="3">Mopping</option>
+                                                        <option value="4">HAVC</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">Intervals</label>
+                                                <div class="input-group col-md-12"> 
+                                                    <select class='form-control selectAllOption3'>
+                                                        <option value="">Please Select</option>
+                                                        <option value="2">Hourly</option>
+                                                        <option value="3">Daily</option>
+                                                        <option value="4">Weekly</option>
+                                                        <option value="5">Fortnightly</option>
+                                                        <option value="6">Monthly</option>
+                                                        <option value="7">Quarterly</option>
+                                                        <option value="8">Half Monthly</option>
+                                                        <option value="9">Yearly</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="javascript:;" title="Add" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-add-row">
+                                                    <i class="fa fa-plus"></i> </a>
+
+                                                <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-row-replica">
+                                                    <i class="fa fa-copy"></i> </a>
+                                                <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-row-delete">
+                                                    <i class="fa fa-trash"></i></a>
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>  
+
+                                    <div class="copyScheduleGroup hide"> 
+
+                                        <div class="input-group control-group  col-md-12"> 
+                                            <hr/>
+                                            <div class="form-group">
+                                                <div class="col-md-3">
+                                                    <label class="control-label">Zone</label>
+                                                    <select class='selectAllOption3' multiple="multiple">
+                                                        <option value="Accord">Neelkanth Business Park</option>
+                                                        <option value="Duster">- Compound</option>
+                                                        <option value="Esteem">- Gate 1</option>
+                                                        <option value="Fiero">- Gate 2</option>
+                                                        <option value="Fiero">- Gate 3</option>
+                                                        <option value="Fiero">- Wing A</option>
+                                                        <option value="Fiero">-- Reception</option>
+                                                        <option value="Fiero">-- Ground Floor</option>
+                                                        <option value="Fiero">--- Shop 1</option>
+                                                        <option value="Fiero">--- Shop 2</option>
+                                                        <option value="Fiero">-- First Floor</option>
+                                                        <option value="Fiero">--- Office 101</option>
+                                                        <option value="Fiero">---- Conference Room</option>
+                                                        <option value="Fiero">---- Toilet</option>
+                                                        <option value="Fiero">--- Office 102</option>
+                                                        <option value="Fiero">--- Corridor</option>
+                                                        <option value="Fiero">--- General Men's Toilet</option>
+                                                        <option value="Fiero">--- General Women's Toilet</option>
+                                                        <option value="Fiero">-- Second Floor</option>
+                                                        <option value="Fiero">-- Third Floor</option>
+                                                        <option value="Fiero">-- Fourth Floor</option>
+                                                        <option value="Fiero">- Wing B</option>
+                                                        <option value="Fiero">- Wing C</option>
+                                                        <option value="Fiero">- Wing D</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="javascript:;" data-repeater-create class="btn btn-circle btn-icon-only btn-default add-schedule-group">
+                                                        <i class="fa fa-plus"></i></a>
+
+                                                    <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-replica">
+                                                        <i class="fa fa-copy"></i></a>
+                                                    <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-delete">
+                                                        <i class="fa fa-close"></i></a>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Shift</label>
+                                                    <div class="input-group col-md-12"> 
+                                                        <select class='form-control selectAllOption3'>
+                                                            <option value="">Please Select</option>
+                                                            <option value="shift-a">Shift A</option>
+                                                            <option value="shift-b">Shift B</option>
+                                                            <option value="shift-c">Shift C</option>
+                                                            <option value="shift-d">Shift D</option>
+                                                            <option value="shift-e">Shift E</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Assign Employee</label>
+                                                    <div class="input-group col-md-12">             
+                                                        <select class="example-optgroup-buttonText selectAllOption3" style="width: 100%;" multiple="multiple">
+                                                            <optgroup label="Senior Supervisor">
+                                                                <option value="1-1">John</option>
+                                                                <option value="1-2">Smith</option>
+                                                                <option value="1-3">Bhavana</option>
+                                                            </optgroup>
+                                                            <optgroup label="Supervisor">
+
+                                                                <option value="2-1">Leena</option>
+                                                                <option value="2-2">Sushil</option>
+                                                                <option value="2-3">Sachin</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Activity</label>
+                                                    <div class="input-group col-md-12"> 
+                                                        <select class='form-control selectAllOption3'>
+                                                            <option value="shift-a">Please Select</option>
+                                                            <option value="shift-a">Cleaning</option>
+                                                            <option value="shift-b">Dusting</option>
+                                                            <option value="shift-c">Mopping</option>
+                                                            <option value="shift-d">HAVC</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Intervals</label>
+                                                    <div class="input-group col-md-12"> 
+                                                        <select class='form-control selectAllOption3'>
+                                                            <option value="shift-a">Please Select</option>
+                                                            <option value="shift-a">Hourly</option>
+                                                            <option value="shift-b">Daily</option>
+                                                            <option value="shift-c">Weekly</option>
+                                                            <option value="shift-d">Fortnightly</option>
+                                                            <option value="shift-e">Monthly</option>
+                                                            <option value="shift-e">Quarterly</option>
+                                                            <option value="shift-e">Half Monthly</option>
+                                                            <option value="shift-e">Yearly</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+
+
+                                                    <a href="javascript:;" title="Add" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-add-row">
+                                                        <i class="fa fa-plus"></i> </a>
+                                                    <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-row-replica">
+                                                        <i class="fa fa-copy"></i> </a>
+                                                    <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-row-delete">
+                                                        <i class="fa fa-trash"></i></a>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+
+                                    <div class="copyScheduleRow hide"> 
+                                        <div class="form-group ">
+                                            <div class="col-md-2">
+                                                <label class="control-label">Shift</label>
+                                                <div class="input-group col-md-12"> 
+                                                    <select class='form-control selectAllOption3'>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Shift A</option>
+                                                        <option value="2">Shift B</option>
+                                                        <option value="3">Shift C</option>
+                                                        <option value="4">Shift D</option>
+                                                        <option value="5">Shift E</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <label class="control-label">Assign Employee</label>
+                                                <div class="input-group col-md-12">             
+                                                    <select class="example-optgroup-buttonText selectAllOption3" style="width: 100%;" multiple="multiple">
+                                                        <option value="">Please Select</option>
+                                                        <optgroup label="Senior Supervisor">
+                                                            <option value="1">John</option>
+                                                            <option value="2">Smith</option>
+                                                            <option value="3">Bhavana</option>
+                                                        </optgroup>
+                                                        <optgroup label="Supervisor">
+                                                            <option value="4">Leena</option>
+                                                            <option value="5">Sushil</option>
+                                                            <option value="6">Sachin</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </div>   
+                                            <div class="col-md-2">
+                                                <label class="control-label">Activity</label>
+                                                <div class="input-group col-md-12"> 
+                                                    <select class='form-control selectAllOption3'>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Cleaning</option>
+                                                        <option value="2">Dusting</option>
+                                                        <option value="3">Mopping</option>
+                                                        <option value="4">HAVC</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <label class="control-label">Intervals</label>
+                                                <div class="input-group col-md-12"> 
+                                                    <select class='form-control selectAllOption3'>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Hourly</option>
+                                                        <option value="2">Daily</option>
+                                                        <option value="3">Weekly</option>
+                                                        <option value="4">Fortnightly</option>
+                                                        <option value="5">Monthly</option>
+                                                        <option value="6">Quarterly</option>
+                                                        <option value="7">Half Monthly</option>
+                                                        <option value="8">Yearly</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <a href="javascript:;" title="Add" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-add-row">
+                                                    <i class="fa fa-plus"></i> </a>
+                                                <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-row-replica">
+                                                    <i class="fa fa-copy"></i> </a>
+                                                <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-row-delete">
+                                                    <i class="fa fa-trash"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                    </div>  
+
+
                                 </div>
                             </div>
-                        </div>	
-                        <!-- END FORM-->
-                    </div>
-                </div>	
-
-                <div class="form-actions">
-                    <div class="row">
-                        <div class="col-md-offset-5 col-md-6">
-                            <button type="submit" class="btn green">Submit</button>
-                            <button type="button" class="btn default">Cancel</button>
                         </div>
                     </div>
-                </div>
-            </form>	
+
+                    <!-- END PAGE BASE CONTENT -->
+                </form>
+            </div>
         </div>
+
+
     </div>
 </div>
 @endsection

@@ -113,7 +113,7 @@ $(function () {
         });
         $('.selectAllOption3').multiselect({
             includeSelectAllOption: false,
-            buttonWidth: '100%',
+            buttonWidth: '100%'
             //allSelectedText: 'No option left ...'
         });
     });
@@ -308,6 +308,46 @@ $(function () {
             var html = $(".copyasset").html();
             $(".after-add-more-asset").after(html);
         });
+        //for schedule plan
+        $("body").on("click", ".add-schedule-group", function () {
+            var html = $(".copyScheduleGroup").html();
+            $(this).parent().parent().parent().after(html);
+        });
+
+
+        $("body").on("click", ".schedule-group-delete", function () {
+            $(this).parent().parent().parent().remove();
+        });
+
+        $("body").on("click", ".schedule-add-row", function () {
+
+            var html = $(".copyScheduleRow").html();
+            
+            $(this).parent().parent().after(html);
+        });
+
+        $("body").on("click", ".schedule-row-delete", function () {
+
+            $(this).parent().parent().remove();
+        });
+
+        $("body").on("click", ".schedule-row-replica", function () {
+            var replicaRow = $(this).parent().parent().clone();
+            var selects = replicaRow.find("select");
+            $(selects).each(function (i) {
+                var select = this;
+                // console.log(select);
+                replicaRow.find("select").eq(i).val($(select).val());
+            });
+
+            // var zoneClone= $("#zoneid").clone();
+            //  console.log(zoneClone);
+            // var html = '<div class="form-group">'+replicaRow+'</div>'
+            $(this).parent().parent().after(replicaRow);
+
+
+
+        });
 
 
     });
@@ -321,6 +361,12 @@ $(function () {
             $(this).parents(".form-group").remove();
         });
     });
+
+
+
+
+
+
 
 
 </script>
