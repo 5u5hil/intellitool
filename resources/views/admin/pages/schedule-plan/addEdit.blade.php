@@ -76,7 +76,7 @@
                                 <div class="form-group">
                                     <div class="input-group control-group col-md-12">   
 
-                                        <span class="col-md-2">                                      
+                                        <span class="col-md-12">                                      
                                             <a class="btn green add-schedule-group">Add Zone</a>
                                         </span>  
                                         <div class="portlet light bordered">
