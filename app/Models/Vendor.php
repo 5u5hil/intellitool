@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Vendor extends Model
 {
      protected $table = 'vendors';
-     
      protected $fillable = ['firstname', 'lastname', 'email','phone','address','status'];
      protected $guarded = ['vertical_ids'];
-     
      
      public static function rules($id = null, $merge = []) {
         return array_merge(

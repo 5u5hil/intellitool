@@ -81,8 +81,7 @@ Route::group(['namespace' => 'Admin'], function () {
             'store' => 'admin.vendor.save/update'],
             'except' => ['update', 'edit', 'show']
         ]);
-        
-       Route::post('/save-update', 'VendorController@saveUpdate')->name('admin.vendor.save-update');
+      
     });
 
     Route::group(['prefix' => 'asset'], function () {
@@ -96,11 +95,6 @@ Route::group(['namespace' => 'Admin'], function () {
     });
 
 
-//
-//    Route::group(['prefix' => 'vendor'], function () {
-//        Route::get('/', 'VendorController@index')->name('admin.vendor.list');
-//        Route::get('/add/edit', 'VendorController@create')->name('admin.vendor.add/edit');
-//    });
     Route::group(['prefix' => 'employee-management'], function () {
         Route::group(['prefix' => 'role'], function () {
             
