@@ -26,9 +26,8 @@
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    {{ Form::model($vendor, ['route' => 'admin.vendor.save-update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
-
-                  {{ Form::hidden("id",null) }}
+                    {{ Form::model($vendor, ['route' => 'admin.vendor.saveUpdate', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
+                    {{ Form::hidden("id",null) }}
 
                     <div class="form-body">
                         <div class="form-group">
