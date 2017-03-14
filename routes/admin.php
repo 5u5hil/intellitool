@@ -64,35 +64,36 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/add/edit', 'ShiftController@addEdit')->name('admin.shift.add/edit');
         Route::post('/save/update', 'ShiftController@saveUpdate')->name('admin.shift.save/update');
     });
-    
+
 //         Route::group(['prefix' => 'asset-category'], function () {
 //        Route::get('/', 'AssetCategoryController@index')->name('admin.asset.category.list');
 //        Route::get('/add/edit', 'AssetCategoryController@addEdit')->name('admin.asset.category.add/edit');
 //    });
-    
-    Route::group(['prefix'=>'asset-category'],function(){
-        Route::resource('/','AssetCategoryController',['names'=>['index'=>'admin.asset.category.list','create'=>'admin.asset.category.add/edit']]);
+
+    Route::group(['prefix' => 'asset-category'], function() {
+        Route::resource('/', 'AssetCategoryController', ['names' => ['index' => 'admin.asset.category.list', 'create' => 'admin.asset.category.add/edit']]);
     });
 
-     Route::group(['prefix'=>'vendor'],function(){
-        Route::resource('/','VendorCategoryController',
-    ['names'=>['index'=>'admin.vendor.list','create'=>'admin.vendor.add/edit','store'=>'admin.vendor.save/update'],
+    Route::group(['prefix' => 'vendor'], function() {
+        Route::resource('/', 'VendorCategoryController', [
+            'names' => ['index' => 'admin.vendor.list', 'create' => 'admin.vendor.add/edit', 'store' => 'admin.vendor.save/update'],
+            'except'=>['store','edit','show']
         ]);
     });
-    
-      Route::group(['prefix' => 'asset'], function () {
+
+    Route::group(['prefix' => 'asset'], function () {
         Route::get('/', 'AssetController@index')->name('admin.asset.list');
         Route::get('/add/edit', 'AssetController@addEdit')->name('admin.asset.add/edit');
     });
 
-      Route::group(['prefix' => 'activity'], function () {
+    Route::group(['prefix' => 'activity'], function () {
         Route::get('/', 'ActivityController@index')->name('admin.activity.list');
         Route::get('/add/edit', 'ActivityController@addEdit')->name('admin.activity.add/edit');
     });
 
-    
-    
-      Route::group(['prefix' => 'vendor'], function () {
+
+
+    Route::group(['prefix' => 'vendor'], function () {
         Route::get('/', 'VendorController@index')->name('admin.vendor.list');
         Route::get('/add/edit', 'VendorController@addEdit')->name('admin.vendor.add/edit');
     });

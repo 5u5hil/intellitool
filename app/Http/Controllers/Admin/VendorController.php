@@ -15,7 +15,8 @@ class VendorController extends Controller
      */
     public function index()
     {
-        //
+        
+      return view(Config('constants.adminPages') . '.vendor.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class VendorController extends Controller
      */
     public function create()
     {
-        //
+     return view(Config('constants.adminPages') . '.vendor.addEdit');
     }
 
     /**
