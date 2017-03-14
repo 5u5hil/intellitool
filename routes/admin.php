@@ -65,15 +65,15 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::post('/save/update', 'ShiftController@saveUpdate')->name('admin.shift.save/update');
     });
 
-//         Route::group(['prefix' => 'asset-category'], function () {
-//        Route::get('/', 'AssetCategoryController@index')->name('admin.asset.category.list');
-//        Route::get('/add/edit', 'AssetCategoryController@addEdit')->name('admin.asset.category.add/edit');
+
+//    Route::group(['prefix' => 'asset-category'], function() {
+//        Route::resource('/', 'AssetCategoryController', ['names' => ['index' => 'admin.asset.category.list', 'create' => 'admin.asset.category.add/edit','store'=>'admin.asset.category.save/update'],'except' => [ 'update', 'destroy']]);
 //    });
-
-    Route::group(['prefix' => 'asset-category'], function() {
-        Route::resource('/', 'AssetCategoryController', ['names' => ['index' => 'admin.asset.category.list', 'create' => 'admin.asset.category.add/edit','update'=>'admin.asset.category.save/update']]);
+    Route::group(['prefix' => 'asset-category'], function () {
+        Route::get('/', 'AssetCategoryController@index')->name('admin.asset.category.list');
+        Route::get('/add/edit', 'AssetCategoryController@addEdit')->name('admin.asset.category.add/edit');
+        Route::get('/save/update', 'AssetCategoryController@saveUpdate')->name('admin.asset.category.save/update');
     });
-
     Route::group(['prefix' => 'vendor'], function() {
         Route::resource('/', 'VendorController', [
             'names' => ['index' => 'admin.vendor.list', 

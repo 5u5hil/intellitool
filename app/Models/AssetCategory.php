@@ -4,6 +4,8 @@ namespace App\Models;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\AssetCategory;
+use Validator;
+
 class AssetCategory extends Model
 {
     protected  $fillable=['name','status'];
@@ -15,7 +17,7 @@ class AssetCategory extends Model
         return AssetCategory::findOrNew(Input::get('id'));
     }
     public static function saveUpdate(){
-       $assetCategory= AssetCategory::findOrNew(Input::all());
+       $assetCategory= AssetCategory::findOrNew(Input::get('id'));
        return $assetCategory->fill(Input::all())->save();
     }
 }

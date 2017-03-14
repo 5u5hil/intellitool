@@ -24,11 +24,11 @@
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
                 </div>
-     <div class="portlet-body form"><?php $action=route('admin.asset.category.add/edit',null);
-     dd($action);
+     <div class="portlet-body form"><?php $action=route('admin.vendor.save/update',null);
+
      ?>
                     <!-- BEGIN FORM-->
-                    {{ Form::model($assetCategory,['url'=>$action,'method'=>'POST','class'=>'repeater form-horizontal']) }}
+                    {{ Form::model($assetCategory,['route'=>['admin.asset.category.save/update',$assetCategory['id']],'method'=>'POST','class'=>'repeater form-horizontal']) }}
                     {{ Form::hidden("id",null) }}
 
                     <div class="form-body">

@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Library\Helper;
 use App\Models\DesignationLevel;
 use Illuminate\Support\Facades\Input;
-
 class DesignationLevelController extends Controller {
 
     //

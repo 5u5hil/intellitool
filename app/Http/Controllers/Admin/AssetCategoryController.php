@@ -25,67 +25,23 @@ class AssetCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function addEdit()
     {
- 
         return view(Config('constants.adminPages').'.asset-category.addEdit',['assetCategory'=>AssetCategory::addEdit()]);
-        //
     }
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function saveUpdate(Request $request)
     {
-        //
+     Validator::make(Input::all(),['name'=>'required'],['name'=>'Name field is required'])->validate();
+     AssetCategory::saveUpdate();
+     return redirect()->route('admin.asset.category.list');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AssetCategory  $assetCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function show(AssetCategory $assetCategory)
-    {
-        //
-    }
+ 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AssetCategory  $assetCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AssetCategory $assetCategory)
-    {
-              
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AssetCategory  $assetCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, AssetCategory $assetCategory)
-    {
-               AssetCategory::saveUpdate();
-               return redirect()->route('admin.asset.category.list');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AssetCategory  $assetCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(AssetCategory $assetCategory)
-    {
-        //
-    }
 }
