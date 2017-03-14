@@ -24,9 +24,11 @@
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
                 </div>
-     <div class="portlet-body form">
+     <div class="portlet-body form"><?php $action=route('admin.asset.category.add/edit',null);
+     dd($action);
+     ?>
                     <!-- BEGIN FORM-->
-                    {{ Form::open(['class'=>'repeater form-horizontal']) }}
+                    {{ Form::model($assetCategory,['url'=>$action,'method'=>'POST','class'=>'repeater form-horizontal']) }}
                     {{ Form::hidden("id",null) }}
 
                     <div class="form-body">
@@ -39,22 +41,22 @@
 
                             <div class="col-md-6">
                                 <div class="form-group form-md-radios top15">
-                                    <label class="col-md-1 control-label" for="form_control_1">Active</label>
+                                    <label class="col-md-1 control-label" for="form_control_1">Status</label>
                                     <div class="col-md-9">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
-                                                <input type="radio" id="activeYes" name="active" value="1"   class="md-radiobtn">
+                                                <input type="radio" id="activeYes" name="status" value="1" {{$assetCategory['status']==1?'checked':''}}  class="md-radiobtn">
                                                 <label for="activeYes">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
-                                                    <span class="box"></span> Yes</label>
+                                                    <span class="box"></span> Active</label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="activeNo"  name="active" value="0" class="md-radiobtn">
+                                                <input type="radio" id="activeNo" {{$assetCategory['status']==0?'checked':''}}  name="status" value="0" class="md-radiobtn">
                                                 <label for="activeNo">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
-                                                    <span class="box"></span> No </label>
+                                                    <span class="box"></span> Suspended </label>
                                             </div>
 
                                         </div>

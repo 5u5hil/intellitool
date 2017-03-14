@@ -27,6 +27,7 @@ class AssetCategoryController extends Controller
      */
     public function create()
     {
+ 
         return view(Config('constants.adminPages').'.asset-category.addEdit',['assetCategory'=>AssetCategory::addEdit()]);
         //
     }
@@ -61,7 +62,7 @@ class AssetCategoryController extends Controller
      */
     public function edit(AssetCategory $assetCategory)
     {
-        //
+              
     }
 
     /**
@@ -73,7 +74,8 @@ class AssetCategoryController extends Controller
      */
     public function update(Request $request, AssetCategory $assetCategory)
     {
-        //
+               AssetCategory::saveUpdate();
+               return redirect()->route('admin.asset.category.list');
     }
 
     /**
