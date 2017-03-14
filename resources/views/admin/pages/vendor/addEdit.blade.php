@@ -26,26 +26,29 @@
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    {{ Form::model($vendor, ['route' => 'admin.vendor.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
+                    {{ Form::model($vendor, ['route' => 'admin.vendor.save-update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
 
-                    {{ Form::hidden("id",null) }}
+                  {{ Form::hidden("id",null) }}
 
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-4">
                                 <label>First Name</label>
                                 {{Form::text('firstname',  null, ['class'=>'form-control',"placeholder"=>'First Name']) }}
+                                <div class="error">{{ @$errors->first('firstname') }}</div>
 
                             </div>	
 
                             <div class="col-md-4">
                                 <label>Last Name</label>
                                 {{Form::text('lastname',  null, ['class'=>'form-control',"placeholder"=>'Last Name']) }}
+                                <div class="error">{{ @$errors->first('lastname') }}</div>
 
                             </div>	
                             <div class="col-md-4">
                                 <label>Email</label>
                                 {{Form::text('email',  null, ['class'=>'form-control',"placeholder"=>'Email']) }}
+                                <div class="error">{{ @$errors->first('email') }}</div>
 
                             </div>	
                         </div>
@@ -53,18 +56,19 @@
                             <div class="col-md-4">
                                 <label>Phone</label>
                                 {{Form::text('phone',  null, ['class'=>'form-control',"placeholder"=>'Phone']) }}
+                                <div class="error">{{ @$errors->first('phone') }}</div>
 
                             </div>	
 
                             <div class="col-md-4">
                                 <label>Address</label>
                                 {{Form::text('address',  null, ['class'=>'form-control',"placeholder"=>'Address']) }}
-
+                                <div class="error">{{ @$errors->first('address') }}</div>
                             </div>	
 
                             <div class="col-md-4"> 
                                 {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
-                                {{Form::select('verticle_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
+                                {{Form::select('vertical_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
 
                             </div>	
                         </div>
@@ -75,14 +79,14 @@
                                     <div class="col-md-9">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
-                                                <input type="radio" id="activeYes" name="active" value="1"   class="md-radiobtn">
+                                                <input type="radio" id="activeYes" name="active" value="1"  <?= ($vendor->status = 1) ? 'checked' : ''; ?>  class="md-radiobtn">
                                                 <label for="activeYes">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> Active</label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="activeNo"  name="active" value="0" class="md-radiobtn">
+                                                <input type="radio" id="activeNo" <?= ($vendor->status = 1) ? 'checked' : ''; ?>  name="active" value="0" class="md-radiobtn">
                                                 <label for="activeNo">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>

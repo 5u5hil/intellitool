@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\Library\Helper;
+use Validator;
 
 class VendorController extends Controller {
 
@@ -19,7 +20,7 @@ class VendorController extends Controller {
         $vendors = Vendor::getListing();
         $data = ['vendors' => $vendors];
         $viewname = Config('constants.adminPages') . '.vendor.index';
-        Helper::returnView($viewname,$data);
+        return Helper::returnView($viewname, $data);
     }
 
     /**
@@ -30,7 +31,7 @@ class VendorController extends Controller {
     public function create() {
         $vendor = Vendor::findOrNew(Input::get('id'));
         $data = ['vendor' => $vendor];
-        Helper::returnView(Config('constants.adminPages') . '.vendor.addEdit', $data);
+        return Helper::returnView(Config('constants.adminPages') . '.vendor.addEdit', $data);
     }
 
     /**
@@ -40,12 +41,16 @@ class VendorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store() {
+        $vendorClass = new Vendor();
+        $validator = Validator::make(Input::all(), Vendor::rules(Input::get('id')), $vendorClass->messages)->validate();
+
         $vendor = Vendor::firstOrCreate(['id' => Input::get('id')]);
         $vendor->fill(Input::all());
         $vendor->save();
-        $data= [];
+        $data = [];
+
         $redirectTo = route('admin.vendor.list');
-        Helper::returnView(null, $data,$redirectTo); 
+        return Helper::returnView(null, $data, $redirectTo);
     }
 
     /**
@@ -76,6 +81,7 @@ class VendorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Vendor $vendor) {
+        echo "update method";
         dd(Input::all());
     }
 
@@ -86,6 +92,10 @@ class VendorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Vendor $vendor) {
+        //
+    }
+    
+       public function saveUpdate() {
         //
     }
 

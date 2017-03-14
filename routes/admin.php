@@ -76,10 +76,13 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::group(['prefix' => 'vendor'], function() {
         Route::resource('/', 'VendorController', [
-            'names' => ['index' => 'admin.vendor.list', 'create' => 'admin.vendor.add/edit',
-                'store' => 'admin.vendor.save/update'],
+            'names' => ['index' => 'admin.vendor.list', 
+            'create' => 'admin.vendor.add/edit',
+            'store' => 'admin.vendor.save/update'],
             'except' => ['update', 'edit', 'show']
         ]);
+        
+       Route::post('/save-update', 'VendorController@saveUpdate')->name('admin.vendor.save-update');
     });
 
     Route::group(['prefix' => 'asset'], function () {

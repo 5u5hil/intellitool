@@ -19,7 +19,7 @@ class Helper {
                 return $data;
             }
         } else if(isset($viewname)) {
-              dd($viewname);
+              
             return view($viewname)->with($data);
         }else if(isset($redirectTo)){
             return redirect()->route($redirectTo);

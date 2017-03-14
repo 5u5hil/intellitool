@@ -49,7 +49,7 @@
                            
                       
                             <td class="text-center">
-                                <a href="{{route("admin.vendor.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Vendor">
+                                <a href="{{route("admin.vendor.add/edit",['id'=>$vendor->id])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Vendor">
                                     <i class='icon-pencil'></i>
                                 </a>  
                                 <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Vendor">
