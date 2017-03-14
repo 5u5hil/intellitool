@@ -32,14 +32,14 @@
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Address</th>
-                            <th scope="col">Vertical</th>
-                            <th scope="col">Active</th>
+                           
+                           
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        @foreach($vendors ad $vendor)
+                  
+                             @foreach($vendors as $vendor)
                         <tr>
                             <td>{{ $vendor->id }}</td>
                             <td>{{ $vendor->firstname }}</td>
@@ -47,9 +47,7 @@
                             <td>{{ $vendor->email }}</td>
                             <td>{{ $vendor->address }}</td>
                            
-                            <td>
-                                <label class='label label-danger'>Suspended</label>
-                            </td>
+                      
                             <td class="text-center">
                                 <a href="{{route("admin.vendor.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Vendor">
                                     <i class='icon-pencil'></i>
@@ -62,7 +60,7 @@
                         </tr>
                         
                         @endforeach
-               
+             
 
                     </tbody>
 

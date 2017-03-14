@@ -8,8 +8,11 @@ class Vendor extends Model
 {
      protected $table = 'vendors';
      
-     public function getlist(){
-         $list = Vendor::where("active",1)->paginate(Config('constants.adminPaginateNo'));
+     protected $fillable = ['firstname', 'lastname', 'email','phone','address','status'];
+     protected $guarded = ['vertical_ids'];
+     
+     public static function getListing(){
+         $list = Vendor::where("status",1)->paginate(10);
          return $list;
          
      }

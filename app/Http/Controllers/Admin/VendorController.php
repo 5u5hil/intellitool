@@ -5,18 +5,21 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+use App\Library\Helper;
 
-class VendorController extends Controller
-{
+class VendorController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-     $vendors=  $this->getlist();
-      return view(Config('constants.adminPages') . '.vendor.index',['vendors'=>$vendors]);
+    public function index() {
+        $vendors = Vendor::getListing();
+        $data = ['vendors' => $vendors];
+        $viewname = Config('constants.adminPages') . '.vendor.index';
+        Helper::returnView($viewname,$data);
     }
 
     /**
@@ -24,10 +27,10 @@ class VendorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-     $vendor = Vendor::findOrNew(Input::get('id'));
-     return view(Config('constants.adminPages') . '.vendor.addEdit',['vendor'=>$vendor]);
+    public function create() {
+        $vendor = Vendor::findOrNew(Input::get('id'));
+        $data = ['vendor' => $vendor];
+        Helper::returnView(Config('constants.adminPages') . '.vendor.addEdit', $data);
     }
 
     /**
@@ -36,9 +39,13 @@ class VendorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store() {
+        $vendor = Vendor::firstOrCreate(['id' => Input::get('id')]);
+        $vendor->fill(Input::all());
+        $vendor->save();
+        $data= [];
+        $redirectTo = route('admin.vendor.list');
+        Helper::returnView(null, $data,$redirectTo); 
     }
 
     /**
@@ -47,8 +54,7 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function show(Vendor $vendor)
-    {
+    public function show(Vendor $vendor) {
         //
     }
 
@@ -58,8 +64,7 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vendor $vendor)
-    {
+    public function edit(Vendor $vendor) {
         //
     }
 
@@ -70,8 +75,7 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vendor $vendor)
-    {
+    public function update(Request $request, Vendor $vendor) {
         dd(Input::all());
     }
 
@@ -81,8 +85,8 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vendor $vendor)
-    {
+    public function destroy(Vendor $vendor) {
         //
     }
+
 }

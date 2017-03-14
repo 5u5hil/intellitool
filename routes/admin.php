@@ -75,9 +75,10 @@ Route::group(['namespace' => 'Admin'], function () {
     });
 
     Route::group(['prefix' => 'vendor'], function() {
-        Route::resource('/', 'VendorCategoryController', [
-            'names' => ['index' => 'admin.vendor.list', 'create' => 'admin.vendor.add/edit', 'update' => 'admin.vendor.save/update'],
-            'except'=>['store','edit','show']
+        Route::resource('/', 'VendorController', [
+            'names' => ['index' => 'admin.vendor.list', 'create' => 'admin.vendor.add/edit',
+                'store' => 'admin.vendor.save/update'],
+            'except' => ['update', 'edit', 'show']
         ]);
     });
 
@@ -92,11 +93,11 @@ Route::group(['namespace' => 'Admin'], function () {
     });
 
 
-
-    Route::group(['prefix' => 'vendor'], function () {
-        Route::get('/', 'VendorController@index')->name('admin.vendor.list');
-        Route::get('/add/edit', 'VendorController@addEdit')->name('admin.vendor.add/edit');
-    });
+//
+//    Route::group(['prefix' => 'vendor'], function () {
+//        Route::get('/', 'VendorController@index')->name('admin.vendor.list');
+//        Route::get('/add/edit', 'VendorController@create')->name('admin.vendor.add/edit');
+//    });
     Route::group(['prefix' => 'employee-management'], function () {
         Route::group(['prefix' => 'role'], function () {
             

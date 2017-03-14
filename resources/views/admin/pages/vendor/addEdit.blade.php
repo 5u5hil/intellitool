@@ -26,7 +26,7 @@
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    {{ Form::model($shift, ['route' => 'admin.vendor.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
+                    {{ Form::model($vendor, ['route' => 'admin.vendor.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
 
                     {{ Form::hidden("id",null) }}
 
@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <div class="col-md-4">
                                 <div class="form-group form-md-radios">
-                                    <label class="col-md-2 control-label" for="form_control_1">Active</label>
+                                    <label class="col-md-2 control-label" for="form_control_1">Status</label>
                                     <div class="col-md-9">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
