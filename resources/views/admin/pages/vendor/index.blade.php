@@ -38,14 +38,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
+                        @foreach($vendors ad $vendor)
                         <tr>
-                            <td>1</td>
-                            <td>Madhuri</td>
-                            <td>Y</td>
-                            <td>madhuri@infiniteit.biz</td>
-                            <td>Kalyan</td>
-                            <td>House Keeping,Security</td>
-                            <td><label class='label label-danger'>Suspended</label></td>
+                            <td>{{ $vendor->id }}</td>
+                            <td>{{ $vendor->firstname }}</td>
+                            <td>{{ $vendor->lastname }}</td>
+                            <td>{{ $vendor->email }}</td>
+                            <td>{{ $vendor->address }}</td>
+                           
+                            <td>
+                                <label class='label label-danger'>Suspended</label>
+                            </td>
                             <td class="text-center">
                                 <a href="{{route("admin.vendor.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Vendor">
                                     <i class='icon-pencil'></i>
@@ -56,25 +60,9 @@
 
                             </td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>John</td>
-                            <td>Smith</td>
-                            <td>john@gmail.biz</td>
-                            <td>Kalyan</td>
-                            <td>Security</td>
-                            <td><label class='label label-success'>Active</label></td>
-                            <td class="text-center">
-                                <a href="{{route("admin.vendor.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Vendor">
-                                    <i class='icon-pencil'></i>
-                                </a>  
-                                <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Vendor">
-                                    <i class='icon-magnifier'></i>
-                                </a>
-
-                            </td>
-                        </tr>
-
+                        
+                        @endforeach
+               
 
                     </tbody>
 

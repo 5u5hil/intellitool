@@ -76,7 +76,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::group(['prefix' => 'vendor'], function() {
         Route::resource('/', 'VendorCategoryController', [
-            'names' => ['index' => 'admin.vendor.list', 'create' => 'admin.vendor.add/edit', 'store' => 'admin.vendor.save/update'],
+            'names' => ['index' => 'admin.vendor.list', 'create' => 'admin.vendor.add/edit', 'update' => 'admin.vendor.save/update'],
             'except'=>['store','edit','show']
         ]);
     });

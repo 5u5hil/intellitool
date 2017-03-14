@@ -26,7 +26,8 @@
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    {{ Form::open(['class'=>'repeater form-horizontal']) }}
+                    {{ Form::model($shift, ['route' => 'admin.vendor.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
+
                     {{ Form::hidden("id",null) }}
 
                     <div class="form-body">
@@ -48,7 +49,7 @@
 
                             </div>	
                         </div>
-                             <div class="form-group">
+                        <div class="form-group">
                             <div class="col-md-4">
                                 <label>Phone</label>
                                 {{Form::text('phone',  null, ['class'=>'form-control',"placeholder"=>'Phone']) }}
@@ -60,12 +61,12 @@
                                 {{Form::text('address',  null, ['class'=>'form-control',"placeholder"=>'Address']) }}
 
                             </div>	
-                           
-                                <div class="col-md-4"> 
-                                    {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
-                                    {{Form::select('verticle_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
 
-                                </div>	
+                            <div class="col-md-4"> 
+                                {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
+                                {{Form::select('verticle_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
+
+                            </div>	
                         </div>
                         <div class="form-group">
                             <div class="col-md-4">

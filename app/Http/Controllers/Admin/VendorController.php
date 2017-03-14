@@ -15,8 +15,8 @@ class VendorController extends Controller
      */
     public function index()
     {
-        
-      return view(Config('constants.adminPages') . '.vendor.index');
+     $vendors=  $this->getlist();
+      return view(Config('constants.adminPages') . '.vendor.index',['vendors'=>$vendors]);
     }
 
     /**
@@ -26,7 +26,8 @@ class VendorController extends Controller
      */
     public function create()
     {
-     return view(Config('constants.adminPages') . '.vendor.addEdit');
+     $vendor = Vendor::findOrNew(Input::get('id'));
+     return view(Config('constants.adminPages') . '.vendor.addEdit',['vendor'=>$vendor]);
     }
 
     /**
@@ -71,7 +72,7 @@ class VendorController extends Controller
      */
     public function update(Request $request, Vendor $vendor)
     {
-        //
+        dd(Input::all());
     }
 
     /**
