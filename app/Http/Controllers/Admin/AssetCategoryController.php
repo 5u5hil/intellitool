@@ -16,8 +16,8 @@ class AssetCategoryController extends Controller
     public function index()
     {
  
-       dd(AssetCategory::getListing());
-      return view(Config('constants.adminPages') . '.asset-category.index');
+      // dd(AssetCategory::getListing());
+      return view(Config('constants.adminPages') . '.asset-category.index',['getAssetCategory'=>AssetCategory::getListing(8)]);
     }
 
     /**
@@ -27,7 +27,7 @@ class AssetCategoryController extends Controller
      */
     public function create()
     {
-        return view(Config('constants.adminPages').'.asset-category.addEdit');
+        return view(Config('constants.adminPages').'.asset-category.addEdit',['assetCategory'=>AssetCategory::addEdit()]);
         //
     }
 

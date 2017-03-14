@@ -7,11 +7,10 @@ use App\Models\AssetCategory;
 class AssetCategory extends Model
 {
     //
-    public static function getListing(){
-      return  AssetCategory::paginate(4);
-        
+    public static function getListing($perPage){
+      return  AssetCategory::paginate($perPage);  
     }
     public static function addEdit(){
-        return "Hello";
+        return AssetCategory::findOrNew(Input::get('id'));
     }
 }

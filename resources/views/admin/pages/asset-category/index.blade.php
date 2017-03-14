@@ -30,17 +30,18 @@
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
 
-                            <th scope="col">Active</th>
+                            <th scope="col">Status</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($getAssetCategory as $getItem )
                         <tr>
-                            <td>1</td>
-                            <td>Electrical</td>
-                            <td><label class='label label-danger'>N0</label></td>
+                            <td>{{$getItem['id']}}</td>
+                            <td>{{$getItem['name']}}</td>
+                            <td><label class="label label-{{$getItem['status']==1?'success':'danger'}}">{{$getItem['status']==1?'Active':'Suspended'}}</label></td>
                             <td class="text-center">
-                                <a href="{{route("admin.asset.category.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
+                                <a href="{{route("admin.asset.category.add/edit",['id'=>$getItem['id']])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
                                     <i class='icon-pencil'></i>
                                 </a>  
                                 <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Asset Category">
@@ -49,55 +50,15 @@
 
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Air Conditioner</td>
-                            <td><label class='label label-success'>YES</label></td>
-                            <td class="text-center">
-                                <a href="{{route("admin.asset.category.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
-                                    <i class='icon-pencil'></i>
-                                </a>  
-                                <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Asset Category">
-                                    <i class='icon-magnifier'></i>
-                                </a>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>PHE</td>
-                            <td><label class='label label-success'>YES</label></td>
-                            <td class="text-center">
-                                <a href="{{route("admin.asset.category.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
-                                    <i class='icon-pencil'></i>
-                                </a>  
-                                <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Asset Category">
-                                    <i class='icon-magnifier'></i>
-                                </a>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>HAVC</td>
-                            <td><label class='label label-success'>YES</label></td>
-                            <td class="text-center">
-                                <a href="{{route("admin.asset.category.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
-                                    <i class='icon-pencil'></i>
-                                </a>  
-                                <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Asset Category">
-                                    <i class='icon-magnifier'></i>
-                                </a>
-
-                            </td>
-                        </tr>
+                        @endforeach
+                        
 
                     </tbody>
 
                 </table>
 
             </div>
-
+{{$getAssetCategory->links()}}
         </div>
     </div>
 
