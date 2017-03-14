@@ -72,16 +72,17 @@
                         </div>
 
                         <div class="portlet-body form">
+
                             <div class="form-body">
                                 <div class="form-group">
-                                    <div class="input-group control-group col-md-12">   
-
-                                        <span class="col-md-12">                                      
-                                            <a class="btn green add-schedule-group">Add Zone</a>
-                                        </span>  
+                                    <div class="input-group control-group col-md-12">                                     
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                            <a class="btn pull-right green add-schedule-group">Add Zone</a>
+                                            </div>
+                                        </div> 
                                         <div class="portlet light bordered">
-
-                                                <div class="form-group">
+                                                <div class="form-group">                                  
                                                 <div class="col-md-8">
                                                     <label class="control-label">Zone</label>
                                                     <select class='selectAllOption3' multiple="multiple" name="zone[]">
@@ -197,8 +198,9 @@
                                     </div>  
 
                                     <div class="copyScheduleGroup hide"> 
-                                     <div class="portlet light bordered">
+                                     
                                         <div class="input-group control-group col-md-12"> 
+                                        <div class="portlet light bordered">
                                             <div class="form-group">
                                                 <div class="col-md-8">
                                                     <label class="control-label">Zone</label>

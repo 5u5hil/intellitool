@@ -163,6 +163,7 @@ class DesignationController extends Controller {
     }
 
     public function updatePermissions() {
+        
         foreach (Route::getRoutes() as $value) {
             if (strpos($value->getPrefix(), "admin") !== false) {
                 try {
