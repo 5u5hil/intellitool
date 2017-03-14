@@ -13,11 +13,13 @@ use View;
 class Helper {
 
     public static function returnView($viewname, $data,$redirectTo=null) {
+      
         if (isset($_REQUEST['response_type'])) {
             if ($_REQUEST['response_type'] == 'json') {
                 return $data;
             }
         } else if(isset($viewname)) {
+              dd($viewname);
             return view($viewname)->with($data);
         }else if(isset($redirectTo)){
             return redirect()->route($redirectTo);
