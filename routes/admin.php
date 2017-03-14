@@ -74,6 +74,12 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::resource('/','AssetCategoryController',['names'=>['index'=>'admin.asset.category.list','create'=>'admin.asset.category.add/edit']]);
     });
 
+     Route::group(['prefix'=>'vendor'],function(){
+        Route::resource('/','VendorCategoryController',
+    ['names'=>['index'=>'admin.vendor.list','create'=>'admin.vendor.add/edit','store'=>'admin.vendor.save/update'],
+        ]);
+    });
+    
       Route::group(['prefix' => 'asset'], function () {
         Route::get('/', 'AssetController@index')->name('admin.asset.list');
         Route::get('/add/edit', 'AssetController@addEdit')->name('admin.asset.add/edit');
