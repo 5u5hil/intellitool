@@ -27,5 +27,5 @@
     </foot>
 </html>
 <script>
-$('.datepicker').datepicker({format:''});
+
 </script>
