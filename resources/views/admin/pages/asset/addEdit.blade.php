@@ -27,7 +27,7 @@
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
                     <!--                    Form::model($shift, ['route' => 'admin.shift.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) -->
-                    {{ Form::open(['class'=>'repeater form-horizontal']) }}
+                    {{ Form::model($getAsset,['route'=>['admin.asset.save/update',$getAsset['id']],'class'=>'repeater form-horizontal']) }}
                     {{ Form::hidden("id",null) }}
 
                     <div class="form-body">
@@ -44,7 +44,7 @@
 
                             <div class="col-md-4">
                                 <label>Vertical</label>
-                                {{Form::select('verticals',[""=>"Please Select","1"=>"House Keeping","2"=>"Food","3"=>"Security"] , null, ['class'=>'form-control']) }}
+                                {{Form::select('vertical',[""=>"Please Select","1"=>"House Keeping","2"=>"Food","3"=>"Security"] , null, ['class'=>'form-control']) }}
                             </div>
 
 
@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <div class="col-md-4">
                                 <label>Model</label>
-                                {{Form::text('modle',  null, ['class'=>'form-control',"placeholder"=>"Model"]) }}
+                                {{Form::text('model',  null, ['class'=>'form-control',"placeholder"=>"Model"]) }}
                             </div>	
 
                             <div class="col-md-4">

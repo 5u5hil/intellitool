@@ -72,7 +72,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'asset-category'], function () {
         Route::get('/', 'AssetCategoryController@index')->name('admin.asset.category.list');
         Route::get('/add/edit', 'AssetCategoryController@addEdit')->name('admin.asset.category.add/edit');
-        Route::get('/save/update', 'AssetCategoryController@saveUpdate')->name('admin.asset.category.save/update');
+        Route::post('/save/update', 'AssetCategoryController@saveUpdate')->name('admin.asset.category.save/update');
     });
 
     
@@ -80,11 +80,13 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/', 'VendorController@index')->name('admin.vendor.list');
         Route::any('/add/edit', 'VendorController@addEdit')->name('admin.vendor.add/edit');
         Route::any('/save/update', 'VendorController@saveUpdate')->name('admin.vendor.save/update');
+
     });
 
     Route::group(['prefix' => 'asset'], function () {
         Route::get('/', 'AssetController@index')->name('admin.asset.list');
         Route::get('/add/edit', 'AssetController@addEdit')->name('admin.asset.add/edit');
+        Route::post('/save/update', 'AssetController@saveUpdate')->name('admin.asset.save/update');
     });
 
     Route::group(['prefix' => 'activity'], function () {

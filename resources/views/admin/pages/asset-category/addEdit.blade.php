@@ -30,7 +30,7 @@
                     <!-- BEGIN FORM-->
                     {{ Form::model($assetCategory,['route'=>['admin.asset.category.save/update',$assetCategory['id']],'method'=>'POST','class'=>'repeater form-horizontal']) }}
                     {{ Form::hidden("id",null) }}
-
+                    {{csrf_field()}}
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-6">
