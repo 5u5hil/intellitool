@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Input;
 use App\Models\AssetCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Route;
+use Validator;
 class AssetCategoryController extends Controller
 {
     /**
@@ -27,7 +28,7 @@ class AssetCategoryController extends Controller
      */
     public function addEdit()
     {
-        return view(Config('constants.adminPages').'.asset-category.addEdit',['assetCategory'=>AssetCategory::addEdit()]);
+        return view(Config('constants.adminPages').'.asset-category.addEdit',['assetCategory'=>AssetCategory::addEdit(Input::get('id'))]);
     }
     /**
      * Store a newly created resource in storage.
@@ -38,7 +39,7 @@ class AssetCategoryController extends Controller
     public function saveUpdate(Request $request)
     {
      Validator::make(Input::all(),['name'=>'required'],['name'=>'Name field is required'])->validate();
-     AssetCategory::saveUpdate();
+     AssetCategory::saveUpdate(Input::all());
      return redirect()->route('admin.asset.category.list');
     }
 

@@ -1,4 +1,4 @@
-@extends(config('constants.adminLayouts').'.default')
+        @extends(config('constants.adminLayouts').'.default')
 
 @section('content')
 

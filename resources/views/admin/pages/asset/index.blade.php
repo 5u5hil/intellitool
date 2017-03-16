@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <div id="transform-buttons" class="btn-group btn-default">
 
-                <a href="{{route('admin.shift.add/edit')}}" class="btn btn-default" id="destroy">
+                <a href="{{route('admin.asset.add/edit')}}" class="btn btn-default" id="destroy">
                     <span data-zh="">Add New Asset</span>
                 </a>
             </div>

@@ -26,3 +26,6 @@
         @yield('myscripts')
     </foot>
 </html>
+<script>
+$('.datepicker').datepicker({format:''});
+</script>
