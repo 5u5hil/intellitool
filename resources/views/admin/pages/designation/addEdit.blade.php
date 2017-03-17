@@ -14,11 +14,11 @@
         </ol>
     </div>
     <?php
-    $vertids = $design->verticles()->get(['verticle_id']);
+    $vertids = $design->verticles()->get(['vertical_id']);
     $arrV = [];
     $vetArr = [];
     foreach ($vertids as $vid) {
-        array_push($arrV, $vid->verticle_id);
+        array_push($arrV, $vid->vertical_id);
     }
     ?>
 
@@ -70,9 +70,9 @@
                                                                                 <option value="Phantom">-- Phantom</option>
                                                                             </select>-->
                             <div class="col-md-3"> 
-                                {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
-                                {{Form::select('verticle_ids[]',@$verticlesSel ,$arrV, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
-                                <div class="error">{{ @$errors->first('verticle_ids') }}</div>
+                                {{ Form::label('Vertical', 'Vertical',['class'=>'control-label']) }}
+                                {{Form::select('vertical_ids[]',@$verticlesSel ,$arrV, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
+                                <div class="error">{{ @$errors->first('vertical_ids') }}</div>
 
 
 
@@ -224,7 +224,7 @@
             },
             designation_level_id: {
                 required: true
-            }, 'verticle_ids[]': {
+            }, 'vertical_ids[]': {
                 required: true
             }
 
@@ -236,7 +236,7 @@
             designation_level_id: {
                 required: "Designation Level is required"
             },
-            'verticle_ids[]': {
+            'vertical_ids[]': {
                 required: "Verticle is required",
             }
 

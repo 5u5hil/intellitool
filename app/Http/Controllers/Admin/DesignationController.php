@@ -125,7 +125,7 @@ class DesignationController extends Controller {
 
         $getRepoting = $designAll->pluck('name', 'id')->prepend('Please Select', '');
 
-        $verticlesSel = DB::table('verticles')->pluck('name', 'id')->prepend('Please Select', '');
+        $verticlesSel = DB::table('verticals')->pluck('name', 'id')->prepend('Please Select', '');
 
         return view(config('constants.adminPages') . '.designation.addEdit', ['design' => $design, 'permissions' => $perms, 'getRepoting' => $getRepoting, 'desLevel' => $desLevel, 'verticlesSel' => $verticlesSel]);
     }
@@ -153,8 +153,8 @@ class DesignationController extends Controller {
                 $saveRole->perms()->sync(Input::get('chk'));
             }
 
-            if (!empty(Input::get('verticle_ids'))) {
-                $saveRole->designationverticles()->sync(Input::get('verticle_ids'));
+            if (!empty(Input::get('vertical_ids'))) {
+                $saveRole->designationverticles()->sync(Input::get('vertical_ids'));
             }
         }
 

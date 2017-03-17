@@ -27,9 +27,10 @@ class VendorController extends Controller {
         $vendorClass = new Vendor();
         $input = Input::all();
         $validator = Validator::make($input, Vendor::rules(Input::get('id')), $vendorClass->messages)->validate();
-        $data = Vendor::saveUpdate($input);
-        $redirectTo = route('admin.vendor.list');
-        return Helper::returnView(null, $data, $redirectTo);
+        Vendor::saveUpdate($input);
+        $redirectTo = 'admin.vendor.list';
+        return Helper::returnView(null,null, $redirectTo);
+        
     }
 
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DesignationHasVerticle extends Model
 {
     public $timestamps=false;
-   protected $table = 'designation_has_verticles';
+   protected $table = 'designation_has_verticals';
    
-   public $fillable= ['verticle_id','designation_id'];
+   public $fillable= ['vertical_id','designation_id'];
 }

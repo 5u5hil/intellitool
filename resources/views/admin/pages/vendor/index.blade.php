@@ -28,26 +28,32 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Address</th>
-                           
-                           
+                            <th scope="col">Phone</th>
+                            <th scope="col">Verticals</th>
+                              <th scope="col">Status</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                  
-                             @foreach($vendors as $vendor)
+
+                        @foreach($vendors as $vendor)
                         <tr>
                             <td>{{ $vendor->id }}</td>
-                            <td>{{ $vendor->firstname }}</td>
-                            <td>{{ $vendor->lastname }}</td>
+                            <td>{{ $vendor->firstname." ".$vendor->lastname }}</td>
                             <td>{{ $vendor->email }}</td>
-                            <td>{{ $vendor->address }}</td>
-                           
-                      
+                            <td>{{ $vendor->phone }}</td>
+
+                            <td>
+                                <?php
+                                $vert = $vendor->vendorverticals()->pluck('verticals.name')->toArray();
+                                echo implode(", ", $vert);
+                                ?>
+
+                            </td>
+                            <td><label class="label label-{{($vendor->status==1)?'success':'danger'}}">{{($vendor->status==1)?'Active':'Suspended'}}</label></td>
+                            
                             <td class="text-center">
                                 <a href="{{route("admin.vendor.add/edit",['id'=>$vendor->id])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Vendor">
                                     <i class='icon-pencil'></i>
@@ -58,9 +64,9 @@
 
                             </td>
                         </tr>
-                        
+
                         @endforeach
-             
+
 
                     </tbody>
 

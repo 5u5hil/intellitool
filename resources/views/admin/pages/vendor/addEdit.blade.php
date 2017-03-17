@@ -12,14 +12,13 @@
         </ol>
     </div>
 
-
     <div class="row">
         <div class="col-md-12">
 
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-clock-o"></i>Assets Category</div>
+                        <i class="fa fa-user"></i>Vendor </div>
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
@@ -58,16 +57,14 @@
                                 <div class="error">{{ @$errors->first('phone') }}</div>
 
                             </div>	
-
                             <div class="col-md-4">
                                 <label>Address</label>
                                 {{Form::text('address',  null, ['class'=>'form-control',"placeholder"=>'Address']) }}
                                 <div class="error">{{ @$errors->first('address') }}</div>
                             </div>	
-
                             <div class="col-md-4"> 
-                                {{ Form::label('Verticle', 'Verticle',['class'=>'control-label']) }}
-                                {{Form::select('vertical_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
+                                {{ Form::label('Vertical', 'Vertical',['class'=>'control-label']) }}
+                                {{Form::select('vertical_ids[]',$verticalSel,@$vendor->vendorverticals()->pluck('vertical_id')->toArray(), ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
 
                             </div>	
                         </div>
@@ -78,14 +75,14 @@
                                     <div class="col-md-9">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">
-                                                <input type="radio" id="activeYes" name="active" value="1"  <?= ($vendor->status = 1) ? 'checked' : ''; ?>  class="md-radiobtn">
+                                                <input type="radio" id="activeYes" name="status" value="1" <?= ($vendor->status = 1) ? 'checked' : ''; ?>  class="md-radiobtn">
                                                 <label for="activeYes">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
                                                     <span class="box"></span> Active</label>
                                             </div>
                                             <div class="md-radio">
-                                                <input type="radio" id="activeNo" <?= ($vendor->status = 1) ? 'checked' : ''; ?>  name="active" value="0" class="md-radiobtn">
+                                                <input type="radio" id="activeNo" <?= ($vendor->status = 0) ? 'checked' : ''; ?>  value="0" name="status" class="md-radiobtn">
                                                 <label for="activeNo">
                                                     <span class="inc"></span>
                                                     <span class="check"></span>
@@ -98,34 +95,20 @@
 
                             </div>
                         </div>
-
-
                         <div class="form-group">
                             <div class="col-md-4">
                                 <button type="submit" class="btn green">Submit</button>
                                 <a href="{{route('admin.vendor.list')}}" class="btn default">Cancel</a>
                             </div>
                         </div>
-
-
-
                     </div>	
                     <!-- END FORM-->
 
                     {{ Form::close() }}
 
-
-
-
-
                 </div>
-
-
             </div>	
-
-
-
-        </div>
+       </div>
     </div>
 </div>
 @endsection

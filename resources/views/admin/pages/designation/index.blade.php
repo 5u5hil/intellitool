@@ -24,7 +24,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Designation</th>
                             <th scope="col">Designation Level</th>
-                            <th scope="col">Verticle</th>
+                            <th scope="col">Vertical</th>
                             <th scope="col">Incubation Date</th>
                             <th></th>
 
@@ -37,19 +37,12 @@
                             <td> {{ $dsg->name }} </td>
                             <td>{{ $dsg->designationlevel()->first()->designation }}  </td>
                             <td>
-                                <?php 
-                                if(!empty($dsg->designationverticles()->get(['verticles.name','verticles.id']))){
-                                    echo "<ul>";
-                                    foreach($dsg->designationverticles()->get(['verticles.name']) as $dverT){
-                                        echo "<li>".$dverT->name."</li>";
-                                    }
-                                    
-                                    echo "</ul>";
-                                    
-                                }
-                                
+                                <?php
+                                $vert = $dsg->designationverticles()->pluck('verticals.name')->toArray();
+                                echo implode(", ", $vert);
                                 ?>
-                                
+
+
                             </td>
 
                             <td> {{ date("d M Y",strtotime($dsg->created_at)) }}</td>

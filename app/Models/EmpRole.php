@@ -33,7 +33,7 @@ class EmpRole extends EntrustRole {
     }
 
     public function designationverticles() {
-        return $this->belongsToMany("App\Models\Verticle", "designation_has_verticles", "designation_id", "verticle_id");
+        return $this->belongsToMany("App\Models\Vertical", "designation_has_verticals", "designation_id", "vertical_id");
     }
 
     public function designationlevel() {

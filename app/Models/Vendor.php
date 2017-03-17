@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Library\Helper;
+use DB;
+
 class Vendor extends Model {
 
     protected $table = 'vendors';
@@ -14,7 +16,7 @@ class Vendor extends Model {
         return array_merge(
                 [
             'firstname' => 'required',
-            'lasttname' => 'required',
+            'lastname' => 'required',
             'email' => 'required|email|unique:vendors' . ($id ? ",email,$id" : ''),
             'phone' => 'required|numeric|unique:vendors' . ($id ? ",phone,$id" : '')
                 ], $merge);
@@ -31,23 +33,27 @@ class Vendor extends Model {
     ];
 
     public static function listing() {
-        $list = Vendor::where("status", 1)->paginate(10);
+        $list = self::paginate(10);
         return $list;
     }
 
     public static function addEdit($id) {
-         $vendor = Vendor::findOrNew($id);
-         $data = ['vendor' => $vendor];
-         return $data;
-        
+        $verticalSel = DB::table('verticals')->pluck('name', 'id')->prepend('Please Select', '')->toArray();
+        $vendor = self::findOrNew($id);
+        $data = ['vendor' => $vendor, 'verticalSel' => $verticalSel];
+        return $data;
     }
 
     public static function saveUpdate($input) {
-        $vendor = Vendor::firstOrNew($input->id);
-        $vendor->fill(Input::all());
-        $data = [];
+        $vendor = self::findOrNew($input['id']);
+        $vendor->fill($input)->save();
+        if (!empty($input['vertical_ids'])) {
+            $vendor->vendorverticals()->sync($input['vertical_ids']);
+        }
+    }
 
-        
+    public function vendorverticals() {
+        return $this->belongsToMany("App\Models\Vertical", "vendor_has_verticals", "vendor_id", "vertical_id");
     }
 
 }

@@ -302,9 +302,7 @@ $(function () {
 </script>
 
 <script type="text/javascript">
-    $(document).on("change", "select", function () {
-        $("option[value=" + this.value + "]", this).attr("selected", true).siblings().removeAttr("selected");
-    });
+ 
     $(document).ready(function () {
         $(".add-more").click(function () {
             var html = $(".copy").html();

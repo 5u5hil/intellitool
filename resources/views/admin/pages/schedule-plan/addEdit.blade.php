@@ -36,20 +36,19 @@
                             <!-- BEGIN FORM-->
                             <div class="form-body">
                                 <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
                                         <label class="control-label">Project</label>
-                                        <div class="input-group col-md-12"> 
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                             <select class='form-control' name="project">
                                                 <option value="">Please Select</option>
                                                 <option value="1">Neelkanth Business Park</option>
                                                 <option value="2">Neelkanth Corporate Park</option>
                                                 <option value="3">Neelkanth Kingdom</option>
-
                                             </select>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6"> 
+                                    <div class="col-md-6 col-sm-12 col-xs-12"> 
                                         {{ Form::label('Vertical', 'Vertical',['class'=>'control-label']) }}
                                         {{Form::select('verticle_ids[]',[""=>"Please Select","1"=>"House Keeping","2"=>"Security","3"=>"Food"],null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
 
@@ -75,17 +74,27 @@
 
                             <div class="form-body">
                                 <div class="form-group">
-                                    <div class="input-group control-group col-md-12">                                     
+                                    <div class="input-group control-group col-md-12 col-sm-12 col-xs-12">                                     
                                         <div class="form-group">
                                             <div class="col-md-12">
                                             <a class="btn pull-right green add-schedule-group">Add Zone</a>
                                             </div>
                                         </div> 
                                         <div class="portlet light bordered">
-                                                <div class="form-group">                                  
-                                                <div class="col-md-8">
+                                            <div class="form-group"> 
+                                                <span class="pull-right">
+                                                    <a href="javascript:;" data-repeater-delete class="btn btn-success schedule-add-row tooltipNew"><span class="tooltiptext">Add Activity</span>
+                                                    <i class="fa fa-plus"></i> </a>
+                                                    <a href="javascript:;" data-repeater-delete class="btn purple schedule-group-replica tooltipNew"><span class="tooltiptext">Replica Zone</span>
+                                                    <i class="fa fa-copy"></i></a>
+                                                    <a href="javascript:;" data-repeater-delete class="btn btn-danger schedule-group-delete tooltipNew"><span class="tooltiptext">Delete Zone</span>
+                                                    <i class="fa fa-close"></i></a>
+                                                </span>  
+
+                                                <div class="col-md-8 col-sm-12 col-xs-12">
                                                     <label class="control-label">Zone</label>
-                                                    <select class='selectAllOption3' multiple="multiple" name="zone[]">
+                                                    <select class='selectAllOption3'  name="zone[]">
+                                                        <option value="1">Please Select</option>
                                                         <option value="1">Neelkanth Business Park</option>
                                                         <option value="2">- Compound</option>
                                                         <option value="3">- Gate 1</option>
@@ -113,21 +122,13 @@
 
                                                     </select>
                                                 </div>
-                                                <div class="col-md-3 top20">
-                                                    <a href="javascript:;" data-repeater-create class="btn btn-circle btn-icon-only btn-default add-schedule-group">
-                                                        <i class="fa fa-plus"></i></a>
-
-                                                    <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-replica">
-                                                        <i class="fa fa-copy"></i></a>
-                                                    <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-delete">
-                                                        <i class="fa fa-close"></i></a>
-                                                </div>
+                                                
                                             </div>
                                         
                                         <div class="form-group">
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Shift</label>
-                                                <div class="input-group col-md-12"> 
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                     <select class='form-control' name="shift[]">
                                                         <option value="">Please Select</option>
                                                         <option value="1">Shift A</option>
@@ -139,9 +140,9 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Assign Employee</label>
-                                                <div class="input-group col-md-12">             
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12">             
                                                     <select class="example-optgroup-buttonText" name="assign_emp[]" style="width: 100%;" multiple="multiple">
                                                         <optgroup label="Senior Supervisor">
                                                             <option value="1">John</option>
@@ -156,9 +157,9 @@
                                                     </select>
                                                 </div>
                                             </div>   
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Activity</label>
-                                                <div class="input-group col-md-12"> 
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                     <select class='form-control' name="activity[]">
                                                         <option value="">Please Select</option>
                                                         <option value="1">Cleaning</option>
@@ -168,9 +169,9 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Intervals</label>
-                                                <div class="input-group col-md-12"> 
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                     <select class='form-control interval' name="intervals[]">
                                                         <option value="">Please Select</option>
                                                         <option value="2">Hourly</option>
@@ -185,26 +186,32 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2 top20">
-                                                <a href="javascript:;" title="Add" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-add-row">
-                                                    <i class="fa fa-plus"></i> </a>
-                                                <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-row-replica">
-                                                    <i class="fa fa-copy"></i> </a>
-                                                <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-row-delete">
-                                                    <i class="fa fa-trash"></i></a>
+                                            <div class="col-md-2 col-sm-12 col-xs-12 top20">
+                                                <a href="javascript:;" data-repeater-delete class="btn purple schedule-row-replica tooltipNew"><span class="tooltiptext">Replica</span>
+                                                <i class="fa fa-copy"></i> </a>
+                                                <a href="javascript:;" data-repeater-delete class="btn btn-danger schedule-row-delete tooltipNew"><span class="tooltiptext">Delete</span>
+                                                <i class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                         </div>
                                     </div>  
-
-                                    <div class="copyScheduleGroup hide"> 
                                      
-                                        <div class="input-group control-group col-md-12"> 
+                                    <div class="copyScheduleGroup hide">
+                                        <div class="input-group control-group col-md-12 col-sm-12 col-xs-12"> 
                                         <div class="portlet light bordered">
                                             <div class="form-group">
-                                                <div class="col-md-8">
+                                                <span class="pull-right">
+                                                    <a href="javascript:;" data-repeater-delete class="btn btn-success schedule-add-row tooltipNew"><span class="tooltiptext">Add Activity</span>
+                                                    <i class="fa fa-plus"></i> </a>
+                                                    <a href="javascript:;" data-repeater-delete class="btn purple schedule-group-replica tooltipNew"><span class="tooltiptext">Replica Zone</span>
+                                                    <i class="fa fa-copy"></i></a>
+                                                    <a href="javascript:;" data-repeater-delete class="btn btn-danger schedule-group-delete tooltipNew"><span class="tooltiptext">Delete Zone</span>
+                                                    <i class="fa fa-close"></i></a>
+                                                </span> 
+                                                <div class="col-md-8 col-sm-12 col-xs-12">
                                                     <label class="control-label">Zone</label>
-                                                    <select class='selectAllOption3' multiple="multiple" name="zone[]">
+                                                    <select class='selectAllOption3' name="zone[]">
+                                                         <option value="1">Please Select</option>
                                                         <option value="Accord">Neelkanth Business Park</option>
                                                         <option value="Duster">- Compound</option>
                                                         <option value="Esteem">- Gate 1</option>
@@ -229,24 +236,14 @@
                                                         <option value="Fiero">- Wing B</option>
                                                         <option value="Fiero">- Wing C</option>
                                                         <option value="Fiero">- Wing D</option>
-
                                                     </select>
-                                                </div>
-                                                <div class="col-md-3 top20">
-                                                     <a href="javascript:;" data-repeater-create class="btn btn-circle btn-icon-only btn-default add-schedule-group">
-                                                        <i class="fa fa-plus"></i></a>
-                                                    <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-replica"> 
-                                                        <i class="fa fa-copy"></i></a>
-                                                    <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-group-delete">
-                                                        <i class="fa fa-close"></i></a>
-                                                </div>
-
+                                                </div>                                                
                                             </div>
 
-                                            <div class="form-group ">
-                                                <div class="col-md-2">
+                                            <div class="form-group">
+                                                <div class="col-md-2 col-sm-12 col-xs-12">
                                                     <label class="control-label">Shift</label>
-                                                    <div class="input-group col-md-12"> 
+                                                    <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                         <select class='form-control ' name="shift[]">
                                                             <option value="">Please Select</option>
                                                             <option value="shift-a">Shift A</option>
@@ -258,9 +255,9 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-2">
+                                                <div class="col-md-2 col-sm-12 col-xs-12">
                                                     <label class="control-label">Assign Employee</label>
-                                                    <div class="input-group col-md-12">             
+                                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">             
                                                         <select class="example-optgroup-buttonText " style="width: 100%;"  name="assign_emp[]" multiple="multiple">
                                                             <optgroup label="Senior Supervisor">
                                                                 <option value="1-1">John</option>
@@ -268,7 +265,6 @@
                                                                 <option value="1-3">Bhavana</option>
                                                             </optgroup>
                                                             <optgroup label="Supervisor">
-
                                                                 <option value="2-1">Leena</option>
                                                                 <option value="2-2">Sushil</option>
                                                                 <option value="2-3">Sachin</option>
@@ -276,9 +272,9 @@
                                                         </select>
                                                     </div>
                                                 </div>   
-                                                <div class="col-md-2">
+                                                <div class="col-md-2 col-sm-12 col-xs-12">
                                                     <label class="control-label">Activity</label>
-                                                    <div class="input-group col-md-12"> 
+                                                    <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                         <select class='form-control ' name="activity[]">
                                                             <option value="shift-a">Please Select</option>
                                                             <option value="shift-a">Cleaning</option>
@@ -289,9 +285,9 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-2">
+                                                <div class="col-md-2 col-sm-12 col-xs-12">
                                                     <label class="control-label">Intervals</label>
-                                                    <div class="input-group col-md-12"> 
+                                                    <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                         <select class='form-control interval' name="intervals[]">
                                                             <option value="shift-a">Please Select</option>
                                                             <option value="shift-a">Hourly</option>
@@ -305,13 +301,11 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 top20">
-                                                    <a href="javascript:;" title="Add" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-add-row">
-                                                        <i class="fa fa-plus"></i> </a>
-                                                    <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-row-replica">
-                                                        <i class="fa fa-copy"></i> </a>
-                                                    <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-row-delete">
-                                                        <i class="fa fa-trash"></i></a>
+                                                <div class="col-md-2 col-sm-12 col-xs-12 top20">
+                                                    <a href="javascript:;" class="btn purple schedule-row-replica tooltipNew"><span class="tooltiptext">Replica</span>
+                                                    <i class="fa fa-copy"></i> </a>
+                                                    <a href="javascript:;" class="btn btn-danger schedule-row-delete tooltipNew"><span class="tooltiptext">Delete</span>
+                                                    <i class="fa fa-trash"></i></a>
                                                 </div>
                                                 </div>
                                             </div>
@@ -319,10 +313,10 @@
                                     </div>  
 
                                     <div class="copyScheduleRow hide"> 
-                                        <div class="form-group ">
-                                            <div class="col-md-2">
+                                        <div class="form-group">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Shift</label>
-                                                <div class="input-group col-md-12"> 
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                     <select class='form-control ' name="shift[]">
                                                         <option value="">Please Select</option>
                                                         <option value="1">Shift A</option>
@@ -334,9 +328,9 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Assign Employee</label>
-                                                <div class="input-group col-md-12">             
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12">             
                                                     <select class="example-optgroup-buttonText " name='assign_emp[]' style="width: 100%;" multiple="multiple">
                                                         <option value="">Please Select</option>
                                                         <optgroup label="Senior Supervisor">
@@ -352,9 +346,9 @@
                                                     </select>
                                                 </div>
                                             </div>   
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Activity</label>
-                                                <div class="input-group col-md-12"> 
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                     <select class='form-control ' name='activity[]'>
                                                         <option value="">Please Select</option>
                                                         <option value="1">Cleaning</option>
@@ -365,9 +359,9 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-sm-12 col-xs-12">
                                                 <label class="control-label">Intervals</label>
-                                                <div class="input-group col-md-12"> 
+                                                <div class="input-group col-md-12 col-sm-12 col-xs-12"> 
                                                     <select class='form-control interval' name='intervals[]'>
                                                         <option value="">Please Select</option>
                                                         <option value="1">Hourly</option>
@@ -382,12 +376,10 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3 top20">
-                                                <!-- <a href="javascript:;" title="Add" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-add-row">
-                                                    <i class="fa fa-plus"></i> </a>-->
-                                                <a href="javascript:;" title="Replica" data-repeater-delete class="btn btn-circle btn-icon-only btn-default  schedule-row-replica">
-                                                    <i class="fa fa-copy"></i> </a> 
-                                                <a href="javascript:;" title="Delete" data-repeater-delete class="btn btn-circle btn-icon-only btn-default schedule-row-delete">
+                                            <div class="col-md-2 col-sm-12 col-xs-12 top20">
+                                                <a href="javascript:;" data-repeater-delete class="btn purple schedule-row-replica tooltipNew"><span class="tooltiptext">Replica</span>
+                                                <i class="fa fa-copy"></i> </a>
+                                                <a href="javascript:;" data-repeater-delete class="btn btn-danger schedule-row-delete tooltipNew"><span class="tooltiptext">Delete</span>
                                                 <i class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
@@ -396,16 +388,11 @@
 
                                     <div class='hide copyTimeSel' >
                                         <div class="col-md-2">
-
                                             <label>Time</label>
-
                                             <div class="input-icon">
                                                 <i class="fa fa-clock-o"></i>
                                                 <input type="text" class="form-control timepicker timepicker-default" value="{{ $shift->starttime or null}}" name='starttime'>
                                             </div>
-
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -425,6 +412,9 @@
 
 @section('myscripts')
 <script>
+       $(document).on("change", "select", function () {
+        $("option[value=" + this.value + "]", this).attr("selected", true).siblings().removeAttr("selected");
+    });
     $(document).ready(function () {
         //for schedule plan
         $("body").on("click", ".add-schedule-group", function () {
@@ -491,4 +481,11 @@
 
     });
 </script>
+<style>
+.tooltipNew { position: relative; display: inline-block;}
+
+.tooltipNew .tooltiptext {visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; bottom: 120%; left: 50%; margin-left: -60px;}
+.tooltipNew .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: black transparent transparent transparent;}
+.tooltipNew:hover .tooltiptext {visibility: visible;}
+</style>
 @endsection
