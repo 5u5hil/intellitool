@@ -39,12 +39,12 @@
 
                             <div class="col-md-4">
                                 <label>Asset Category</label>
-                                {{Form::select('asset_category',[""=>"Please Select","1"=>"Electrical","2"=>"Air Conditioner","3"=>"PHE"] , null, ['class'=>'form-control']) }}
+                                {{Form::select('asset_category',$assetCategory , $getAsset['asset_category'], ['class'=>'form-control']) }}
                             </div>
 
                             <div class="col-md-4">
                                 <label>Vertical</label>
-                                {{Form::select('vertical',[""=>"Please Select","1"=>"House Keeping","2"=>"Food","3"=>"Security"] , null, ['class'=>'form-control']) }}
+                                {{Form::select('vertical',$vertical ,  $getAsset['vertical'], ['class'=>'form-control']) }}
                             </div>
 
 
@@ -71,7 +71,8 @@
 
                             <div class="col-md-4">
                                 <label>Make</label>
-                                {{Form::select('make', [""=>"Please Select",'0'=>"make1",'1'=>'make2','3'=>'make3'], null, ['class'=>'form-control']) }}
+                                {{$getAsset->make}}
+                                {{Form::select('make',$make, $getAsset->make, ['class'=>'form-control']) }}
                             </div>
                             <div class="col-md-4">
                                 <label>Installation Date</label>

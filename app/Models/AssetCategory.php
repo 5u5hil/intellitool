@@ -24,5 +24,9 @@ class AssetCategory extends Model {
         $assetCategory = AssetCategory::findOrNew($request['id']);
         return $assetCategory->fill($request)->save();
     }
+    
+    public static function getSelect(){
+        return self::where('status',1)->pluck('name','id')->prepend('Please Select')->toArray();
+    }
 
 }

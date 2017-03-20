@@ -35,14 +35,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
+                        @foreach($getAsset as $asset)
                         <tr>
-                            <td>1</td>
-                            <td>Polishing Machine</td>
-                            <td>Electrical</td>
-                            <td>House Keeping,Food</td>
+                            <td>{{$asset['id']}}</td>
+                            <td>{{$asset['machine_name']}}</td>
+                            <td>{{$asset->assetCategory['name']}}</td>
+                            <td>{{$asset->verticals['name']}}</td>
 
                             <td class="text-center">
-                                <a href="{{route("admin.asset.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
+                                <a href="{{route("admin.asset.add/edit",['id'=>$asset['id']])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
                                     <i class='icon-pencil'></i>
                                 </a>  
                                 <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Asset Category">
@@ -51,28 +53,14 @@
 
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>AC</td>
-                            <td>Air Conditioner</td>
-                            <td>Security,Food</td>
-                            <td class="text-center">
-                                <a href="{{route("admin.asset.add/edit")}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Asset Category">
-                                    <i class='icon-pencil'></i>
-                                </a>  
-                                <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Asset Category">
-                                    <i class='icon-magnifier'></i>
-                                </a>
-
-                            </td>
-                        </tr>
-
+                      
+                        @endforeach
                     </tbody>
 
                 </table>
 
             </div>
-
+{{$getAsset->links()}}
         </div>
     </div>
 
