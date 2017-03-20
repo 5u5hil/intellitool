@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class ActivityController extends Controller
 {
-    public function index() {
+    public function index() { 
     //    $shifts = Shift::orderBy("id", "desc")->paginate(Config('constants.adminPaginateNo'));
         return view(Config('constants.adminPages') . '.activity.index');
     }

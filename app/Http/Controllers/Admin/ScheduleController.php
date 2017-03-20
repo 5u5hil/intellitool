@@ -11,4 +11,7 @@ class ScheduleController extends Controller
     public function index(){
         return view(config('constants.adminPages').'.schedule.index');
     }
+      public function view(){
+        return view(config('constants.adminPages').'.schedule.view');
+    }
 }

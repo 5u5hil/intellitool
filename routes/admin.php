@@ -40,6 +40,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::group(['prefix' => 'schedule'], function () {
         Route::get('/', 'ScheduleController@index')->name('admin.schedule.list');
+        Route::get('/view', 'ScheduleController@view')->name('admin.schedule.view');
     });
 
     Route::group(['prefix' => 'designation-level'], function() {

@@ -75,6 +75,12 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
 .top20 { margin-top:20px; }
 .top20 { margin-top:25px; }
 .top30 { margin-top:30px; }
+.bottom5 { margin-top:5px; }
+.bottom10 { margin-top:10px; }
+.bottom15 { margin-top:15px; }
+.bottom20 { margin-top:20px; }
+.bottom20 { margin-top:25px; }
+.bottom30 { margin-top:30px; }
 
 .tasks {
   margin: 0px;
@@ -100,7 +106,7 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
   line-height: inherit!important;
   font-size: 14px!important;
   font-weight: bold!important;
-  color: inherit;margin:0px; padding: 5px 0px!important;}
+  color: inherit;margin:0px; padding: 2px 0px!important;}
 .tasks-lists {
   position: absolute!important;
   top: 50%!important;
@@ -122,14 +128,14 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
   box-shadow: 0 6px #8c959d, 0 -6px #8c959d!important;}
 .tasks-list-item {
   display: block!important;
-  line-height: 24px!important;
-  padding: 12px 15px!important;
+  /*line-height: 24px!important;*/
+  padding: 5px 15px!important;
   cursor: pointer!important;
   -webkit-user-select: none!important;
   -moz-user-select: none!important;
   -ms-user-select: none!important;
   user-select: none!important;
-	float: left;
+	float: left; margin-bottom: 0px; 
 	width: 100%;}
 .tasks-list-item + .tasks-list-item {border-top: 1px solid #f0f2f3!important;}
 .tasks-list-cb {display: none!important;}
@@ -138,8 +144,8 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
   display: inline-block!important;
   vertical-align: top!important;
   margin-right: 12px!important;
-  width: 25px!important;
-  height: 25px!important;
+  width: 20px!important;
+  height: 20px!important;
   border: 2px solid #c4cbd2!important;
   border-radius: 12px!important;}
 .tasks-list-mark:before {
@@ -148,9 +154,9 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
   position: absolute!important;
   top: 47%!important;
   left: 45%!important;
-  margin: -5px 0 0 -6px!important;
-  height: 8px!important;
-  width: 14px!important;
+  margin: -4px 0 0 -4px!important;
+  height: 7px!important;
+  width: 10px!important;
   border: solid #39ca74!important;
   border-width: 0 0 4px 4px!important;
   -webkit-transform: rotate(-45deg)!important;

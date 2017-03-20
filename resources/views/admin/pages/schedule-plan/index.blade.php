@@ -37,17 +37,14 @@
                             <td> Housekeeping </td>
                             <td> Neel Shah</td>
                             <td> 8798798787 </td>
-                            <td class="text-center"><a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Plan">
-                                    <i class='icon-pencil'></i>
-                                </a>         <a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Schedule">
-                                    <i class='icon-plus'></i>
-                                </a>
-                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Plan">
-                                    <i class='icon-magnifier'></i>
-                                </a>
-                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Plan">
-                                    <i class='icon-trash'></i></a> 
-                            </td>
+                          <td class="text-center"><a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Schedule Plan"><i class='icon-pencil'>
+                                
+                                    </i>
+                                            </a>
+                                            <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Publish Schedule"><i class="icon-rocket"></i></a>
+                                
+                                            <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Schedule Plan"><i class='icon-magnifier'></i></a>  <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Schedule Plan"><i class='icon-trash'></i>
+                                            </a> </td>
                         </tr>
 
                         <tr>
@@ -56,14 +53,13 @@
                             <td> Security </td>
                             <td> Neel Shah</td>
                             <td> 8798798787 </td>
-                                        <td class="text-center"><a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Plan"><i class='icon-pencil'>
+                                        <td class="text-center"><a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Schedule Plan"><i class='icon-pencil'>
                                 
                                     </i>
                                             </a>
-                                            <a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Schedule">
-                                    <i class='icon-plus'></i>
-                                </a>
-                                            <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Plan"><i class='icon-magnifier'></i></a>  <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Plan"><i class='icon-trash'></i>
+                                            <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Publish Schedule"><i class="icon-rocket"></i></a>
+                                
+                                            <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Schedule Plan"><i class='icon-magnifier'></i></a>  <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Schedule Plan"><i class='icon-trash'></i>
                                             </a> </td>
                         </tr>
 
@@ -73,9 +69,12 @@
                             <td> Housekeeping </td>
                             <td> John Cade</td>
                             <td> 8798798784 </td>
-                            <td class="text-center"><a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Plan"><i class='icon-pencil'></i></a>         <a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Add Schedule">
-                                    <i class='icon-plus'></i>
-                                </a><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Plan"><i class='icon-magnifier'></i></a>  <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Plan"><i class='icon-trash'></i></a> </td>
+                            <td class="text-center"><a href="{{ route('admin.schedule.plan.add/edit') }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Plan">
+                                    <i class='icon-pencil'></i></a>   <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Convert to Schedule"><i class="icon-rocket"></i></a>
+                             
+                                </a><a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Plan"><i class='icon-magnifier'></i></a>
+                                
+                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Plan"><i class='icon-trash'></i></a> </td>
                         </tr>
 
                     </tbody>
