@@ -86,9 +86,7 @@
                                             <!-- First Panel -->
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
-                                                     <h4 class="panel-title"
-                                                         data-toggle="collapse" 
-                                                         data-target="#collapseOne">
+                                                     <h4 class="panel-title">
                                                          Zone Name 1
                                                      </h4>
                                                 </div>
@@ -212,9 +210,7 @@
                                             <div class="copyScheduleGroup hide">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
-                                                         <h4 class="panel-title" 
-                                                             data-toggle="collapse" 
-                                                             data-target="#collapseTwo">
+                                                         <h4 class="panel-title">
                                                              Zone Name 2
                                                          </h4>
                                                     </div>
@@ -416,23 +412,21 @@
         //for schedule plan
         $("body").on("click", ".add-schedule-group", function () {
             var html = $(".copyScheduleGroup").html();
-            $('.panel-default .panel-collapse:last-child').removeClass('in');
+            //$('.panel-default .panel-collapse:last-child').removeClass('in');
             $('#accordion').append(html);
             dynamicAccordian();
         });
 
-
         function dynamicAccordian(){
             $(".panel-default").each(function(){
             $(this).click(function(){
-              var ww=$(this).find('.collapse');
+                console.log('test1234');
+              var ww=$(this).find('.panel-collapse');
               $(ww).toggleClass('in');
 
             })
-        })
+            })
         }
-
-
 
 
         $("body").on("click", ".schedule-group-delete", function () {
