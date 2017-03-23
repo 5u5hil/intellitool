@@ -5,27 +5,23 @@ use App\Models\Shift;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Validator;
+use App\Library\Helper;
 class ShiftController extends Controller {
     public function index() {
-        $shifts = Shift::orderBy("id", "desc")->paginate(Config('constants.adminPaginateNo'));
-        return view(Config('constants.adminPages') . '.shift.index', ['shifts' => $shifts]);
+        $shifts = Shift::listing();
+        $data = ['shifts' => $shifts];
+        $viewname = Config('constants.adminPages') . '.shift.index';
+        return Helper::returnView($viewname, $data);
     }
     public function addEdit() {
-        $shift = Shift::findOrNew(Input::get('id'));
-        return view(Config('constants.adminPages') . '.shift.addEdit', ['shift' => $shift]);
+        $data = Shift::addEdit(Input::get('id'));
+        return Helper::returnView(Config('constants.adminPages') . '.shift.addEdit', $data);
     }
-    public function saveUpdate(Request $request) {
+    public function saveUpdate() {
         $validation = new Shift();
-        $validator = Validator::make($request->all(), $validation->rules(Input::get('id')), $validation->messages);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        } else {
-            $shift = Shift::findOrNew(Input::get('id'));
-            $shift->fill(Input::except('starttime', 'endtime'))->save();
-            $shift->starttime = date('H:i:s', strtotime(Input::get('starttime')));
-            $shift->endtime = date('H:i:s', strtotime(Input::get('endtime')));
-            $shift->update();
-        }
-        return redirect()->route('admin.shift.list');
+        $validator = Validator::make(Input::all(), $validation->rules(Input::get('id')), $validation->messages)->validate();
+        Shift::saveUpdate(Input::all());
+        $redirectTo = 'admin.shift.list';
+        return Helper::returnView(null, null, $redirectTo);
     }
 }

@@ -412,21 +412,18 @@
         //for schedule plan
         $("body").on("click", ".add-schedule-group", function () {
             var html = $(".copyScheduleGroup").html();
-            //$('.panel-default .panel-collapse:last-child').removeClass('in');
+            $('.panel-default .panel-collapse').removeClass('in');
             $('#accordion').append(html);
-            dynamicAccordian();
         });
+        $("#accordion").on('click','.panel-default',function(event){
+            var ww=$(this).find('.panel-collapse');
+            $(ww).toggleClass('in');
+        })
 
-        function dynamicAccordian(){
-            $(".panel-default").each(function(){
-            $(this).click(function(){
-                console.log('test1234');
-              var ww=$(this).find('.panel-collapse');
-              $(ww).toggleClass('in');
 
-            })
-            })
-        }
+
+
+
 
 
         $("body").on("click", ".schedule-group-delete", function () {
