@@ -12,6 +12,10 @@ class EmpRole extends EntrustRole {
         'designation_level_id' => 'required',
         'verticle_ids' => 'required'
     ];
+    
+     protected $casts = [
+        'verticals' => 'json'
+    ];
 
     public static function rules($id = null, $merge = []) {
         return array_merge(
@@ -28,16 +32,21 @@ class EmpRole extends EntrustRole {
         'verticle_ids.required' => 'Verticle is required'
     ];
 
-    public function verticles() {
-        return $this->hasMany("App\Models\DesignationHasVerticle", "designation_id");
+    public static function listing(){
+        
+        
     }
-
-    public function designationverticles() {
-        return $this->belongsToMany("App\Models\Vertical", "designation_has_verticals", "designation_id", "vertical_id");
-    }
-
-    public function designationlevel() {
-        return $this->belongsTo("App\Models\DesignationLevel", "designation_level_id");
-    }
+    
+//    public function verticles() {
+//        return $this->hasMany("App\Models\DesignationHasVerticle", "designation_id");
+//    }
+//
+//    public function designationverticles() {
+//        return $this->belongsToMany("App\Models\Vertical", "designation_has_verticals", "designation_id", "vertical_id");
+//    }
+//
+//    public function designationlevel() {
+//        return $this->belongsTo("App\Models\DesignationLevel", "designation_level_id");
+//    }
 
 }

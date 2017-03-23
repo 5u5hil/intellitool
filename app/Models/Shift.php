@@ -41,12 +41,9 @@ class Shift extends Model {
     }
 
     public static function saveUpdate($input) {
-        dd($input);
-        
-        //unset($input['starttime']);
-       // unset($input['endtime']);
         $shift = self::findOrNew($input['id']);
-        $shift->fill($input)->save();
+        $shift->name=$input['name'];
+        $shift->active=$input['active'];
         $shift->starttime = date('H:i:s', strtotime($input['starttime']));
         $shift->endtime = date('H:i:s', strtotime($input['endtime']));
         $shift->update();

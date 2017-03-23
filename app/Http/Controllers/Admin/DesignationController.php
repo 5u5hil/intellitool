@@ -153,8 +153,9 @@ class DesignationController extends Controller {
                 $saveRole->perms()->sync(Input::get('chk'));
             }
 
-            if (!empty(Input::get('vertical_ids'))) {
-                $saveRole->designationverticles()->sync(Input::get('vertical_ids'));
+            if (!empty($input['vertical_ids'])) {
+                $saveRole->verticals = array_map('intval', $input['vertical_ids']);
+                $saveRole->update();
             }
         }
 
@@ -163,7 +164,7 @@ class DesignationController extends Controller {
     }
 
     public function updatePermissions() {
-        
+
         foreach (Route::getRoutes() as $value) {
             if (strpos($value->getPrefix(), "admin") !== false) {
                 try {

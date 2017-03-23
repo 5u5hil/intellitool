@@ -211,7 +211,7 @@
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
                                                          <h4 class="panel-title">
-                                                             Zone Name 2
+                                                             Zone Name 2 
                                                          </h4>
                                                     </div>
                                                     <div class="panel-collapse collapse in">
@@ -411,21 +411,23 @@
     $(document).ready(function () {
         //for schedule plan
         $("body").on("click", ".add-schedule-group", function () {
-            var html = $(".copyScheduleGroup").html();
-            $('.panel-default .panel-collapse').removeClass('in');
+        //  $('.panel-default .panel-collapse').removeClass('in');
+          var cnt=$('.panel-default .panel-collapse').length;
+          var asf=cnt-1;
+          $('.panel-default .panel-collapse').removeClass('in');
+       //   $('.panel-default:not(:last-child)').addClass('fasdfasdfsdaf');
+          console.log(cnt);
+            var html = $(".copyScheduleGroup .panel-default").eq(0).clone();
+                console.log(html)
+                html.find(".panel-collapse").addClass('in');
             $('#accordion').append(html);
         });
-        $("#accordion").on('click','.panel-default',function(event){
-            var ww=$(this).find('.panel-collapse');
-            $(ww).toggleClass('in');
+ 
+          $('#accordion').on('click','.panel-default .panel-heading',function(event){
+             $('.panel-default .panel-collapse').removeClass('in');
+            $(this).parent().find('.panel-collapse').toggleClass('in');
         })
-
-
-
-
-
-
-
+ 
         $("body").on("click", ".schedule-group-delete", function () {
             $(this).parent().parent().parent().remove();
         });
@@ -472,9 +474,6 @@
 .tooltipNew .tooltiptext {visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; bottom: 120%; left: 50%; margin-left: -60px;}
 .tooltipNew .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: black transparent transparent transparent;}
 .tooltipNew:hover .tooltiptext {visibility: visible;}
-.form-group {margin-bottom:5px;}
-.form-horizontal .control-label{padding: 0px; text-align: left;}
-.form-control {height: auto; padding: 5px 12px;}
 
 </style>
 @endsection
