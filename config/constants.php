@@ -1,5 +1,4 @@
 <?php
-
 $adminContstants = [
     'adminAssets' => 'public/admin/assets/',
     'adminPages' => 'admin.pages',
@@ -8,10 +7,7 @@ $adminContstants = [
     'adminPaginateNo' => 10,
     
 ];
-
 $frontendConstants = [];
-
 $contants = $adminContstants + $frontendConstants;
-
 return $contants;
 ?>

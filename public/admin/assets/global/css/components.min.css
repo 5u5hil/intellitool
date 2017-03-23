@@ -73,100 +73,50 @@ body,h1,h2,h3,h4,h5,h6{font-family:"Open Sans",sans-serif}.bold.btn,.sbold.btn{l
 .top10 { margin-top:10px; }
 .top15 { margin-top:15px; }
 .top20 { margin-top:20px; }
-.top20 { margin-top:25px; }
+.top25 { margin-top:25px; }
 .top30 { margin-top:30px; }
-.bottom5 { margin-top:5px; }
-.bottom10 { margin-top:10px; }
-.bottom15 { margin-top:15px; }
-.bottom20 { margin-top:20px; }
-.bottom20 { margin-top:25px; }
-.bottom30 { margin-top:30px; }
+.bottom5 { margin-bottom:5px; }
+.bottom10 { margin-bottom:10px; }
+.bottom15 { margin-bottom:15px; }
+.bottom20 { margin-bottom:20px; }
+.bottom25 { margin-bottom:25px; }
+.bottom30 { margin-bottom:30px; }
+.left5 { margin-left:5px; }
+.left10 { margin-left:10px; }
+.left15 { margin-left:15px; }
+.left20 { margin-left:20px; }
+.left25 { margin-left:25px; }
+.left30 { margin-left:30px; }
+.right5 { margin-right:5px; }
+.right10 { margin-right:10px; }
+.right15 { margin-right:15px; }
+.right20 { margin-right:20px; }
+.right25 { margin-right:25px; }
+.right30 { margin-right:30px; }
 
-.tasks {
-  margin: 0px;
-  width: 100%;
-  background: white;
-  border: 1px solid #cdd3d7;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);}
-.tasks-header {
-  position: relative;
-  padding: 5px 15px;
-  color: #5d6b6c;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.7);
-  background: #f0f1f2;
-  border-bottom: 1px solid #d1d1d1;
-  background-image: -webkit-linear-gradient(top, #f5f7fd, #e6eaec);
-  background-image: -moz-linear-gradient(top, #f5f7fd, #e6eaec);
-  background-image: -o-linear-gradient(top, #f5f7fd, #e6eaec);
-  background-image: linear-gradient(to bottom, #f5f7fd, #e6eaec);
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(0, 0, 0, 0.03);}
-.tasks-title {
-  line-height: inherit!important;
-  font-size: 14px!important;
-  font-weight: bold!important;
-  color: inherit;margin:0px; padding: 2px 0px!important;}
-.tasks-lists {
-  position: absolute!important;
-  top: 50%!important;
-  right: 10px!important;
-  margin-top: -11px!important;
-  padding: 10px 4px!important;
-  width: 19px!important;
-  height: 3px!important;
-  font: 0/0 serif!important;
-  text-shadow: none!important;
-  color: transparent!important;}
-.tasks-lists:before {
-  content: ''!important;
-  display: block!important;
-  height: 3px!important;
-  background: #8c959d!important;
-  border-radius: 1px!important;
-  -webkit-box-shadow: 0 6px #8c959d, 0 -6px #8c959d!important;
-  box-shadow: 0 6px #8c959d, 0 -6px #8c959d!important;}
-.tasks-list-item {
-  display: block!important;
-  /*line-height: 24px!important;*/
-  padding: 5px 15px!important;
-  cursor: pointer!important;
-  -webkit-user-select: none!important;
-  -moz-user-select: none!important;
-  -ms-user-select: none!important;
-  user-select: none!important;
-	float: left; margin-bottom: 0px; 
-	width: 100%;}
-.tasks-list-item + .tasks-list-item {border-top: 1px solid #f0f2f3!important;}
-.tasks-list-cb {display: none!important;}
-.tasks-list-mark {
-  position: relative!important;
-  display: inline-block!important;
-  vertical-align: top!important;
-  margin-right: 12px!important;
-  width: 20px!important;
-  height: 20px!important;
-  border: 2px solid #c4cbd2!important;
-  border-radius: 12px!important;}
-.tasks-list-mark:before {
-  content: ''!important;
-  display: none!important;
-  position: absolute!important;
-  top: 47%!important;
-  left: 45%!important;
-  margin: -4px 0 0 -4px!important;
-  height: 7px!important;
-  width: 10px!important;
-  border: solid #39ca74!important;
-  border-width: 0 0 4px 4px!important;
-  -webkit-transform: rotate(-45deg)!important;
-  -moz-transform: rotate(-45deg)!important;
-  -ms-transform: rotate(-45deg)!important;
-  -o-transform: rotate(-45deg)!important;
-  transform: rotate(-45deg)!important;}
-.tasks-list-cb:checked ~ .tasks-list-mark {border-color: #39ca74!important;}
-.tasks-list-cb:checked ~ .tasks-list-mark:before {display: block!important;}
-.tasks-list-desc { float: left; width: 30%!important;}
-.tasks-list-mark { float: left;}
-.tasks-list-cb:checked ~ .tasks-list-desc {color: #34bf6e!important; text-decoration: line-through!important;}
-.emptySpan{margin-left: 3%; float: left;}
+
+.taskTable{ margin:0px; }
+.taskTable a{ color: #444;}
+.taskTable tr th{ margin:0px!important; padding: 5px 10px!important; background: #f1f1f1;}
+.taskTable tr td{ margin:0px!important; padding: 5px 10px!important; background: #ffffff;}
+.taskTable tr td p{ margin:0px!important; padding:0px!important;}
+.mainHideText{width: 200px}
+.taskHideText{overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 200px;}
+
+.ModleFeedback{margin: 0px; padding: 0px; border: 0px;}
+.ModleFeedback p{margin: 0px; padding: 0px; border: 0px; font-size: 16px; font-weight: normal; color: #444;}
+.timeText{ float: left; margin: 0px; padding: 0px; border: 0px; font-size: 14px; font-weight: normal; color: #777;}
+.ModleFeedback small{text-align: right;}
+/*ToolTips CSS Start*/
+.tooltipNew { position: relative; display: inline-block;}
+.tooltipNew .tooltiptext {visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; bottom: 120%; left: 50%; margin-left: -60px;}
+.tooltipNew .tooltiptext::after {content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: black transparent transparent transparent;}
+.tooltipNew:hover .tooltiptext {visibility: visible;}
+
+.carousel-control.right{background: none!important; top: 40%; color: #000; font-size: 30px;}
+.carousel-control.left{background: none!important; top: 40%; color: #000; font-size: 30px;}
+
+.checkboxStyle[type='checkbox']:after{font: normal normal normal 14px/1 FontAwesome; content: '\f096'; display: inline-block; color: #ccc; font-size: 26px; background: #fff; margin-top: -4px; margin-left: -4px;}
+.checkboxStyle[type='checkbox']:checked:after {font: normal normal normal 14px/1 FontAwesome; content: "\f14a"; font-size: 24px; color: #39ca74;}
+
+.newAddSDPlan{margin: 5px 0px!important; padding: 5px 20px 0 20px!important;}

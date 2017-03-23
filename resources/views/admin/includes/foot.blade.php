@@ -13,21 +13,11 @@
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/moment.min.js') }}" type="text/javascript"></script>
-
-
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}" type="text/javascript"></script>
-
-
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
-
-
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/scripts/app.min.js') }}" type="text/javascript"></script>
-
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/components-date-time-pickers.min.js') }}" type="text/javascript"></script>
-
-
-
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/morris/raphael-min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
@@ -63,7 +53,6 @@
 <script src="{{ asset(config('constants.adminAssets').'global/scripts/app.min.js') }}" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/ui-tree.min.js') }}" type="text/javascript"></script>
-
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/components-bootstrap-multiselect.min.js') }}" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/dashboard.min.js') }}" type="text/javascript"></script>
@@ -76,28 +65,28 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.repeater.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
-
-
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.validate.min.js') }}" type="text/javascript"></script>
+<script>
 
+</script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script type="text/javascript">
-$(function () {
-    $('#datepicker').daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true,
-        locale: {
-            format: 'YYYY-MM-DD'
-        }
+    $(function () {
+        $('#datepicker').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            locale: {
+                format: 'YYYY-MM-DD'
+            }
+        });
+        $('.datepicker').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            locale: {
+                format: 'YYYY-MM-DD'
+            }
+        });
     });
-    $('.datepicker').daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true,
-        locale: {
-            format: 'YYYY-MM-DD'
-        }
-    });
-});
 </script>
 <script>
     $(document).ready(function () {
@@ -128,29 +117,23 @@ $(function () {
         $('.example-optgroup-buttonText').multiselect({
             buttonWidth: '100%',
             buttonText: function (options, select) {
-
                 // First consider the simple cases, i.e. disabled and empty.
                 if (this.disabledText.length > 0
                         && (this.disableIfEmpty || select.prop('disabled'))
                         && options.length == 0) {
-
                     return this.disabledText;
                 }
                 else if (options.length === 0) {
                     return this.nonSelectedText;
                 }
-
                 var $select = $(select);
                 var $optgroups = $('optgroup', $select);
-
                 var delimiter = this.delimiterText;
                 var text = '';
-
                 // Go through groups.
                 $optgroups.each(function () {
                     var $selectedOptions = $('option:selected', this);
                     var $options = $('option', this);
-
                     if ($selectedOptions.length == $options.length) {
                         text += $(this).attr('label') + delimiter;
                     }
@@ -160,12 +143,10 @@ $(function () {
                         });
                     }
                 });
-
                 var $remainingOptions = $('option:selected', $select).not('optgroup option');
                 $remainingOptions.each(function () {
                     text += $(this).text() + delimiter;
                 });
-
                 return text.substr(0, text.length - 2);
             }
         });
@@ -174,10 +155,8 @@ $(function () {
 <script type="text/javascript">
     $.fn.extend({
         treed: function (o) {
-
             var openedClass = 'glyphicon-minus-sign';
             var closedClass = 'glyphicon-plus-sign';
-
             if (typeof o != 'undefined') {
                 if (typeof o.openedClass != 'undefined') {
                     openedClass = o.openedClass;
@@ -187,7 +166,6 @@ $(function () {
                 }
             }
             ;
-
             //initialize each of the top levels
             var tree = $(this);
             tree.addClass("tree");
@@ -226,9 +204,7 @@ $(function () {
             });
         }
     });
-
 //Initialization of treeviews
-
     $('#tree1').treed();
     $('#tree2').treed();
     $('#tree3').treed();
@@ -240,7 +216,6 @@ $(function () {
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
         $(this).children().children().show();
     });
-
     $('#tree2 .branch').each(function () {
         var icon = $(this).children('i:first');
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
@@ -256,7 +231,6 @@ $(function () {
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
         $(this).children().children().show();
     });
-
     $('#tree5 .branch').each(function () {
         var icon = $(this).children('i:first');
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
@@ -267,9 +241,7 @@ $(function () {
         icon.addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
         $(this).children().children().show();
     });
-
 </script>
-
 <script>
     $("#myModal").on("show", function () {    // wire up the OK button to dismiss the modal when shown
         $("#myModal a.btn").on("click", function (e) {
@@ -280,7 +252,6 @@ $(function () {
     $("#myModal").on("hide", function () {    // remove the event listeners when the dialog is dismissed
         $("#myModal a.btn").off("click");
     });
-
     $("#myModal").on("hidden", function () {  // remove the actual elements from the DOM when fully hidden
         $("#myModal").remove();
     });
@@ -298,11 +269,8 @@ $(function () {
             "show": true                     // ensure the modal is shown immediately
         });
     })
-
 </script>
-
 <script type="text/javascript">
- 
     $(document).ready(function () {
         $(".add-more").click(function () {
             var html = $(".copy").html();
@@ -311,17 +279,11 @@ $(function () {
         $(document).on("click", ".remove", function () {
             $(this).parents(".form-group").remove();
         });
-
         $(".add-more-asset").click(function () {
             var html = $(".copyasset").html();
             $(".after-add-more-asset").after(html);
         });
-     
-
-
-
     });
-
     $(document).ready(function () {
         $(".add-more1").click(function () {
             var html = $(".copy1").html();
@@ -331,12 +293,4 @@ $(function () {
             $(this).parents(".form-group").remove();
         });
     });
-
-
-
-
-
-
-
-
 </script>

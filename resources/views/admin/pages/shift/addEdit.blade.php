@@ -11,11 +11,8 @@
             <li class="active">Shift</li>
         </ol>
     </div>
-
-
     <div class="row">
         <div class="col-md-12">
-
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
@@ -28,7 +25,6 @@
                     <!-- BEGIN FORM-->
                     {{ Form::model($shift, ['route' => 'admin.shift.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) }}
                     {{ Form::hidden("id",null) }}
-
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-6">
@@ -36,7 +32,6 @@
                                 {{Form::text('name',  null, ['class'=>'form-control',"placeholder"=>"Name"]) }}
                                 <div class="error">{{ $errors->first('name') }}</div>
                             </div>	
-
                             <div class="col-md-6">
                                 <div class="form-group form-md-radios top15">
                                     <label class="col-md-1 control-label" for="form_control_1">Active</label>
@@ -63,69 +58,38 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6">
-
                                 <label>Start Time</label>
-
                                 <div class="input-icon">
                                     <i class="fa fa-clock-o"></i>
                                     <input type="text" class="form-control timepicker timepicker-default" placeholder="Start Time" value="{{ $shift->starttime or null}}" name='starttime'>
                                 </div>
-
                                 <div class="error">{{ $errors->first('starttime') }}</div>
-
                             </div>	
-
                             <div class="col-md-6">
-
                                 <label>End Time</label>
-
                                 <div class="input-icon">
                                     <i class="fa fa-clock-o"></i>
                                     <input type="text" placeholder="End Time" value="{{ $shift->endtime or null}}" class="form-control timepicker timepicker-default" name='endtime' > </div>
-
                                 <div class="error">{{ $errors->first('endtime') }}</div>
-
                             </div>	
-
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-4">
                                 <button type="submit" class="btn green">Submit</button>
                                 <a href="{{route('admin.shift.list')}}" class="btn default">Cancel</a>
                             </div>
                         </div>
-
-
-
                     </div>	
                     <!-- END FORM-->
-
                     {{ Form::close() }}
-
-
-
-
-
                 </div>
-
-
             </div>	
-
-
-
-
-
-
-
         </div>
     </div>
 </div>
 @endsection
-
 @section('myscripts')
 <script>
-
     $("#shiftForm").validate({
         rules: {
             name: {
@@ -136,10 +100,7 @@
             },
             endtime: {
                 required: true
-
             }
-
-
         },
         messages: {
             name: {
@@ -151,17 +112,13 @@
             endtime: {
                 required: "End Time is required"
             }
-
         },
         errorPlacement: function (error, element) {
             var name = $(element).attr("name");
-
             var errorDiv = $(element).parent();
             errorDiv.append(error);
             // error.appendTo($("#" + name + "_validate"));
         }
-
     });
-
 </script>
 @endsection

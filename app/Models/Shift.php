@@ -1,16 +1,13 @@
 <?php
-
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Pagination\Paginator;
+use DB;
 class Shift extends Model {
-
     protected $table = 'shifts';
     protected $fillable = [
         'name', 'starttime', 'endtime', 'active'
     ];
-
     public static function rules($id = null, $merge = []) {
         return array_merge(
                 [
@@ -19,11 +16,18 @@ class Shift extends Model {
             'endtime' => 'required'
                 ], $merge);
     }
-
     public $messages = [
         'name.required' => 'Name is required.',
         'starttime.required' => 'Starttime is required',
         'endtime.required' => 'Endtime is required'
     ];
-
+    
+   public static function listing(){
+      // $list = DB:select("select * from shifts order by id desc");
+       $list = new Paginator($list,Config("constants.Admin."));
+       
+       
+       
+   }
+    
 }

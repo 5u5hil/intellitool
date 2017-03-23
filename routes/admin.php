@@ -12,49 +12,40 @@
  */
 Route::group(['namespace' => 'Admin'], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
-
     Route::get('/login', function () {
         return 'login';
     });
-
     Route::group(['prefix' => 'client'], function () {
         Route::get('/', 'ClientController@index')->name('admin.client.list');
         Route::get('/add', 'ClientController@add')->name('admin.client.add');
     });
-
     Route::group(['prefix' => 'proposal'], function () {
         Route::get('/', 'ProposalController@index')->name('admin.proposal.list');
         Route::get('/add', 'ProposalController@add')->name('admin.proposal.add');
     });
-
     Route::group(['prefix' => 'project'], function () {
         Route::get('/', 'ProjectController@index')->name('admin.project.list');
         Route::get('/add', 'ProjectController@add')->name('admin.project.add');
         Route::get('/edit', 'ProjectController@edit')->name('admin.project.edit');
     });
-
     Route::group(['prefix' => 'schedule-plan'], function () {
         Route::get('/', 'SchedulePlanController@index')->name('admin.schedule.plan.list');
         Route::get('/add/edit', 'SchedulePlanController@add')->name('admin.schedule.plan.add/edit');
     });
-
     Route::group(['prefix' => 'schedule'], function () {
         Route::get('/', 'ScheduleController@index')->name('admin.schedule.list');
         Route::get('/view', 'ScheduleController@view')->name('admin.schedule.view');
     });
-
     Route::group(['prefix' => 'designation-level'], function() {
         Route::get('/', 'DesignationLevelController@index')->name('admin.designation.level.list');
         Route::get('/add/edit', 'DesignationLevelController@add')->name('admin.designation.level.add/edit');
         Route::post('/save/update', 'DesignationLevelController@save')->name('admin.designation.level.save/update');
     });
-
     Route::group(['prefix' => 'designation'], function () {
         Route::get('/', 'DesignationController@index')->name('admin.designation.list');
         Route::get('/add/edit', 'DesignationController@addEdit')->name('admin.designation.add/edit');
         Route::post('/save/update', 'DesignationController@saveUpdate')->name('admin.designation.save/update');
     });
-
     Route::group(['prefix' => 'employee'], function () {
         Route::get('/', 'EmployeeController@index')->name('admin.employee.list');
         Route::get('/add/edit', 'EmployeeController@addEdit')->name('admin.employee.add/edit');
@@ -65,8 +56,6 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/add/edit', 'ShiftController@addEdit')->name('admin.shift.add/edit');
         Route::post('/save/update', 'ShiftController@saveUpdate')->name('admin.shift.save/update');
     });
-
-
 //    Route::group(['prefix' => 'asset-category'], function() {
 //        Route::resource('/', 'AssetCategoryController', ['names' => ['index' => 'admin.asset.category.list', 'create' => 'admin.asset.category.add/edit','store'=>'admin.asset.category.save/update'],'except' => [ 'update', 'destroy']]);
 //    });
@@ -76,30 +65,24 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::post('/save/update', 'AssetCategoryController@saveUpdate')->name('admin.asset.category.save/update');
     });
 
-    
-        Route::group(['prefix' => 'vendor'], function () {
+    Route::group(['prefix' => 'vendor'], function () {
         Route::get('/', 'VendorController@index')->name('admin.vendor.list');
         Route::any('/add/edit', 'VendorController@addEdit')->name('admin.vendor.add/edit');
         Route::any('/save/update', 'VendorController@saveUpdate')->name('admin.vendor.save/update');
-
     });
-
     Route::group(['prefix' => 'asset'], function () {
         Route::get('/', 'AssetController@index')->name('admin.asset.list');
         Route::get('/add/edit', 'AssetController@addEdit')->name('admin.asset.add/edit');
         Route::post('/save/update', 'AssetController@saveUpdate')->name('admin.asset.save/update');
     });
-
     Route::group(['prefix' => 'activity'], function () {
         Route::get('/', 'ActivityController@index')->name('admin.activity.list');
         Route::get('/add/edit', 'ActivityController@addEdit')->name('admin.activity.add/edit');
+        Route::any('/save/update', 'ActivityController@saveUpdate')->name('admin.activity.save/update');
     });
-
-
     Route::group(['prefix' => 'employee-management'], function () {
         Route::group(['prefix' => 'role'], function () {
             
         });
     });
 });
-
