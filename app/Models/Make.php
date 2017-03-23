@@ -9,6 +9,6 @@ class Make extends Model
     //
     
     public static function getSelect(){
-        return self::pluck('name','id')->prepend('Please Select')->toArray();
+        return self::pluck('name','id')->prepend('Please Select'," ")->toArray();
     }
 }

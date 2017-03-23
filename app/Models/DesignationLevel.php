@@ -11,6 +11,11 @@ class DesignationLevel extends Model {
     protected $fillable = [
         'designation','status','sort_order'
     ];
+    
+    public static function getSelect(){
+        $designationlevel = Self::pluck("designation","id")->toArray();
+        return $designationlevel;
+    }
     public static function listing() {
         $list = DB::select("select * from designation_levels order by sort_order");
         $list = new Paginator($list, Config('constants.adminPaginateNo'));

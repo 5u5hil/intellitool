@@ -27,32 +27,36 @@
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
                     <!--                    Form::model($shift, ['route' => 'admin.shift.save/update', 'class'=>'repeater form-horizontal','id'=>'shiftForm','method'=>'post']) -->
-                    {{ Form::model($getAsset,['route'=>['admin.asset.save/update',$getAsset['id']],'class'=>'repeater form-horizontal']) }}
+                    {{ Form::model($getAsset,['route'=>['admin.asset.save/update',$getAsset['id']],'class'=>'repeater form-horizontal','id'=>'assetForm']) }}
                     {{ Form::hidden("id",null) }}
 
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Machine Name</label>
+                                <label>Machine Name<span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('machine_name',  null, ['class'=>'form-control',"placeholder"=>"Machine Name"]) }}
+                                <div class="error">{{$errors->first('machine_name')}}</div>
                             </div>	
 
                             <div class="col-md-4">
-                                <label>Asset Category</label>
+                                <label>Asset Category<span class="required" aria-required="true"> * </span></label>
                                 {{Form::select('asset_category',$assetCategory , $getAsset['asset_category'], ['class'=>'form-control']) }}
+                                <div class="error">{{$errors->first('asset_category')}}</div>
                             </div>
 
                             <div class="col-md-4">
-                                <label>Vertical</label>
+                                <label>Vertical<span class="required" aria-required="true"> * </span></label>
                                 {{Form::select('vertical',$vertical ,  $getAsset['vertical'], ['class'=>'form-control']) }}
+                                <div class="error">{{$errors->first('vertical')}}</div>
                             </div>
 
 
                         </div>
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Model</label>
+                                <label>Model<span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('model',  null, ['class'=>'form-control',"placeholder"=>"Model"]) }}
+                                <div class="error">{{$errors->first('model')}}</div>
                             </div>	
 
                             <div class="col-md-4">
@@ -70,9 +74,10 @@
                         <div class="form-group">
 
                             <div class="col-md-4">
-                                <label>Make</label>
+                                <label>Make<span class="required" aria-required="true"> * </span></label>
                                 {{$getAsset->make}}
                                 {{Form::select('make',$make, $getAsset->make, ['class'=>'form-control']) }}
+                                <div class="error">  {{$errors->first('make')}}</div>
                             </div>
                             <div class="col-md-4">
                                 <label>Installation Date</label>
@@ -129,8 +134,9 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Installation Location</label>
+                                <label>Installation Location<span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('installation_location',  null, ['class'=>'form-control',"placeholder"=>"Installation Location"]) }}
+                                <div class="error">{{$errors->first('installation_location')}}</div>
                             </div>	
 
 
@@ -174,43 +180,24 @@
 
 @section('myscripts')
 <script>
-
-    $("#shiftForm").validate({
-        rules: {
-            name: {
-                required: true
-            },
-            starttime: {
-                required: true
-            },
-            endtime: {
-                required: true
-
-            }
-
-
-        },
-        messages: {
-            name: {
-                required: "Name is required"
-            },
-            starttime: {
-                required: "Start Time is required"
-            },
-            endtime: {
-                required: "End Time is required"
-            }
-
-        },
-        errorPlacement: function (error, element) {
-            var name = $(element).attr("name");
-
-            var errorDiv = $(element).parent();
-            errorDiv.append(error);
-            // error.appendTo($("#" + name + "_validate"));
-        }
-
-    });
-
+$('#assetForm').validate({
+    rules:{
+        machine_name:{required:true},
+        asset_category:{required:true},
+        vertical:{required:true},
+        model:{required:true},
+        make:{required:true},
+        installation_location:{required:true}
+        
+    },
+    messages:{
+        machine_name:{required:"The machine name field is required."},
+        asset_category:{required:"The asset category field is required."},
+        vertical:{required:"The vertical field is required."},
+        model:{required:"The model field is required."},
+        make:{required:"The make field is required."},
+        installation_location:{required:"The installation location field is required."}
+    }
+});
 </script>
 @endsection

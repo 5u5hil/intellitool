@@ -9,6 +9,7 @@ use App\Models\AssetCategory;
 use App\Models\Vertical;
 use App\Models\Make;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 class AssetController extends Controller {
 
@@ -27,6 +28,7 @@ class AssetController extends Controller {
     }
 
     public function saveUpdate() {
+        Validator::make(Input::all(),['machine_name'=>'required','asset_category'=>'required','vertical'=>'required','model'=>'required','make'=>'required','installation_location'=>'required'])->validate();
         Asset::saveUpdate(Input::all());
         return redirect()->route('admin.asset.list');
     }

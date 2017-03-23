@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\EmpRole;
@@ -14,22 +12,18 @@ use App\Models\DesignationHasVerticle;
 use Route;
 use DB;
 use Validator;
-
 class DesignationController extends Controller {
-
     public function index() {
-        $designations = EmpRole::all();
-        return view(config('constants.adminPages') . '.designation.index', ['designations' => $designations]);
+        $designations = EmpRole::listing();
+        $data = ['designations' => $designations];
+        $viewname = Config('constants.adminPages') . '.designation.index';
+        return Helper::returnView($viewname, $data);
     }
-
     public function buildTree($ar, $pid = null, $dash = null) {
         $op = array();
         $newArr = [];
-
         foreach ($ar as $item) {
-
             if ($item['parent_id'] == $pid) {
-
                 if ($pid == null) {
                     $op[$item['id']][] = $item['name'];
 //                        array(
@@ -49,14 +43,12 @@ class DesignationController extends Controller {
                 // using recursion
                 $children = $this->buildTree($ar, $item['id'], $dash);
                 if ($children) {
-
                     $op[$item['id']][] = $children;
                 }
             }
         }
         return $op;
     }
-
     public function printTree($tree, $r = 0, $p = null) {
         foreach ($tree as $i => $t) {
             $dash = ($t['parent_id'] == 0) ? '' : str_repeat('-', $r) . ' ';
@@ -70,117 +62,51 @@ class DesignationController extends Controller {
             }
         }
     }
-
     public function getDesignations($parentId = null) {
         $categories = [];
-
         foreach (EmpRole::where('parent_id', null)->get() as $category) {
             $categories = [
                 'item' => $category,
                 'children' => $this->getDesignations($category->id)
             ];
         }
-
         return $categories;
     }
-
     private function getCategories($parentId = null) {
         $categories = [];
-
         foreach (EmpRole::where('parent_id', null)->get() as $category) {
             $categories = [
                 'item' => $category,
                 'children' => $this->getCategories($category->id)
             ];
         }
-
         return $categories;
     }
-
     public function addEdit() {
-
-
-        $design = EmpRole::findOrNew(Input::get('id'));
-        $permissions = DB::table("emp_permissions")->get(['id', 'display_name', 'description']);
-        $perms = [];
-        $i = 0;
-        foreach ($permissions as $prmv) {
-            $perms[$prmv->description][$i]['perms'] = $prmv->display_name;
-            $perms[$prmv->description][$i]['id'] = $prmv->id;
-            $i++;
-        }
-
-        $desLevel = DB::table("designation_levels")->orderBy("designation", "asc")->pluck('designation', 'id')->prepend('Please Select', '');
-
-
-        $designAll = EmpRole::orderBy("name", "asc");
-        if (!empty(Input::get('id')))
-            $designAll = $designAll->where("id", "!=", Input::get('id'));
-
-
-        // $roleArr = $this->buildTree($designAll->get()->toArray());
-
-
-
-
-        $getRepoting = $designAll->pluck('name', 'id')->prepend('Please Select', '');
-
-        $verticlesSel = DB::table('verticals')->pluck('name', 'id')->prepend('Please Select', '');
-
-        return view(config('constants.adminPages') . '.designation.addEdit', ['design' => $design, 'permissions' => $perms, 'getRepoting' => $getRepoting, 'desLevel' => $desLevel, 'verticlesSel' => $verticlesSel]);
+        $data = EmpRole::addEdit(Input::get('id'));
+        $viewname = Config('constants.adminPages') . '.designation.addEdit';
+        return Helper::returnView($viewname, $data);
     }
-
-    public function saveUpdate(Request $request) {
-
+    public function saveUpdate() {
         $validation = new EmpRole();
-
-        $validator = Validator::make($request->all(), $validation->rules(Input::get('id')), $validation->messages);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        } else {
-
-
-            $saveRole = EmpRole::findOrNew(Input::get('id'));
-            $saveRole->name = Input::get('name');
-            $saveRole->display_name = Input::get('name');
-            $saveRole->parent_id = Input::get('parent_id');
-            $saveRole->designation_level_id = Input::get('designation_level_id');
-            $saveRole->system_access = (Input::get('system_access')) ? Input::get('system_access') : 0;
-            $saveRole->save();
-
-            if (!empty(Input::get('chk'))) {
-                $saveRole->perms()->sync(Input::get('chk'));
-            }
-
-            if (!empty($input['vertical_ids'])) {
-                $saveRole->verticals = array_map('intval', $input['vertical_ids']);
-                $saveRole->update();
-            }
-        }
-
-
-        return redirect()->route('admin.designation.list');
+        $validator = Validator::make(Input::all(), $validation->rules(Input::get('id')), $validation->messages)->validate();
+        EmpRole::saveUpdate($input);
+        $redirectTo = 'admin.designation.list';
+        return Helper::returnView(null, null, $redirectTo);
     }
-
     public function updatePermissions() {
-
         foreach (Route::getRoutes() as $value) {
             if (strpos($value->getPrefix(), "admin") !== false) {
                 try {
                     $displayName = ucwords(strtolower(str_replace(".", " ", str_replace("admin.", "", $value->getName()))));
                     $displayName1 = end((explode(".", $value->getName())));
-
                     $chkPerm = EmpPermission::where('name', '=', $value->getName())->first();
-
                     if (!empty($chkPerm))
                         $permissions = EmpPermission::where('name', '=', $value->getName())->firstOrFail();
                     else
                         $permissions = new EmpPermission();
-
                     $permissions->name = $value->getName();
                     $permissions->display_name = @$displayName1;
-
                     $permissions->prefix = @$value->getPrefix();
                     $permissions->description = end((explode("/", $permissions->prefix)));
                     $permissions->save();
@@ -191,5 +117,4 @@ class DesignationController extends Controller {
         }
         return "success";
     }
-
 }

@@ -26,7 +26,7 @@ class AssetCategory extends Model {
     }
     
     public static function getSelect(){
-        return self::where('status',1)->pluck('name','id')->prepend('Please Select')->toArray();
+        return self::where('status',1)->pluck('name','id')->prepend('Please Select'," ")->toArray();
     }
 
 }
