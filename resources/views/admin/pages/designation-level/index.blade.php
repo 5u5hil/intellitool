@@ -39,15 +39,15 @@
                             <td class="text-center"><a href="{{route("admin.designation.level.add/edit",['id'=>$getLevel->id])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Designation">
                                     <i class='icon-pencil'></i></a> 
                                 <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="View Designation"><i class='icon-magnifier'></i></a> 
-<!--                                <a href="" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Delete Designation"><i class='icon-trash'></i></a>-->
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                 
             </div>
-            
             {{$designationLevel->links()}}
+           
         </div>
     </div>
 </div>

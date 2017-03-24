@@ -20,10 +20,8 @@ class AssetController extends Controller {
 
     public function addEdit() {
         $getAssetCategory = AssetCategory::getSelect();
-        $vertical = Vertical::getSelect();
+        $vertical = Vertical::getSelectWithOption();
         $make=Make::getSelect();
-
-        // $shift = Shift::findOrNew(Input::get('id'));
         return view(Config('constants.adminPages') . '.asset.addEdit', ['getAsset' => Asset::addEdit(Input::get('id')), 'assetCategory' => $getAssetCategory, 'vertical' => $vertical,'make'=>$make]);
     }
 

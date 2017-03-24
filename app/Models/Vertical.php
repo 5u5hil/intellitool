@@ -10,5 +10,10 @@ class Vertical extends Model
            return $verticals;
        }
        
+       public static function getSelectWithOption(){
+           $verticals=self::pluck('name','id')->prepend('Please Select'," ")->toArray();
+           return $verticals;
+       }
+       
    
 }

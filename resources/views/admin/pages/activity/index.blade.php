@@ -52,6 +52,8 @@
                     </tbody>
                 </table>
             </div>
+            {{ $activities->links() }}
+            
         </div>
     </div>
 </div>

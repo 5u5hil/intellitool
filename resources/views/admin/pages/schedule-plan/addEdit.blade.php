@@ -86,10 +86,10 @@
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title">
-                                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1"> Zone 1 </a>
+                                                            <div class="accordion-toggle accordion-toggle-styled"> Zone 1 </div>
                                                         </h4>
                                                     </div>
-                                                    <div id="collapse_3_1" class="panel-collapse in">
+                                                    <div class="panel-collapse collapse in">
                                                         <div class="panel-body">
                                                            <div class="portlet light bordered newAddSDPlan">
                                                                 <div class="form-group">  
@@ -210,10 +210,10 @@
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title">
-                                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_2"> Zone 2 </a>
+                                                            <div class="accordion-toggle accordion-toggle-styled" > Zone 2 </div>
                                                         </h4>
                                                     </div>
-                                                    <div id="collapse_3_2" class="panel-collapse in"><!--collapse-->
+                                                    <div  class="panel-collapse collapse in"><!--collapse-->
                                                         <div class="panel-body">
                                                                 <div class="input-group control-group col-md-12 col-sm-12 col-xs-12"> 
                                                                     <div class="portlet light bordered newAddSDPlan">
@@ -407,13 +407,28 @@
     $(document).ready(function () {
         //for schedule plan
         $("body").on("click", ".add-schedule-group", function () {
-            var html = $(".copyScheduleGroup").html();
-            $(this).parent().parent().parent().after(html);
-            
-            
+            $('.panel-default .panel-collapse').removeClass('in');
+              $('.accordion-toggle-styled').addClass('collapsed');
+            var html = $(".copyScheduleGroup .panel-default").clone();
+            $('#accordion3').append(html);
+            html.find('.panel-collapse').addClass('in');                    
+            html.find('.accordion-toggle-styled').removeClass('collapsed');                 
         });
         
-        
+        $('#accordion3').on('click','.panel-default .panel-heading',function(event){
+  
+        if($(this).parent().find('.panel-collapse').hasClass('in')){
+            $('.panel-default .panel-collapse').removeClass('in');
+             $(this).parent().find('.accordion-toggle-styled').toggleClass('collapsed');
+           }else{
+            $('.panel-default .panel-collapse').removeClass('in');
+             $(this).parent().find('.panel-collapse').toggleClass('in');             
+             $(this).parent().find('.accordion-toggle-styled').removeClass('collapsed');
+           }
+ 
+        })
+
+
         
         $("body").on("click", ".schedule-group-delete", function () {
             $(this).parent().parent().parent().remove();
@@ -462,5 +477,6 @@
 .tooltipNew:hover .tooltiptext {visibility: visible;}
 .panel {margin-bottom: 5px;}
 .panel-group{margin-bottom:5px;}
+.panel-group .panel{margin-bottom:5px;}
 </style>
 @endsection

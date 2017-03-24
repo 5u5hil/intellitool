@@ -1,7 +1,5 @@
 @extends(config('constants.adminLayouts').'.default')
-
 @section('content')
-
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
@@ -14,21 +12,11 @@
         </ol>
     </div> 
 
-
     <div class="row">
         <div class="col-md-12">
             {!! Form::model($employee, ['method' => 'post', 'route' => 'admin.employee.save/update' , 'class' => 'repeater form-horizontal',"id"=>"EmpForm" ]) !!}
             {!! Form::hidden('id',null) !!}
-
-            <?php
-            $vertids = $employee->reportto()->get(['report_to']);
-            $arrV = [];
-
-            foreach ($vertids as $vid) {
-                array_push($arrV, $vid->report_to);
-            }
-            ?>
-
+ 
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
@@ -37,37 +25,37 @@
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
                 </div>
-
+             
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-4">
-
                                 {!!Form::label('Employee Code','Employee Code') !!}
                                 {!! Form::text('emp_code',null, ["class"=>'form-control' ,"placeholder"=>'Employee Code']) !!}
                             </div>
                             <div class="col-md-4">
                                 {!!Form::label('First Name','First Name') !!}
                                 {!! Form::text('firstname',null, ["class"=>'form-control' ,"placeholder"=>'First Name']) !!}
-
                                 <div class="error">{{ $errors->first('firstname') }}</div>
-
                             </div>	
                             <div class="col-md-4">
                                 {!!Form::label('Last Name','Last Name') !!}
                                 {!! Form::text('lastname',null, ["class"=>'form-control' ,"placeholder"=>'Last Name']) !!}
                             </div>	
                         </div>
+                           
+                       
                         <div class="form-group">
                             <div class="col-md-4">
                                 {!!Form::label('Designation','Designation') !!}
-                                {!! Form::select('roles',$roles,!empty($employee->roles()->first()->id)?$employee->roles()->first()->id:null,["class"=>'form-control m-b' ]) !!}
+                                {!! Form::select('roles',$roles,null,["class"=>'form-control m-b' ]) !!}
                                 <div class="error">{{ $errors->first('roles') }}</div>
                             </div>
+                               
                             <div class="col-md-4">
                                 {!!Form::label('Reports To','Reports to') !!}
-                                {!! Form::select('reports_to[]',$reportTo,($arrV)?$arrV:null, ["class"=>'form-control','id'=>"selectAllOption","multiple"=>"multiple"]) !!}
+                                {!! Form::select('reports_to[]',$reportsTo,null, ["class"=>'form-control','id'=>"selectAllOption","multiple"=>"multiple"]) !!}
                             </div>	
                             <div class="col-md-4">
                                 {!!Form::label('Email','Email') !!}
@@ -75,6 +63,7 @@
                                 <div class="error">{{ $errors->first('email') }}</div>
                             </div>	
                         </div>
+                     
                         <div class="form-group">
                             <div class="col-md-4">
                                 {!!Form::label('Password','Password') !!}
@@ -107,12 +96,9 @@
     </div>
 </div>
 @endsection
-
 @section('myscripts')
 <script>
-
     //  alert("sdf");
-
     $("#EmpForm").validate({
         rules: {
             firstname: {
@@ -124,11 +110,9 @@
             email: {
                 email: true,
                 required: true
-
             }, phone: {
                 required: true,
                 phonevalidate: true
-
             },
             password: {
                 required: true,
@@ -139,7 +123,6 @@
                 minlength: 5,
                 equalTo: "#password"
             }
-
 
         },
         messages: {
@@ -165,17 +148,13 @@
                 minlength: "Your password must be at least 5 characters long",
                 equalTo: "Enter Confirm Password Same as Password"
             }
-
         },
         errorPlacement: function (error, element) {
             var name = $(element).attr("name");
-
             var errorDiv = $(element).parent();
             errorDiv.append(error);
             // error.appendTo($("#" + name + "_validate"));
         }
-
     });
-
 </script>
 @endsection

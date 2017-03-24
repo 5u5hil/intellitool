@@ -1,7 +1,5 @@
 @extends(config('constants.adminLayouts').'.default')
-
 @section('content')
-
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
@@ -13,10 +11,8 @@
             <li class="active">Employee</li>
         </ol>
     </div>
-
     <div class="row">
         <div class="col-md-12">
-
             <div class="table-scrollable">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -25,6 +21,8 @@
                               <th scope="col">Employee Code</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Designation</th>
+                             <th scope="col">Report To</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Joining Date</th>
                             <th></th>
@@ -38,6 +36,8 @@
                             <td>{{ $emp->emp_code }} </td>
                             <td> {{ $emp->firstname }}</td>
                             <td> {{$emp->email }}</td>
+                             <td> {{$emp->designation }}</td>
+                                <td> {{$emp->reportsto }}</td>
                             <td> {{ $emp->phone }}</td>
                             <td> {{ date("d M Y",strtotime($emp->created_at)) }}</td>
                             <td class="text-center">
@@ -54,10 +54,10 @@
                     
                     </tbody>
                 </table>
+                
+                {{ $employees->links() }}
             </div>
         </div>
     </div>
-
 </div>
-
 @endsection

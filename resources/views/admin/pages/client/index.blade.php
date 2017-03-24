@@ -1,7 +1,5 @@
 @extends(config('constants.adminLayouts').'.default')
-
 @section('content')
-
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
@@ -13,10 +11,8 @@
             <li class="active">Client</li>
         </ol>
     </div>
-
     <div class="row">
         <div class="col-md-12">
-
             <div class="table-scrollable">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -93,7 +89,5 @@
             </div>
         </div>
     </div>
-
 </div>
-
 @endsection

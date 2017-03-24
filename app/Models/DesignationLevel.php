@@ -29,7 +29,6 @@ class DesignationLevel extends Model {
     public static function saveUpdate($input) {
         $saveUpdateCat = DesignationLevel::findOrNew($input['id']);
         $saveUpdateCat->fill($input)->save();
-        //dd($saveUpdateCat);
         return $saveUpdateCat;
     }
 }

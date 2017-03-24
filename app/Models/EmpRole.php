@@ -27,13 +27,17 @@ class EmpRole extends EntrustRole {
         'designation_level_id.required' => 'Designation Level is required',
         'vertical_ids.required' => 'Vertical is required'
     ];
+    
+    public static function getSelect(){
+        return EmpRole::pluck('name','id')->prepend("Please Select","")->toArray();
+    }
     public static function listing() {
         $list = DB::select("SELECT e.id,e.name,e.description,e.status,e.sort_order,e.created_at,dl.designation,group_concat(vt.name SEPARATOR ', ') as verticals FROM `emp_roles` e 
 left join verticals vt on JSON_CONTAINS(e.verticals->'$[*]', CAST(vt.id as JSON), '$') 
 left join designation_levels dl on e.designation_level_id = dl.id
 GROUP by e.id");
-        $list = new Paginator($list, Config('constants.adminPaginateNo'));
-        return $list;
+        return  new Paginator($list, Config('constants.adminPaginateNo'));
+        
     }
     public static function addEdit($id) {
         $design = self::findOrNew($id);
@@ -56,7 +60,6 @@ GROUP by e.id");
         return $data;
     }
     public static function saveUpdate($input) {
-        dd($input);
         $saveRole = self::findOrNew($input['id']);
         $saveRole->fill($input)->save();
         if (!empty($input['chk'])) {

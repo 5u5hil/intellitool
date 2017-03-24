@@ -19,69 +19,69 @@ class DesignationController extends Controller {
         $viewname = Config('constants.adminPages') . '.designation.index';
         return Helper::returnView($viewname, $data);
     }
-    public function buildTree($ar, $pid = null, $dash = null) {
-        $op = array();
-        $newArr = [];
-        foreach ($ar as $item) {
-            if ($item['parent_id'] == $pid) {
-                if ($pid == null) {
-                    $op[$item['id']][] = $item['name'];
-//                        array(
-//                    'name' => $item['name'],
-//                    'id' => $item['id'],
-//                    'parent_id' => $item['parent_id']
-//                );
-                } else {
-                    $op[$item['id']][] = $dash . "" . $item['name'];
-//                              array(
-//                    'name' => $dash."".$item['name'],
-//                    'id' => $item['id'],
-//                    'parent_id' => $item['parent_id']
-//                ); 
-                }
-                $dash .= "-";
-                // using recursion
-                $children = $this->buildTree($ar, $item['id'], $dash);
-                if ($children) {
-                    $op[$item['id']][] = $children;
-                }
-            }
-        }
-        return $op;
-    }
-    public function printTree($tree, $r = 0, $p = null) {
-        foreach ($tree as $i => $t) {
-            $dash = ($t['parent_id'] == 0) ? '' : str_repeat('-', $r) . ' ';
-            printf("\t<option value='%d'>%s%s</option>\n", $t['id'], $dash, $t['name']);
-            if ($t['parent_id'] == $p) {
-                // reset $r
-                $r = 0;
-            }
-            if (isset($t['_children'])) {
-                printTree($t['_children'], ++$r, $t['parent_id']);
-            }
-        }
-    }
-    public function getDesignations($parentId = null) {
-        $categories = [];
-        foreach (EmpRole::where('parent_id', null)->get() as $category) {
-            $categories = [
-                'item' => $category,
-                'children' => $this->getDesignations($category->id)
-            ];
-        }
-        return $categories;
-    }
-    private function getCategories($parentId = null) {
-        $categories = [];
-        foreach (EmpRole::where('parent_id', null)->get() as $category) {
-            $categories = [
-                'item' => $category,
-                'children' => $this->getCategories($category->id)
-            ];
-        }
-        return $categories;
-    }
+//    public function buildTree($ar, $pid = null, $dash = null) {
+//        $op = array();
+//        $newArr = [];
+//        foreach ($ar as $item) {
+//            if ($item['parent_id'] == $pid) {
+//                if ($pid == null) {
+//                    $op[$item['id']][] = $item['name'];
+////                        array(
+////                    'name' => $item['name'],
+////                    'id' => $item['id'],
+////                    'parent_id' => $item['parent_id']
+////                );
+//                } else {
+//                    $op[$item['id']][] = $dash . "" . $item['name'];
+////                              array(
+////                    'name' => $dash."".$item['name'],
+////                    'id' => $item['id'],
+////                    'parent_id' => $item['parent_id']
+////                ); 
+//                }
+//                $dash .= "-";
+//                // using recursion
+//                $children = $this->buildTree($ar, $item['id'], $dash);
+//                if ($children) {
+//                    $op[$item['id']][] = $children;
+//                }
+//            }
+//        }
+//        return $op;
+//    }
+//    public function printTree($tree, $r = 0, $p = null) {
+//        foreach ($tree as $i => $t) {
+//            $dash = ($t['parent_id'] == 0) ? '' : str_repeat('-', $r) . ' ';
+//            printf("\t<option value='%d'>%s%s</option>\n", $t['id'], $dash, $t['name']);
+//            if ($t['parent_id'] == $p) {
+//                // reset $r
+//                $r = 0;
+//            }
+//            if (isset($t['_children'])) {
+//                printTree($t['_children'], ++$r, $t['parent_id']);
+//            }
+//        }
+//    }
+//    public function getDesignations($parentId = null) {
+//        $categories = [];
+//        foreach (EmpRole::where('parent_id', null)->get() as $category) {
+//            $categories = [
+//                'item' => $category,
+//                'children' => $this->getDesignations($category->id)
+//            ];
+//        }
+//        return $categories;
+//    }
+//    private function getCategories($parentId = null) {
+//        $categories = [];
+//        foreach (EmpRole::where('parent_id', null)->get() as $category) {
+//            $categories = [
+//                'item' => $category,
+//                'children' => $this->getCategories($category->id)
+//            ];
+//        }
+//        return $categories;
+//    }
     public function addEdit() {
         $data = EmpRole::addEdit(Input::get('id'));
         $viewname = Config('constants.adminPages') . '.designation.addEdit';
@@ -90,7 +90,7 @@ class DesignationController extends Controller {
     public function saveUpdate() {
         $validation = new EmpRole();
         $validator = Validator::make(Input::all(), $validation->rules(Input::get('id')), $validation->messages)->validate();
-        EmpRole::saveUpdate($input);
+        EmpRole::saveUpdate(Input::all());
         $redirectTo = 'admin.designation.list';
         return Helper::returnView(null, null, $redirectTo);
     }
