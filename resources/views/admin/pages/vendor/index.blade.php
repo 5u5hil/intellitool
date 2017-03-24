@@ -12,12 +12,17 @@
         </ol>
     </div>
     <div class="row">
+        
         <div class="col-md-12">
+            @component('admin.includes.success-msg')
+            {{ Session::get('successMsg') }}
+            @endcomponent
             <div id="transform-buttons" class="btn-group btn-default">
                 <a href="{{route('admin.vendor.add/edit')}}" class="btn btn-default" id="destroy">
                     <span data-zh="">Add New Vendor</span>
                 </a>
             </div>
+            
             <div class="table-scrollable">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>

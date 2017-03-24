@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\Library\Helper;
 use Validator;
+use Session;
 class VendorController extends Controller {
     public function index() {
         $vendors = Vendor::listing();
@@ -23,6 +24,7 @@ class VendorController extends Controller {
         $validator = Validator::make($input, Vendor::rules(Input::get('id')), $vendorClass->messages)->validate();
         Vendor::saveUpdate($input);
         $redirectTo = 'admin.vendor.list';
+        Session::flash('successMsg', 'Successfully saved.'); 
         return Helper::returnView(null,null, $redirectTo);
     }
 }

@@ -180,24 +180,27 @@
 
 @section('myscripts')
 <script>
-$('#assetForm').validate({
-    rules:{
-        machine_name:{required:true},
-        asset_category:{required:true},
-        vertical:{required:true},
-        model:{required:true},
-        make:{required:true},
-        installation_location:{required:true}
-        
-    },
-    messages:{
-        machine_name:{required:"The machine name field is required."},
-        asset_category:{required:"The asset category field is required."},
-        vertical:{required:"The vertical field is required."},
-        model:{required:"The model field is required."},
-        make:{required:"The make field is required."},
-        installation_location:{required:"The installation location field is required."}
-    }
-});
+    $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+        return arg != value;
+    }, "This field is required.");
+    $('#assetForm').validate({
+        rules: {
+            machine_name: {required: true},
+            asset_category: {required: true, valueNotEquals: " "},
+            vertical: {valueNotEquals: " "},
+            model: {required: true},
+            make: {valueNotEquals: " "},
+            installation_location: {required: true}
+
+        },
+        messages: {
+            machine_name: {required: "The machine name field is required."},
+            asset_category: {required: "The asset category field is required.",valueNotEquals:"The asset category field is required."},
+            vertical: {required: "The vertical field is required.",valueNotEquals:"The vertical field is required."},
+            model: {required: "The model field is required."},
+            make: {required: "The make field is required.",valueNotEquals:"The make field is required."},
+            installation_location: {required: "The installation location field is required."}
+        }
+    });
 </script>
 @endsection

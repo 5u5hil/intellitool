@@ -4,6 +4,7 @@ $adminContstants = [
     'adminPages' => 'admin.pages',
     'adminLayouts' => 'admin.layouts',
     'adminIncludes' => 'admin.includes',
+    'successComponent' => 'admin.includes.success-msg',
     'adminPaginateNo' => 10,
     
 ];

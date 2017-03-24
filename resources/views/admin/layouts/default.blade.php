@@ -9,17 +9,13 @@
     </head>
     <body>
     <body class="page-header-fixed page-sidebar-closed-hide-logo">
-
         <div class="wrapper">
             @include(config('constants.adminIncludes').'.header')
             <div class="container-fluid">
                 @yield('content')
-
                 @include(config('constants.adminIncludes').'.footer')
-
             </div>
         </div>
-
     </body>
     <foot>
         @include(config('constants.adminIncludes').'.foot')
@@ -27,5 +23,4 @@
     </foot>
 </html>
 <script>
-
 </script>
