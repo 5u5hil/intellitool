@@ -3,19 +3,24 @@
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
     <div class="breadcrumbs">
-        <h1>Asset</h1>
+        <h1>Asset Category</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ route('admin.dashboard') }}">Home</a>
             </li>
-            <li class="active">Asset</li>
+            <li class="active">Asset Category</li>
         </ol>
     </div>
     <div class="row">
         <div class="col-md-12">
+            @if(Session::get('successMsg'))
+            @component('admin.includes.success-msg')
+            {{Session::get('successMsg')}}
+            @endcomponent
+            @endif
             <div id="transform-buttons" class="btn-group btn-default">
                 <a href="{{route('admin.asset.category.add/edit')}}" class="btn btn-default" id="destroy">
-                    <span data-zh="">Add New Asset</span>
+                    <span data-zh="">Add New Asset Category</span>
                 </a>
             </div>
             <div class="table-scrollable">

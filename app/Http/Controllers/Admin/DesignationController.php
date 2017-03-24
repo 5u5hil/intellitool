@@ -12,6 +12,7 @@ use App\Models\DesignationHasVerticle;
 use Route;
 use DB;
 use Validator;
+use Session;
 class DesignationController extends Controller {
     public function index() {
         $designations = EmpRole::listing();
@@ -92,6 +93,7 @@ class DesignationController extends Controller {
         $validator = Validator::make(Input::all(), $validation->rules(Input::get('id')), $validation->messages)->validate();
         EmpRole::saveUpdate(Input::all());
         $redirectTo = 'admin.designation.list';
+        Session::flash('successMsg', 'Successfully saved.'); 
         return Helper::returnView(null, null, $redirectTo);
     }
     public function updatePermissions() {

@@ -28,34 +28,36 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>First Name</label>
+                                <div class="input-icon right">
+                                <label>First Name <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('firstname',  null, ['class'=>'form-control',"placeholder"=>'First Name']) }}
                                 <div class="error">{{ @$errors->first('firstname') }}</div>
+                                </div>
                             </div>	
                             <div class="col-md-4">
-                                <label>Last Name</label>
+                                <label>Last Name <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('lastname',  null, ['class'=>'form-control',"placeholder"=>'Last Name']) }}
                                 <div class="error">{{ @$errors->first('lastname') }}</div>
                             </div>	
                             <div class="col-md-4">
-                                <label>Email</label>
+                                <label>Email <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('email',  null, ['class'=>'form-control',"placeholder"=>'Email']) }}
                                 <div class="error">{{ @$errors->first('email') }}</div>
                             </div>	
                         </div>
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Phone</label>
+                                <label>Phone <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('phone',  null, ['class'=>'form-control',"placeholder"=>'Phone']) }}
                                 <div class="error">{{ @$errors->first('phone') }}</div>
                             </div>	
                             <div class="col-md-4">
-                                <label>Address</label>
+                                <label>Address <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('address',  null, ['class'=>'form-control',"placeholder"=>'Address']) }}
                                 <div class="error">{{ @$errors->first('address') }}</div>
                             </div>
                             <div class="col-md-4"> 
-                                {{Form::label('Vertical', 'Vertical',['class'=>'control-label']) }}
+                                  <label>Vertical <span class="required" aria-required="true"> * </span></label>
                                 {{Form::select('vertical_ids[]',$verticalSel, ($vendor->verticals)?$vendor->verticals:null, ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
                             </div>	
                         </div>

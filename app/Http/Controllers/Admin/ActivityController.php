@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Library\Helper;
 use Illuminate\Support\Facades\Input;
 use Validator;
+use Session;
 class ActivityController extends Controller
 {
     public function index() { 
@@ -25,6 +26,7 @@ class ActivityController extends Controller
         $validator = Validator::make($input, Activity::rules(Input::get('id')), $activityObj->messages)->validate();
         Activity::saveUpdate($input);
         $redirectTo = 'admin.activity.list';
+        Session::flash('successMsg', 'Successfully saved.'); 
         return Helper::returnView(null,null, $redirectTo);
         
     }

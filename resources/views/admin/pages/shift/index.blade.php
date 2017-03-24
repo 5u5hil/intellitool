@@ -13,6 +13,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            @if(Session::get('successMsg'))
+            @component('admin.includes.success-msg')
+            {{ Session::get('successMsg') }}
+            @endcomponent
+            @endif
             <div id="transform-buttons" class="btn-group btn-default">
                 <a href="{{route('admin.shift.add/edit')}}" class="btn btn-default" id="destroy">
                     <span data-zh="">Add New Shift</span>
@@ -26,7 +31,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Start Time</th>
                             <th scope="col">End Time</th>
-                            <th scope="col">Active</th>
+                            <th scope="col">Status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -41,7 +46,7 @@
                             <td> {{$shift->name}}</td>
                             <td> {{date("h:i A",strtotime($shift->starttime))}}</td>
                             <td> {{date("h:i A",strtotime($shift->endtime))}}</td>
-                            <td> <?php echo  ($shift->active == 0)? "<label class='label label-danger'>No</label>":"<label class='label label-success'>Yes</label>" ?></td>
+                            <td> <?php echo ($shift->active == 0) ? "<label class='label label-danger'>Suspended</label>" : "<label class='label label-success'>Active</label>" ?></td>
                             <td class="text-center">
                                 <a href="{{route("admin.shift.add/edit",['id'=>$shift->id])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Shift">
                                     <i class='icon-pencil'></i>

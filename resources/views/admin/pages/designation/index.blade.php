@@ -6,13 +6,18 @@
         <h1>Designation Listing</h1>
         <ol class="breadcrumb">
             <li>
-                <a href="#">Home</a>
+               <a href="{{ route('admin.dashboard') }}">Home</a>
             </li>
             <li class="active">Designation</li>
         </ol>
     </div>
     <div class="row">
         <div class="col-md-12">
+            @if(Session::get('successMsg'))
+            @component('admin.includes.success-msg')
+            {{ Session::get('successMsg') }}
+            @endcomponent
+            @endif
             <div class="table-scrollable">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -23,7 +28,6 @@
                             <th scope="col">Vertical</th>
 <!--                              <th scope="col">Status</th>-->
                             <th scope="col">Incubation Date</th>
-                        
                             <th></th>
                         </tr>
                     </thead>
@@ -34,10 +38,9 @@
                             <td> {{ $dsg->name }} </td>
                             <td>{{ $dsg->designation }}  </td>
                             <td>
-                               {{ $dsg->verticals}}
+                                {{ $dsg->verticals}}
                             </td>
-<!--                            <td><label class="label label-<?= ($dsg->status == 1)?'success':'danger'?>"><?= ($dsg->status == 1)?'Active':'Suspended'?> </label></td>-->
-                                
+<!--                            <td><label class="label label-<?= ($dsg->status == 1) ? 'success' : 'danger' ?>"><?= ($dsg->status == 1) ? 'Active' : 'Suspended' ?> </label></td>-->
                             <td> {{ date("d M Y",strtotime($dsg->created_at)) }}</td>
                             <td class="text-center">
                                 <a href="{{ route("admin.designation.add/edit",['id'=>$dsg->id]) }}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Designation">
@@ -50,9 +53,7 @@
                         </tr>
                         @endforeach
                     </tbody>
-                    
                     {{ $designations->links() }}
-                    
                 </table>
             </div>
         </div>

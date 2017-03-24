@@ -27,12 +27,12 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-4">
-                                <label>Name</label>
+                                <label>Name <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('name',  null, ['class'=>'form-control',"placeholder"=>"Name"]) }}
                                  <div class="error">{{ @$errors->first('name') }}</div>
                             </div>	
                             <div class="col-md-4">
-                                <label>Vertical</label>
+                                <label>Vertical <span class="required" aria-required="true"> * </span></label>
                                 {{Form::select('vertical_ids[]',$verticalSel,($activity->verticals)?$activity->verticals:null, ['class'=>'form-control','id'=>"selectAllOption",'multiple'=>'multiple']) }}
                                  <div class="error">{{ @$errors->first('vertical_ids[]') }}</div>
                             </div>

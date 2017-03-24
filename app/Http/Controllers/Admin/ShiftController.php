@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Validator;
 use App\Library\Helper;
+use Session;
 class ShiftController extends Controller {
     public function index() {
         $shifts = Shift::listing();
@@ -22,6 +23,7 @@ class ShiftController extends Controller {
         $validator = Validator::make(Input::all(), $validation->rules(Input::get('id')), $validation->messages)->validate();
         Shift::saveUpdate(Input::all());
         $redirectTo = 'admin.shift.list';
+        Session::flash('successMsg', 'Successfully saved.'); 
         return Helper::returnView(null, null, $redirectTo);
     }
 }

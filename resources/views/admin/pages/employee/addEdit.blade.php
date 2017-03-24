@@ -11,12 +11,10 @@
             <li class="active">Employee</li>
         </ol>
     </div> 
-
     <div class="row">
         <div class="col-md-12">
             {!! Form::model($employee, ['method' => 'post', 'route' => 'admin.employee.save/update' , 'class' => 'repeater form-horizontal',"id"=>"EmpForm" ]) !!}
             {!! Form::hidden('id',null) !!}
- 
             <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
@@ -25,7 +23,6 @@
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
                 </div>
-             
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
                     <div class="form-body">
@@ -35,7 +32,7 @@
                                 {!! Form::text('emp_code',null, ["class"=>'form-control' ,"placeholder"=>'Employee Code']) !!}
                             </div>
                             <div class="col-md-4">
-                                {!!Form::label('First Name','First Name') !!}
+                                <label>First Name <span class="required" aria-required="true"> * </span></label>
                                 {!! Form::text('firstname',null, ["class"=>'form-control' ,"placeholder"=>'First Name']) !!}
                                 <div class="error">{{ $errors->first('firstname') }}</div>
                             </div>	
@@ -44,37 +41,33 @@
                                 {!! Form::text('lastname',null, ["class"=>'form-control' ,"placeholder"=>'Last Name']) !!}
                             </div>	
                         </div>
-                           
-                       
                         <div class="form-group">
                             <div class="col-md-4">
-                                {!!Form::label('Designation','Designation') !!}
-                                {!! Form::select('roles',$roles,null,["class"=>'form-control m-b' ]) !!}
+                                <label>Designation<span class="required" aria-required="true"> * </span></label>
+                                {!! Form::select('roles',$roles,($employee->designation_id)?$employee->designation_id:null,["class"=>'form-control m-b' ]) !!}
                                 <div class="error">{{ $errors->first('roles') }}</div>
                             </div>
-                               
                             <div class="col-md-4">
                                 {!!Form::label('Reports To','Reports to') !!}
                                 {!! Form::select('reports_to[]',$reportsTo,null, ["class"=>'form-control','id'=>"selectAllOption","multiple"=>"multiple"]) !!}
                             </div>	
                             <div class="col-md-4">
-                                {!!Form::label('Email','Email') !!}
+                                <label>Email<span class="required" aria-required="true"> * </span></label>
                                 {!! Form::email('email',null, ["class"=>'form-control' ,"placeholder"=>'Email']) !!}
                                 <div class="error">{{ $errors->first('email') }}</div>
                             </div>	
                         </div>
-                     
                         <div class="form-group">
                             <div class="col-md-4">
-                                {!!Form::label('Password','Password') !!}
+                                <label>Password<span class="required" aria-required="true"> * </span></label>
                                 {!! Form::password('password', ["class"=>'form-control' ,"placeholder"=>'Password',"id"=>"password"]) !!}
                             </div>
                             <div class="col-md-4">
-                                {!!Form::label('Confirm Password','Confirm Password') !!}
+                                <label>Confirm Password<span class="required" aria-required="true"> * </span></label>
                                 {!! Form::password('confirm_password', ["class"=>'form-control' ,"placeholder"=>'Confirm Password']) !!}
                             </div>
                             <div class="col-md-4">
-                                {!!Form::label('Phone','Phone') !!}
+                                <label>Phone<span class="required" aria-required="true"> * </span></label>
                                 {!! Form::text('phone',null, ["class"=>'form-control' ,"placeholder"=>'Phone']) !!}
                                 <div class="error">{{ $errors->first('phone') }}</div>
                             </div>	
@@ -123,7 +116,6 @@
                 minlength: 5,
                 equalTo: "#password"
             }
-
         },
         messages: {
             firstname: {

@@ -6,6 +6,7 @@ use App\Library\Helper;
 use App\Models\DesignationLevel;
 use Illuminate\Support\Facades\Input;
 use Validator;
+use Session;
 class DesignationLevelController extends Controller {
     public function index() {
         $designationLevel = DesignationLevel::listing();
@@ -21,6 +22,7 @@ class DesignationLevelController extends Controller {
         Validator::make(Input::all(), ['designation' => 'required'], ['designation' => 'Designation Field cannot be blank!'])->validate();
         DesignationLevel::saveUpdate(Input::all());
         $redirectTo = 'admin.designation.level.list';
+          Session::flash('successMsg', 'Successfully saved.'); 
         return Helper::returnView(null, null, $redirectTo);
     }
 }

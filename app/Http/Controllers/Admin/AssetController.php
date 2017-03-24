@@ -10,24 +10,27 @@ use App\Models\Vertical;
 use App\Models\Make;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+use App\Library\Helper;
+use Session;
 
 class AssetController extends Controller {
 
     public function index() {
         $asset=Asset::getListing(8);
-        return view(Config('constants.adminPages') . '.asset.index',['getAsset'=>$asset]);
+        return Helper::returnView(Config('constants.adminPages') . '.asset.index',['getAsset'=>$asset]);
     }
 
     public function addEdit() {
         $getAssetCategory = AssetCategory::getSelect();
         $vertical = Vertical::getSelectWithOption();
         $make=Make::getSelect();
-        return view(Config('constants.adminPages') . '.asset.addEdit', ['getAsset' => Asset::addEdit(Input::get('id')), 'assetCategory' => $getAssetCategory, 'vertical' => $vertical,'make'=>$make]);
+        return Helper::returnView(Config('constants.adminPages') . '.asset.addEdit', ['getAsset' => Asset::addEdit(Input::get('id')), 'assetCategory' => $getAssetCategory, 'vertical' => $vertical,'make'=>$make]);
     }
 
     public function saveUpdate() {
         Validator::make(Input::all(),['machine_name'=>'required','asset_category'=>'required','vertical'=>'required','model'=>'required','make'=>'required','installation_location'=>'required'])->validate();
         Asset::saveUpdate(Input::all());
+        Session::flash('successMsg','Successfully saved.');
         return redirect()->route('admin.asset.list');
     }
 

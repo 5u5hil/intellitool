@@ -54,6 +54,7 @@
 <!-- END THEME GLOBAL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/ui-tree.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/components-bootstrap-multiselect.min.js') }}" type="text/javascript"></script>
+
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/dashboard.min.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
@@ -66,6 +67,8 @@
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.repeater.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
 <script src="{{ asset(config('constants.adminAssets').'pages/scripts/jquery.validate.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset(config('constants.adminAssets').'pages/scripts/form-validation.min.js') }}" type="text/javascript"></script>
+
 <script>
 
 </script>

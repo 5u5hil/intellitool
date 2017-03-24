@@ -28,13 +28,13 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-6">
-                                <label>Name</label>
+                                <label>Name <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('name',  null, ['class'=>'form-control',"placeholder"=>"Name"]) }}
                                 <div class="error">{{ $errors->first('name') }}</div>
                             </div>	
                             <div class="col-md-6">
                                 <div class="form-group form-md-radios top15">
-                                    <label class="col-md-1 control-label" for="form_control_1">Active</label>
+                                    <label class="col-md-1 control-label" for="form_control_1">Status</label>
                                     <div class="col-md-9">
                                         <div class="md-radio-inline">
                                             <div class="md-radio">

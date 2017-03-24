@@ -10,6 +10,7 @@ use App\Library\Helper;
 use Validator;
 use Hash;
 use DB;
+use Session;
 class EmployeeController extends Controller {
     public function index() {
         $employees = Employee::listing();
@@ -25,6 +26,7 @@ class EmployeeController extends Controller {
         $validator = Validator::make(Input::all(), $validation->rules(Input::get('id')), $validation->messages)->validate();
         $data = Employee::saveUpdate(Input::all());
         $redirectTo = 'admin.employee.list';
+        Session::flash('successMsg', 'Successfully saved.'); 
         return Helper::returnView(null,$data,'admin.employee.list');
     }
 }

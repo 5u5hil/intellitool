@@ -13,6 +13,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            @if(Session::get('successMsg'))
+            @component('admin.includes.success-msg')
+            {{ Session::get('successMsg') }}
+            @endcomponent
+            @endif
             <div id="transform-buttons" class="btn-group btn-default">
                 <a href="{{route('admin.activity.add/edit')}}" class="btn btn-default" id="destroy">
                     <span data-zh="">Add New Activity</span>
@@ -34,10 +39,9 @@
                         <tr>
                             <td>{{ $activity->id }}</td>
                             <td>{{ $activity->name }}</td>
-                              <td>{{ $activity->verticals }}</td>
+                            <td>{{ $activity->verticals }}</td>
                             <td>
-                                 <label class='label label-<?= ($activity->status == 1)?'success':'danger' ?>'><?= ($activity->status == 1)?'Active':'Suspended' ?></label>
-                                
+                                <label class='label label-<?= ($activity->status == 1) ? 'success' : 'danger' ?>'><?= ($activity->status == 1) ? 'Active' : 'Suspended' ?></label>
                             </td>
                             <td class="text-center">
                                 <a href="{{route("admin.activity.add/edit",['id'=>$activity->id])}}" class="tooltips" data-container="body" data-placement="bottom" data-original-title="Edit Activity ">
@@ -48,12 +52,11 @@
                                 </a>
                             </td>
                         </tr>
-                     @endforeach
+                        @endforeach
                     </tbody>
                 </table>
             </div>
             {{ $activities->links() }}
-            
         </div>
     </div>
 </div>

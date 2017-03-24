@@ -29,12 +29,13 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                                {{ Form::label('Designation', 'Designation') }}
+                                
+                             <label>Designation <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('name',  null, ['class'=>'form-control','placeholder'=>'Designation']) }}
                                 <div class="error">{{ @$errors->first('name') }}</div>
                             </div>	
                             <div class="col-md-3">
-                                {{ Form::label('Reporting Designation', 'Reporting Designation') }}
+                                   <label>Reporting Designation </label>
                                 {{Form::select('parent_id',@$getRepoting , @$design->parent_id or null , ['class'=>'form-control']) }}
                             </div>	
                             <div class="col-md-3">
@@ -43,7 +44,7 @@
                                 <div class="error">{{ @$errors->first('designation_level_id') }}</div>
                             </div>
                             <div class="col-md-3"> 
-                                {{ Form::label('Vertical', 'Vertical',['class'=>'control-label']) }}
+                                <label>Vertical <span class="required" aria-required="true"> * </span></label>
                                 {{Form::select('vertical_ids[]',@$verticlesSel ,($design->verticals)?$design->verticals:'', ['id'=>"selectAllOption",'multiple'=>'multiple']) }}
                                 <div class="error">{{ @$errors->first('vertical_ids') }}</div>
                             </div>

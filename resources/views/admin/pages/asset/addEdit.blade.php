@@ -1,4 +1,8 @@
 @extends(config('constants.adminLayouts').'.default')
+@section('mystyles')
+
+    
+@endsection
 @section('content')
 <div class="page-content">
     <!-- BEGIN BREADCRUMBS -->
@@ -179,10 +183,12 @@
 @endsection
 
 @section('myscripts')
+
 <script>
     $.validator.addMethod("valueNotEquals", function (value, element, arg) {
         return arg != value;
     }, "This field is required.");
+    
     $('#assetForm').validate({
         rules: {
             machine_name: {required: true},

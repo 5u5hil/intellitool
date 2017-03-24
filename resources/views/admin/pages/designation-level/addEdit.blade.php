@@ -20,7 +20,7 @@
                     <div class="tools">
                         <a href="javascript:;" class="collapse"> </a>
                     </div>
-                    
+
                 </div>
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
@@ -30,12 +30,12 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                                <label>Designation Level</label>
+                                <label>Designation Level <span class="required" aria-required="true"> * </span></label>
                                 {{Form::text('designation',  null, ['class'=>'form-control',"placeholder"=>"Designation Level"]) }}
                             </div>
-                             <div class="error">{{ @$errors->first('designation') }}</div>
-                             <div class="col-md-3">
-                                <label>Order</label>
+                            <div class="error">{{ @$errors->first('designation') }}</div>
+                            <div class="col-md-3">
+                                <label>Sort Order</label>
                                 {{Form::text('sort_order',  null, ['class'=>'form-control',"placeholder"=>"Order"]) }}
                             </div>
                             <div class="col-md-6">
@@ -68,15 +68,9 @@
                                 <a href="<?= route('admin.designation.level.list') ?>" class="btn default">Cancel</a>
                             </div>
                         </div>
-                        @foreach($errors->all() as $getMessage)
-<!--                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="alert alert-danger">
-                                    <p>{{$getMessage}}</p>
-                                </div>
-                            </div>
-                        </div>-->
-                        @endforeach
+
+                 
+
                     </div>	
                     <!-- END FORM-->
                     {{ Form::close() }}
@@ -85,9 +79,93 @@
         </div>
     </div>
 </div>
+
+<!--       <div class="portlet-body">
+                             BEGIN FORM
+                            <form action="#" id="form_sample_2" class="form-horizontal">
+                                <div class="form-body">
+                                    <div class="alert alert-danger display-hide">
+                                        <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+                                    <div class="alert alert-success display-hide">
+                                        <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+                                    <div class="form-group  margin-top-20">
+                                        <label class="control-label col-md-3">Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" name="name" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Email
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" name="email" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">URL
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" name="url" /> </div>
+                                            <span class="help-block"> e.g: http://www.demo.com or http://demo.com </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Number
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" name="number" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Digits
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" name="digits" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Credit Card
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" name="creditcard" /> </div>
+                                            <span class="help-block"> e.g: 5500 0000 0000 0004 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn green">Submit</button>
+                                            <button type="button" class="btn default">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                             END FORM
+                        </div>-->
 @endsection
 @section('myscripts')
 <script>
+
     $("#designationLevelForm").validate({
         rules: {
             designation: {
@@ -97,7 +175,7 @@
         messages: {
             designation: {
                 required: "Designation is required"
-            }   
+            }
         },
         errorPlacement: function (error, element) {
             var name = $(element).attr("name");
@@ -106,5 +184,7 @@
             // error.appendTo($("#" + name + "_validate"));
         }
     });
+
+
 </script>
 @endsection

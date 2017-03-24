@@ -13,6 +13,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            @if(Session::get('successMsg'))
+            @component('admin.includes.success-msg')
+            {{ Session::get('successMsg') }}
+            @endcomponent
+            @endif
             <div id="transform-buttons" class="btn-group btn-default">
                 <a href="{{route('admin.asset.add/edit')}}" class="btn btn-default" id="destroy">
                     <span data-zh="">Add New Asset</span>
@@ -30,7 +35,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         @foreach($getAsset as $asset)
                         <tr>
                             <td>{{$asset['id']}}</td>
@@ -46,7 +50,6 @@
                                 </a>
                             </td>
                         </tr>
-
                         @endforeach
                     </tbody>
                 </table>
